@@ -1,0 +1,340 @@
+\chapter{Introduction}
+
+\section{Background}
+
+Silicon Carbide (SiC) devices have broad spectrum of applications in the field of power electronics and communication due to their unique electrical characteristics. They have large operating temperature range, high breakdown field, high thermal conduction coefficient, high sublimation temperature, high switching speed and are thermally stable \cite{Trew1991}. Due to these superior characteristics, SiC devices can comfortably perform in harsh environments, both, in the field of power electronics and communication. SiC based Metal Semiconductor Field Effect Transistors (MESFETs) are capable of operating in S-band and X-band microwave frequencies with significant output power density and power added efficiency (PAE). Because of these superb properties, SiC devices are getting greater attraction in power electronics and in high power microwave industry. SiC MESFETs have outclassed Si based JFETs and GaAs based MESFETs in power electronics. For a given output power, a smaller chip area is occupied by SiC devices than its counter parts, i.e. Si and GaAs \cite{Arai2003}. Furthermore, due to high input and output impedances offered by SiC based devices, matching circuitry is easy to design. Also peripheral circuits such as DC to DC converters are simplified for SiC circuitry because it requires smaller cooling systems due to its larger thermal conduction coefficient \cite{Clarke2002}.
+
+On account of poor performance of Si and GaAs MESFETs have been fabricated for microwave applications. Due to unavailability of data for Si MESFET, only comparison of GaAs and SiC MESFETs performance is shown in Table \ref{Table 1.1} \cite{Clarke2002,Sayed2004,Weitzel1995,Honda2003,Morvan2001}.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\caption{Comparison of the performance of GaAs and SiC MESFETs.}
+\begin{center}
+\begin{tabular}{l|l|p{4cm}}
+%\setlength{\tabcolsep}{1pt}
+\hline
+\textbf{Parameter} & \textbf{GaAs MESFET}  & \textbf{SiC MESFET}\\
+\hline
+
+Breakdown voltage & $\sim16V$ & $ \sim200V $\\
+\rowcolor{gray!50}
+Operating voltage & $ \sim8V $ & $ \sim105V $\\
+$ I_{d(sat)} $mA/mm & 404 & 734\\
+\rowcolor{gray!50}
+Power density (W/mm) & $ 0.78 $ & $17.37$\\
+
+PAE& comparable & $>35\%$\\
+\rowcolor{gray!50}
+Operating  & Low & As large as 500$^\circ$C  \\
+\rowcolor{gray!50}
+temprature &&(ultimate limit is ceramic packaging)\\
+
+$ f_{max} $ (GHz)& $>200$ & $\sim34$  \\
+\rowcolor{gray!50}
+$ f_{T} $ (GHz) & $>100$ & $\sim10$ \\
+
+%NF & High & Fair \\
+%\rowcolor{gray!50}
+Impedance & Low, on-chip matching &$ 25-50\Omega$ no on-chip matching\\
+\hline
+\end{tabular}
+\label{Table 1.1}
+\end{center}
+\end{table}
+
+\section{General Properties of SiC}
+
+SiC is a semiconductor material having suitable properties for high power, high frequency and high temperature applications. SiC is a wide bandgap semiconductor material with high breakdown electric field strength, high saturated drift velocity of electrons, robust structure, and a high thermal conductivity as compared to many other semiconductors as explained in the Table \ref{Table 1.2} \cite{Elasser2002,Dreike1994}. In this table, $E_{g}$ is bandgap, $\varepsilon_{s}$ represents relative permittivity, $\mu$ is the electron mobility, $\upsilon_s$ represents saturation velocity, $E_{crit}$ is the critical electric field at which breakdown takes place and $\kappa$ represents thermal conductivity. Additionally, SiC is a hard substance with a Young's modulus of 394 GPa \cite{Tong1992}. It is chemically inert and reacts poorly with any known material at room temperature.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\caption{Comparison of average properties of semiconductors.}
+\begin{center}
+\begin{tabular}{l|cccccc}
+%\setlength{\tabcolsep}{1pt}
+%\hline
+Material & $E_g$(eV) & $\varepsilon_s$ & $\mu$(cm$^2$/Vs) & $\upsilon_s$(cm/s) & $E_{crit}$(MV/cm) & $\kappa$(W/cm.K)\\
+\hline
+Si & 1.12 & 11.7 & 1400 & 1$\times$10$^{7}$ & 0.3 & 1.5\\
+%\hline
+GaAs & 1.40 & 12.8 & 8500 & 1$\times$10$^{7}$ & 0.4 & 0.5\\
+%\hline
+GaN & 3.39 & 9.00 & 900 & 2.5$\times$10$^{7}$ & 3.3 & 1.3\\
+%\hline
+4H-SiC & 3.26 & 9.66 & 1000 & 2.2$\times$10$^{7}$ & 2.0 & 4.9\\
+\hline
+\end{tabular}
+\label{Table 1.2}
+\end{center}
+\end{table}
+
+The most commonly used poly type of SiC is 4H-SiC, which has a bandgap of 3.265 eV. The wide bandgap made SiC an attractive choice for high temperature electronics fabrication. The breakdown field of SiC is six times higher than Si, making it a natural choice for high power electronics. Therefore, devices fabricated using SiC can operate at much higher voltages and temperatures compared to Si and GaAs.
+
+Drift velocity plays a significant role in the operation of a device especially, when the device is meant for high frequency applications. In SiC, the saturation drift velocity, $\upsilon_s=2.2\times10^{7}$ cm/sec, which is twice that of Si. A high value of $\upsilon_s$ allows faster communication between the two electrodes needed for microwave applications. Further, an increase in temperature, generally, changes electrical properties of a device, like, mobility of free carriers, $\mu$, drift velocity, $\upsilon$, etc., which normally affects the device in a negative way. SiC is a thermally stable material relative to its counterparts, therefore, variation in its electrical properties is relatively low. This can be judged by comparing thermal conductivity of SiC with known conductors. For example, thermal conductivity of copper and silver is 4 W/(cm-K) and 4.18 W/(cm-K), respectively \cite{Saddow2004}; whereas, the value of thermal conductivity for SiC is 5 W/(cm-K) as reported in \cite{Slack1964}. A relatively high value of thermal conductivity indicates that SiC devices will allow heat to dissipate quickly thus, keeping intact the electrical performance of the device. Assuming that lattice temperature of a semiconductor is represented by $T$, its value depends on the maximum power dissipation, $P_{MD}$ and thermal resistance, $R_{th}$ as given below
+\begin{equation}
+\label{Eq:1.1}
+\textit{T}=P_{MD}\times{\textit{R}_{th}}~.
+\end{equation}
+Since, $R_{th}$ of SiC is smaller than its counter parts therefore, under high power operating conditions, low lattice heating is observed. Thus, devices fabricated from SiC require simple, smaller and lighter cooling systems.
+
+Another important factor, which is commonly used to assess the performance of a device is its free carriers mobility. In SiC, electron low field mobility, $\mu_{0}$ is described as \cite{Caughey1967}:
+\begin{equation}
+\label{Eq:1.2}
+\mu_{0}(N_d)=\mu_{min}+\dfrac{\mu_{max}-\mu_{min}}{1+\left(N_d/N_{r} \right)^{\alpha}}~,
+\end{equation}
+where $N_d$ represents impurity concentration in conducting channel, $\mu_{min}$ and $\mu_{max}$ are the minimum and maximum mobilities, respectively. $N_r$ and $\alpha$ represent empirical constants. A plot of Eq. \eqref{Eq:1.2} as a function of $N_d$ for 4H-SiC is shown in Fig. \ref{Fig:1.1}. This is a typical Fermi-Dirac distribution profile where $\mu_0$ is reducing at higher values of $N_d$ due to increased ionized impurity scattering.
+
+At elevated temperature, the amplitude of lattice vibration increases, causing more obstruction to the flow of carriers thus, reducing $\mu_0$. This requires modification in Eq. \ref{Eq:1.2}, which leads to a temperature dependent $\mu_{0}$ defined as \cite{Hjelmgren2007}
+\begin{equation}
+\label{Eq:1.3}
+\mu_{0}(N_d,T) = \mu_{min}\left(\frac{T}{300}\right)^{-\beta} + \frac{\left(\mu_{max}-\mu_{min}\right)\left(T/300\right)^{-\beta}}{1+\left(N_d/N_{r}\right)^{\alpha}}~,
+\end{equation}
+where $T$ represents temperature in Kelvin and $\beta$ is a fitting variable whose value is defined in Table \ref{Table 1.3} \cite{Hjelmgren2007}. Eq. \ref{Eq:1.3} shows reduction in mobility by increasing the temperature whose value can be controlled by $\beta$ at a given temperature.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig1_1.pdf}
+\caption{Mobility as a function of donor impurities.}
+\label{Fig:1.1}
+\end{figure}
+
+For a given device, the value of $\mu$ is also dependent on the applied electric field, $E$, which is given by \cite{Caughey1967}
+\begin{equation}
+\label{Eq:1.4}
+\mu(E) = \frac{\mu(N_d,T)}{\left\{1+\left[\mu(N_d,T)E/\upsilon_{s}\right]^p\right\}^{1/p}}~,
+\end{equation}
+where $p$ is an empirical constant. Relationship between $\mu$ and $\upsilon$ of a device is governed by the expression
+\begin{equation}
+\label{Eq:1.5}
+\upsilon\left(E\right)=\mu\left(E\right) \times E~.
+\end{equation}
+By assuming the values given in Table \ref{Table 1.3}, variation in $\upsilon$ as a function of $E$ at different temperatures is shown in Fig. \ref{Fig:1.2}. The plot exhibits that pre-saturation $\upsilon$ shows strong dependence on temperature and it decreases with increasing temperature values. This reduction in $\upsilon$ is primarily associated with the reduction in $\mu$ at elevated temperature due to increased lattice scattering $\sim$1$\times$10$^6$ V/cm. Further, it is also evident from Fig. \ref{Fig:1.2} that $\upsilon$ saturates at $E$ commonly known as saturation field, $E_{s}$. Majority of figure-of-merits of SiC are based on carrier's mobility and velocity detail of which are given in the next section.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\caption{Parameter values for the mobility model of 4H-SiC \cite{Hjelmgren2007}.}
+\begin{center}
+\begin{tabular}{l|l}
+%\setlength{\tabcolsep}{1pt}
+%\hline
+Parameters \setlength{\tabcolsep}{4pt}& Value\setlength{\tabcolsep}{4pt}\\
+\hline
+$ N_{r} $ 		& 9.5$\times$10$^{16}$ cm$^{-3}$ \\
+$\upsilon_{s}$ 	& 2.2$\times$10$^{7} $cm/s\\
+$\mu_{max}$ 	& 960 cm$^{2}$/V.s \\
+$\mu_{min}$ 	& 10 cm$^{2}$/V.s \\
+$\alpha$ 		& 0.65 \\
+$\beta$			& 2.25 \\
+$ p $ 			& 1.2\\
+\hline
+\end{tabular}
+\label{Table 1.3}
+\end{center}
+\end{table}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig1_2.pdf}
+\caption{Velocity as a function of electric field and temperature.}
+\label{Fig:1.2}
+\end{figure}
+
+\section{Figure of Merit}
+
+There are several criteria (Figure of Merits) to compare the performance of semiconductor materials and devices, for high frequency and high power applications. Johnson suggested a figure of merit (JFOM), which considers the potential of power handling and high frequency capability of a device. JFOM takes into account $E_{crit}$ and $\upsilon_{s}$, as given in the following equation \cite{Johnson1966}:
+\begin{equation}
+\label{Eq:1.6}
+\text{JFOM}=\dfrac{E^{2}_{crit}\upsilon^{2}_{s}}{4\pi^{2}}~.
+\end{equation}
+JFOM does not take into account the material's thermal properties, which are critically important at high power operation, so, Keyes \cite{Keyes1972} proposed another figure of merit (KFOM), which provides thermal limitation to the switching behavior of transistors used in integrated circuits.
+\begin{equation}
+\label{Eq:1.7}
+\text{KFOM}=\kappa\sqrt{\dfrac{c\upsilon_{s}}{4\pi\varepsilon_s}}~,
+\end{equation}
+where $c$ represents speed of light in vacuum. Neither JFOM nor KFOM gives any information about power handling capabilities of a device and consequently, Baliga proposed another figure of merit (BFOM) \cite{Baliga1989}, which involves material parameters to address conduction losses.
+\begin{equation}
+\label{Eq:1.8}
+\text{BFOM}=\varepsilon_s\mu_0 E^{3}_{g}~,
+\end{equation}
+where $E_{g}$ is the bandgap of a semiconductor.
+
+Table \ref{Table 1.4} presents a summary of figure-of-merits of SiC relative to Si. It shows that SiC power devices have greater potential in performance over Si and GaAs power devices.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\caption{Comparison of figure-of-merits of SiC and GaAs normalized to Si \cite{Saddow2004}.}
+\begin{center}
+\begin{tabular}{l|cccc}
+%\setlength{\tabcolsep}{1pt}
+%\hline
+Figure-of-Merit & Si \setlength{\tabcolsep}{4pt}& GaAs\setlength{\tabcolsep}{4pt} &  4H-SiC \setlength{\tabcolsep}{4pt} & 6H-SiC \\
+\hline
+JFOM & 1 & 9 & 1640 & 900 \\
+%\hline
+KFOM & 1 & 0.41 & 5.9 & 5 \\
+%\hline
+BFOM & 1 & 22 & 1840 & 920 \\
+\hline
+\end{tabular}
+\label{Table 1.4}
+\end{center}
+\end{table}
+
+\section{SiC MESFET}
+Metal Semiconductor Field Effect Transistor (MESFET) was proposed by Mead \cite{Mead1966} and subsequently fabricated by Hooper and Lehrer using GaAs epitaxial layer on semi-insulating GaAs substrate \cite{Hooper1967}. It has a similar construction and operation as that of Junction Field Effect Transistor (JFET). For the gate terminal, MESFET uses a Schottky junction (metal-semiconductor junction) instead of a PN-junction. It is usually fabricated using compound semiconductors such as SiC, GaAs, AlGaN, InP, etc. and is faster than Si based JFET or MOSFET. A cross-sectional view of a SiC MESFET is shown in Fig. \ref{Fig:1.3}. It has a lateral structure, where Schottky barrier gate is sitting in a recess. The length ($L_g$) of the Schottky barrier gate defines the device length; whereas, its width ($W$) would be the device width. In Fig. \ref{Fig:1.3}, the epitaxial layer has been etched to define the thickness of the channel, $a$, which determines the available channel for the flow of current. The electronic current will flow from source to drain; whereas, the conventional current, i.e. drain to source current ($I_{ds}$) will have the direction of flow from the drain to the source terminals. Both drain and source are ohmic contacts with a high degree of linear response. Separation between gate-source and gate-drain defines the source side and the drain side resistance of the device, respectively. In an operating MESFET, as shown in Fig. \ref{Fig:1.3}, the drain is at higher potential compared to the source terminal, resulting in a varying drain potential in the channel thus, causing a tapered gate depletion. The substrate, which is used for the fabrication of SiC MESFET is normally of high resistance hence, confining the charge flow within the channel thickness defined by $a$. The thickness $a$ is chosen as per the mode of operation of the device and for normally ON devices, it complies with the condition:
+\begin{equation}
+|V_P| > \frac{qN_da^2}{2\varepsilon_s}~,
+\end{equation}
+and for normally OFF devices, it fulfills the condition defined by:
+\begin{equation}
+|V_P| < \frac{qN_da^2}{2\varepsilon_s}~,
+\end{equation}
+where $q$ is the electron charge and $V_P$ is the pinch-off voltage. For $n$-channel devices, typical value of $N_d\sim$3$\times$10$^{17}$cm$^{-3}$. To reduce the ohmic contact resistance, usually an additional layer is also used on top of the channel layer with a relatively higher doping $\sim$10$^{18}$cm$^{-3}$. Fabrication parameters such as $L_g$, $a$ and $W$ of the device are chosen based on its operation. For high frequency devices, $L_g$ would be of submicron dimension with relatively thinner $a$. For power devices, to meet the specific power requirements, the value of $W$ is chosen accordingly.
+
+\subsection{Output Characteristics}
+An operating MESFET is shown in Fig. \ref{Fig:1.3} wherein, the drain-source is biased by a voltage source called $V_{ds}$, and the Schottky barrier gate is connected with negative terminal of another voltage source referred to as $V_{gs}$. It is a depletion type device where the channel has got $n$-carriers and the device can be depleted by gradually increasing the magnitude of $V_{gs}$ to the point where the entire channel is occupied by the gate depletion. At $V_{ds}$ $>$ 0, $I_{ds}$ will have a finite value and it will increase linearly by increasing $V_{ds}$ to a certain value of $V_{ds}$ called $V_{ds\text{(sat)}}$. When $V_{ds}$ $>$ $V_{ds\text{(sat)}}$, the channel carriers attain maximum velocity and, thus, define a current called $I_{ds\text{(sat)}}$. Any increase in $V_{ds}$ beyond $V_{ds\text{(sat)}}$ will, ideally, have no effect on $I_{ds}$ and, thus, it remains constant ($I_{ds\text{(sat)}}$). This naturally defines two distinct regions of $I_{ds}$($V_{ds}$) characteristics: the first region is known as the linear region; whereas, the region in which the current is not changing by changing $V_{ds}$ is known as the saturation region.
+
+By changing $V_{gs}$ magnitude, the current changes both in the linear as well as in the saturation region thus, defining a family of $I_{ds}$ curves as a function of $V_{ds}$ and $V_{gs}$. These characteristics are known as output characteristics of a MESFET, as shown in Fig. \ref{Fig:1.4}(a). This figure clearly shows that by increasing $V_{gs}$ negatively, the maximum value of $I_{ds}$ decreases in the saturation region of operation, and eventually it reaches to the point where the channel is fully depleted and the device reaches the region called cut-off region. For microwave applications, like amplifier design, the device Q-point is chosen in the saturation region of operation, such that there should be no signal cut-off when there is a variation in the input signal at the gate electrode.
+
+It is pertinent to mention here that after the on-set of current saturation, the device usually does not follow the ideal behavior and there is still a finite change in $I-{ds}$ for $V_{ds}$ $>$ $V_{ds\text{(sat)}}$. This leads to a finite output conductance in the saturation region of operation, which is considered a negative feature of a MESFET. In SiC MESFET, the output conductance is inevitable because of the short value of $L_g$. The output conductance, $g_d$ of a SiC MESFET is defined as
+\begin{equation}
+g_{d}=\frac{\partial{I_{ds}}}{\partial{V_{ds}}}\bigg|_{V_{gs}=\text{constant}}~.
+\label{Eq:1.11}
+\end{equation}
+
+\begin{figure}
+\centering
+\includegraphics [width=4in, height=3in]{ThesisFigs/Fig1_3.pdf}
+\caption{Cross-sectional view of the schematic of a MESFET.}
+\label{Fig:1.3}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure[]{\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig1_4a.pdf}}
+\subfigure[]{\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig1_4b.pdf}}
+\caption{(a) Output and (b) transfer characteristics of a SiC MESFET.}
+\label{Fig:1.4}
+\end{figure}
+
+In the saturation region of operation, as a first order approximation, $I_{ds}$ in the saturation region of operation is given by the Shockley's equation
+\begin{equation}
+\label{Eq:1.12}
+I_{ds}=I_{dss}\left[1-\dfrac{V_{gs}}{V_{P}}\right]^{2}~,
+\end{equation}
+where $I_{dss}$ is the saturation current at $V_{gs}$ = 0V. By changing the geometrical parameters and the device technology, the saturation current can be adjusted as per the design requirements. By and large, $I_{ds}$ depends on the physical parameters of the device: $a$, $W$, and $N_{d}$. The knowledge of the output characteristics plays an important role in designing the circuits involving SiC MESFETs.
+
+\subsection{Transfer Characteristics}
+Transfer characteristics define the relationship between $I_{ds}$ and $V_{gs}$ known as transconductance, $g_m$ of the device, which is given by:
+\begin{equation}
+g_{m}=\frac{\partial{I_{ds}}}{\partial{V_{gs}}}\bigg|_{V_{ds}=\text{constant}}~.
+\end{equation}
+$g_{m}$ is one of the most important performance parameters for the device, i.e. high value of $g_m$ indicates that the device gain will also be high. Characteristic curves for $I_{ds}$ and $g_{m}$ in response to the variation in $V_{gs}$ for a submicron SiC MESFET are shown in the Fig. \ref{Fig:1.4}(b). It is apparent from the two curves that there is a non-linear relationship between the quantities, which can also be seen from Eq. \eqref{Eq:1.11}.
+
+The magnitude of $g_m$ can be increased by making the channel thinner and heavily doped. Thus, for microwave applications, it is always desired to optimize the thickness of the channel in order to achieve the desired output characteristics.
+
+\section{RF Power Performance}
+Power amplifiers are the primary consumers of DC voltage source. Therefore, consideration of the amplifier efficiency is of significant importance, specially, in case of hand-held wireless devices. Since, Class-A amplifier is ideally linear in operation, it is therefore preferred in low noise applications. The maximum output RF power of a SiC MESFET, under class-A operation, is computed by
+\begin{equation}
+P_{(max)} = \frac{\left[V_{ds\text{(max)}}-V_{ds\text{(sat)}}\right]\left[I_{ds\text{(max)}}-I_{ds\text{(sat)}}\right]}{8}~,
+\end{equation}
+\begin{equation}
+V_{dsQ} = \frac{V_{ds\text{(max)}}-V_{ds\text{(sat)}}}{2}~,
+\end{equation}
+\begin{equation}
+I_{dsQ} = \frac{I_{ds}\left[V_{ds\text{(sat)}}\right]-I_{ds}\left[V_{gs\text{(min)}}\right]}{2}~,
+\end{equation}
+where $\textit{V}_{ds\text{(max)}}$ is the breakdown voltage of the device. Using Eqs. (1.14) to (1.16), one can have a feel about RF performance of SiC MESFET and based on these expressions, an optimum point for the operation of device can be observed for its power performance.
+
+\subsection{Power Gain}
+The available power gain of an RF amplifier is defined as:
+\begin{equation}
+G_{A} = \frac{\text{Power available from the two-port network}}{\text{Power available from the source}}~.
+\end{equation}
+The overall power gain of an RF amplifier depends on the source impedance, the load impedance and the reflection coefficients of the respective ports. The available gain in terms of $S$-parameters and the circuit reflection coefficients is given by
+\begin{equation}
+ G_{A}=\dfrac{\vert{S_{21}}\vert^{2}\left(1-\vert\Gamma_{S}\vert^{2}\right)\left(1-\vert\Gamma_{L}\vert^{2}\right)}{\vert 1-\Gamma_{S}\Gamma_{in}\vert^{2}\vert 1-S_{22}\Gamma_{L}\vert^{2}}~,
+\end{equation}
+or
+\begin{equation}
+ G_{A}=\dfrac{\vert{S_{21}}\vert^{2}\left(1-\vert\Gamma_{S}\vert^{2}\right)\left(1-\vert\Gamma_{L}\vert^{2}\right)}{\vert 1-S_{11}\Gamma_{S}\vert^{2}\vert 1-\Gamma_{out}\Gamma_{L}\vert^{2}}~,
+\end{equation}\\
+where $\Gamma_{S}$ is the reflection coefficient looking towards the source, $\Gamma_{L}$ is the reflection coefficients looking towards the load, and $ \Gamma_{in} $ and $ \Gamma_{out} $ are the reflection coefficients at the input and output ports of the device, respectively. The above equation can be written as:\\
+\begin{equation}
+G_T = G_S~.~G_0~.~G_L~,
+\end{equation}
+where
+\begin{equation}
+G_S = \frac{1-|\Gamma_S|^2}{|1-\Gamma_{in}\Gamma_S|^2} = \frac{1-|\Gamma_S|^2}{|1-S_{11}\Gamma_S|^2}~,
+\end{equation}
+\begin{equation}
+G_L = \frac{1-|\Gamma_L|^2}{|1-\Gamma_{out}\Gamma_L|^2}= \frac{1-|\Gamma_L|^2}{|1-S_{22}\Gamma_L|^2}~,
+\end{equation}
+and
+\begin{equation}
+G_0 = |S_{21}|^2~.
+\end{equation}
+For perfect match, an ideal condition, $ G_{S}=G_{L}=1 $ and $ G_{A}=\vert{S_{21}}\vert^{2} $ which is also called matched gain or maximum available gain (MAG). However, the simultaneous matching for input and output terminations and the device respective ports, is seldom achieved. Another metric for rating and comparing the gain of the various devices, operating under stable conditions, is the maximum stable gain (MSG) and is given by:
+\begin{equation}
+\text{MSG}=\dfrac{\vert{S_{21}\vert}}{\vert{S_{12}}\vert}~.
+\end{equation}
+As an example, a plot for MAG, MSG and the relative phase between input and output of MSG, for 10W SiC MESFET is shown in Fig. \ref{Fig:1.5}. The frequency-phase curve shows that the device is stable within the bandwidth.
+
+\begin{figure}
+\centering
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig1_5.pdf}
+\caption{Plot for MAG, MSG and the phase of MSG for SiC MESFET.}
+\label{Fig:1.5}
+\end{figure}
+
+\subsection{Efficiency of an RF Amplifier}
+The drain efficiency $\eta$, which is the ratio of RF output power to the DC power, of an amplifier does not give the knowledge about the input power to the amplifier, where the gain of the active device is low. A better measure, which also takes into account the effect of input RF power, is the power-added efficiency (PAE) calculated as:
+\begin{equation}
+\text{PAE}=\dfrac{\left[ P_{out}\right] _{RF}-\left[ P_{in}\right] _{RF}}{\left[ P_{DC}\right] _{\text{total}}}=\left( 1-\frac{1}{G}\right)\eta~,
+\end{equation}
+where $\eta=\left[ P_{out}\right] _{RF}/\left[ P_{DC}\right] _{\text{total}}$ is the drain efficiency and $ G=\left[ P_{out}\right] _{RF}\left[ P_{in}\right] _{RF} $ is the RF gain of an amplifier. PAE is a function of frequency and drops with its increasing values. A plot for RF gain, output power and PAE of an RF amplifier, designed using 4H-SiC-MESFET \cite{Sayed2004}, is shown in the Fig. \ref{Fig:1.6}.
+
+\begin{figure}
+\centering
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig1_6.pdf}
+\caption{Power performances measurement at 2 GHz of a 4H-SiC MESFET.}
+\label{Fig:1.6}
+\end{figure}
+
+\section{SiC MESFETs Applications}
+SiC MESFETs, due to their unique material characteristics, are highly preferred devices for high power RF applications, especially those where large bandwidth is required. These devices exhibit a mean failure time in excess of 500 hours at a junction temperature of $410^\circ$C \cite{Sriram2005}. There are numerous companies, which are commercializing SiC MESFETs and their RF modules for high temperature electronics and communication related applications. Power handling capability of SiC MESFETs is as high as $\sim$7.8 W/mm \cite{Andersson2006}. The PAE for such devices is $\sim$70\% for class AB configuration. Under such a configuration, these devices are used in military aircrafts, powerful microwave electronics, radar, air traffic control, satellite communications and cell phone base stations.
+
+Faster switching speed coupled with high thermal conduction with no additional requirement of cooling systems made these devices a natural choice to be used in hot and harsh environments; in automotive, aerospace and deep-well drilling industries.
+
+By employing SiC MESFET technology, the size and the cost of the power conversion and distribution systems have been greatly reduced \cite{Elasser2002,Zolper2005,Neudeck2009,Dreike1994}. From green energy perspective, SiC devices have relatively lesser issues associated to global environment. These devices, because of reduced power conversion losses and less heat dissipation, have also created a significant impact on power electronics sector, solar cells, electric cars and power converters, etc. \cite{Arai2003}. Today, we have SiC based lamps and tube rods, which are replacing the conventional technologies.
+
+SiC integrated circuits (ICs) are also under investigation and many SiC based ICs have been fabricated. High-power SiC MMIC amplifiers have also been demonstrated with excellent yield and reliability. These MMIC amplifiers showed power performance characteristics not previously available with conventional GaAs technology \cite{Henry2004,Sudow2006}. In general, one can say, that SiC ICs brought a major improvement in power systems, especially those meant for harsh environments, such as radar, cellular communication towers, sensors and control electronics, etc. \cite{Sheng2008,Lee2008}.
+
+\section{Motivations}
+As mentioned earlier, SiC MESFET devices have scores of applications in the field of RF engineering and thus can comfortably operate at X-band and S-band with significant output power, PAE and other benefits. Design and optimization of SiC MESFET based RF components depend on the degree of accuracy of the modeling of the device. Therefore, SiC MESFET's modeling is a hot area for the researchers to realize enhanced performance of RF systems involving SiC MESFETs.
+
+Many models for MESFETs are reported in the literature; but a few of them are specifically developed for SiC MESFETs \cite{Tsap1995,Murray2002,Zhu2006,Quanjun2008}. The accuracy and validity of these models are based on the device dimensions and their global validity cannot be guaranteed, especially for the devices having submicron $L_g$. Thus, a comprehensive model which should cover a wide range of SiC MESFETs design with an acceptable accuracy, is still a requirement of design engineers.
+
+As mentioned before, the performance of a SiC MESFET depends on its physical parameters such as $L_g$, $a$ and $N_d$, substrate and buffer layers thicknesses etc. An accurate analytical model, based on the closed form expressions, with improved channel potential understanding would provide a better explanation about the device response, especially at high biasing. By employing the gathered information, the device physical parameters can be further optimized to achieve enhanced performance. Due to the unique characteristics of SiC MESFETs, caused by self heating and high biasing, an improved analytical model is also required to use the device to its fullest potential.
+
+SiC MESFET intrinsic small signal parameters play a crucial role in determining the RF response of the device. A straight forward technique to assess the intrinsic small signal parameters is lacking, which could be employed to have the initial assessment to answer how the device would respond when subjected to RF applications? It would be, therefore, beneficial to have the assessment of the device intrinsic small signal parameters using its assessed DC characteristics. Such a technique would be relying on the accuracy of the DC model employed, followed by the assessment of the device AC parameters. We would like to established an AC parameters assessment technique based on SiC MESFET DC characteristics to develop its AC equivalent circuit.
+
+\section{Thesis Outline}
+
+This thesis presents analytical and semi-empirical modeling of SiC MESFETs meant for high power microwave applications. Techniques have been developed to predict the response of submicron SiC MESFETs by evaluating channel conditions and material parameters. Small signal parameters are evaluated by using DC characteristics of the device. The techniques developed in this thesis can potentially be employed in simulation tools of high power microwave MESFETs involving submicron devices. The remaining organization of the thesis is as follows:
+
+\textbf{Chapter 2:} This chapter summarizes the current state of SiC MESFET technology. It presents SiC MESFETs characteristics and their applications in high power industry. Progress made so far in the device design to get improved performance is presented. The device potential for high power microwave communication systems is highlighted. Stable performance, which the device can offer at high ambient temperature and in radiation rich environment is discussed. The work reported by different research groups about SiC MESFETs' power requirement along with superior linearity characteristics in microwave amplifiers is explored. It is shown that owing to relatively better thermal conductivity, SiC MESFETs provide superior conduction of heat generated under high power operating conditions thus, maintaining their stable performance.
+
+Novel structures of SiC MESFETs, which are reported in the literature to improve the device power handling capabilities and to increase its $f_T$ and $f_{max}$ operation are also discussed. While reviewing the device current state of technology, physical parameters used to improve $g_m$ and $g_d$ of the device are explored.
+
+To determine the fullest capacity of the device and to know its physical behavior, simulation and modeling techniques are usually employed. Analytical, empirical and semi-empirical models developed for SiC MESFETs and their origins are discussed. A need of a comprehensive model is established to predict DC characteristics. Moreover, it is discussed that an accurate AC model is needed to predict intrinsic small signal parameters of the device designed for microwave power applications.
+
+\textbf{Chapter 3:} This chapter presents a detailed mathematical model describing $I-V$ characteristics of submicron SiC MESFETs. Poisson's equation with appropriate boundary conditions is solved to determine potential distribution inside the channel. Location of the Schottky barrier gate, where the carrier's velocity gets saturated is evaluated. The finite output conductance in the saturation region of operation, which is usually observed in submicron devices is explained with Schottky barrier depletion layer modification. $I-V$ characteristics of submicron SiC MESFET are modeled and compared with the conventional velocity saturation technique, where the depletion layer after the onset of current saturation is treated as constant.
+
+\textbf{Chapter 4:} This chapter presents a comparative analysis of semi-empirical DC models of SiC MESFETs and their degree of validity/accuracy to a number of submicron devices by employing Particle Swarm Optimization (PSO) technique. An improved model is presented to simulate DC and pulsed $I-V$ characteristics of SiC MESFETs. The validity of the model is demonstrated by applying it on submicron devices, especially designed for power applications. A comparative analysis is carried out by employing PSO technique. Moreover, in this chapter, expressions are developed to simulate $g_d$ and $g_m$ of the device. Based on the simulated characteristics, parameters defining the device geometrical structure are estimated to a good degree of accuracy.
+
+\textbf{Chapter 5:} This chapter reports a technique to assess AC small signal parameters of submicron SiC MESFETs using its DC characteristics. Effects caused by self heating and high transverse electric field on the device characteristics, especially when channel length is reduced to submicron regime are discussed in this chapter. It is shown that the conventional models used to assess FET devices, meant for low voltage operation, loose their accuracy in predicting small signal elements of a microwave SiC MESFET. Thus, there is a need to establish a technique, which can predict small signal elements of submicron SiC/GaN MESFETs, which are specially designed to operate under harsh environment and at high temperatures. A set of expressions is developed to assess small signal elements of SiC MESFETs and their validity is demonstrated.
+
+\textbf{Chapter 6:} This chapter presents the conclusion drawn from this research and provide suggestions on possible future extension of the work. 

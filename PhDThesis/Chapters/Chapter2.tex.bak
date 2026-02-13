@@ -1,0 +1,328 @@
+\chapter{Literature Review}
+
+\section{Introduction}
+
+SiC is a wide band-gap material with large breakdown field, high saturation velocity, and large thermal conduction. SiC MESFETs can operate at high voltage and have high thermal robustness with large output resistance relative to other semiconductors such as Si, GaAs MESFETs and GaN HEMTs. SiC MESFETs are good candidates for high power microwave applications even in harsh thermal environments because of many superior electrical characteristics such as high mobility, high breakdown voltage, low series source ($R_s$) and drain ($R_d$) resistances, and high power density, etc \cite{Codreanu2000}. Furthermore, SiC MESFETs are thermally stable devices and exhibit a maximum of 10\% change in their electrical parameters when operated at 500$^\circ$C and over the course of 500 hours in an air ambient \cite{Spry2004}. The maximum temperature range to which SiC MESFETs can operate is limited by the ceramic packaging. Reliability of SiC MESFETs is a well established fact thus, they are well suited for high temperature applications \cite{Milligan2008}. Although, GaN devices exhibit similar properties, but SiC has two main advantages over GaN. The first one pertains to high thermal conductivity of SiC; and the second one offers both bulk and surface conduction devices. Of the three materials, Si, GaAs, and SiC, the last one offers highest absolute power density due to large breakdown voltage \cite{Weitzel1995}. Therefore, SiC MESFETs are very attractive for microwave applications such as transmitters and RADAR. Development made so far has been summarized in a tabular form and is given in Table \ref{Table 2.1}.
+
+\begin{table}
+\footnotesize
+\renewcommand{\arraystretch}{1.5}
+\caption{SiC development history}
+\begin{center}
+\begin{tabular}{cllc}
+%\setlength{\tabcolsep}{1pt}
+\hline
+Year &Development &Author& Reference\\
+\hline
+1977 & Muench fabricated first SiC MESFET with $g_m$ = 1.75mS/mm & Muench & \cite{Muench1977}\\
+1987  &  SiC MESFETs with $ g_{m} $ of 1.6 and 2.3mS/mm  &  Kong,  &  \cite{Kong1987}\\
+&& Kelner&\cite{G1992}\\
+1991  &$ \alpha $-SiC MESFET with $ g_{m} $ of 47mS/mm,  & Trew  & \cite{Trew1991} \\
+&PAD and PD of 23.4\% and 4W/mm, respectively\\
+\\
+1993  & SiC MESFET with 2W/mm at 1GHz and $ f_{T}$ =7GHz &  Driver  &  \cite{Driver1993}\\
+\\
+1994&S-Band operation of SiC power MESFET with 20W & Henry & \cite{Henry2004}\\
+
+& output power, 4.4W/mm PD and 60\% PAE&&\\
+\\
+1995  & SiC MESFET with $ g_{m} $, $ f_{max} $, $ f_{T} $, PD, and PAD of & Weitzel &\cite{Weitzel1995}\\
+& 42mS/mm, 12.9GHz, 6.7GHz, 2.8W/mm and 12.7\%, respectively&\\
+\\
+1995& Two region analytical model of SiC MESFET &Tsap &\cite{Tsap1995}\\
+\\
+
+2002  & S-band 4H-SiC MESFETs with PD of 5.6W/mm and 36\% PAE,& Clarke &\cite{Clarke2002}\\
+&and 80 W(CW)with PAE of 38\%&&\\
+\\
+2004&Electrical operation of 6H-SiC MESFET at 500$ ^{\circ} $C & Spry &\cite{Spry2004}\\
+&for 500 hours in air ambient & &\\	
+\\
+2006&SiC MESFET with PD of 7.8W/mm at 3GHz, PAE 70\%& Andersson&\cite{Andersson2006}\\
+& at Class-AB bias. 	 \\
+\\
+2006&A three-region analytical model for short-channel SiC MESFETs&Zhu&\cite{Zhu2006}\\
+\\
+2016& A comprehensive semi-empirical model for SiC MESFETs&Riaz&\cite{Riaz2016}\\
+\\
+2017& Analytical model for submicron SiC MESFETs&Ahmed&\cite{Ahmed2017}\\
+\hline
+\end{tabular}
+\label{Table 2.1}
+\end{center}
+\end{table}
+
+\section{RF Power Performance}
+
+Use of SiC MESFETs in RF applications has frequently been discussed in the literature. Song et al. \cite{Song2004} fabricated 4H-SiC MESFETs on a conducting SiC substrate and the fabricated devices exhibited unity gain frequency, $f_T$ = 3.2GHz, maximum operating frequency, $f_{max}$ = 12.4GHz, an RF power gain of 5.9dB, and a maximum output power of 25.3dBm (0.85W/mm) at 2GHz, which is much higher than Si and GaAs equivalent size transistors. They observed that the devices offered low breakdown voltage and degraded RF power due to the leakage in the conducting substrate. Sadler et al. reported a 30 watts output power from a single 12mm SiC transistor under pulsed-mode conditions in X-band \cite{Sadler1998}. For small (250$\mu$m) devices, they also reported output power of 5.2W/mm at 3.5GHz and 4.5W/mm at 10GHz.
+
+H. Chen et al. fabricated 4H-SiC MESFET having 4$\times$20mm total gate width. The pulsed (300$\mu$s, 10\%) output power, gain and power-added efficiency (PAE) of the internally-matched device measured at 2GHz were 250W, 10.5dB, and 30\%, respectively \cite{Chen2008}. S. Sriram et al. \cite{Sriram2009} fabricated SiC MESFETs by using source connected field plates (FPs) and demonstrated maximum stable gain (MSG) exceeding 15.7dB at 3.1GHz in a Class-AB bias condition, and RF output power density greater than 4W/mm was achieved. H. Jia et al. \cite{Jia2011} designed 4H-SiC microwave MESFETs using $n$-shielded, buried channel and field plate; to improve DC and RF performance. Experimental results showed a relatively broad and uniform transconductance ($g_m$) versus gate voltage using a 0.1$\mu$m $n$-shielding. The resultant device showed 5.27W/mm power density, 6.7dB power gain and 43\% PAE at 2.3GHz under pulse operation.
+
+Wojtasiak et al. \cite{Wojtasiak2010} designed and fabricated a 100W high power L-band amplifier for active phased-array radar (APAR) by using two 60W SiC MESFETs. The package temperature increased from 60$^\circ$C to 140$^\circ$C. The output power dropped to 0.5dB and the rise in temperature was over 140$^\circ$C, which damaged the ceramic transistor package.
+
+S. Sriram et al. \cite{Sriram2011} fabricated ion-implanted SiC MESFETs and evaluated their DC and RF performance which were comparable to that of epitaxial-channel devices. The fabricated MESFET with a gate length, $L_g$ of 0.4$\mu$m showed MSG $\sim$ 15.7dB at 3.1GHz in class-AB bias conditions. In RF power operation at 3.5GHz, an output power of 4.1W/mm with a PAE $\sim$ 63\%, and a linear gain of 15.9dB were obtained.
+
+Niclas et al. \cite{Ejebjork2011} successfully fabricated and measured two types of SiC MESFETs with different epistacks having different doping and the devices were scaled both vertically and laterally. Improvements were shown using a thinner heavily doped channel layer. DC and AC measurements were used to assess the performance and their results were either matching or in some cases better than what have been reported by other groups. An increase in $f_T$ and $f_{max}$ of 27\% and 18\%, respectively, were obtained for SiC MESFETs having higher channel doping.
+
+Deng et al. \cite{Deng2011} fabricated SiC microwave MESFETs by using a standard structure but with multi-recessed gate. The multi-recessed gate structure proved to be effective in increasing the output power due to increased breakdown voltage. A SiC MESFET with 250mm gate periphery biased at a drain voltage, $V_{ds}$ = 65V demonstrated a pulsed wave saturated output power of 2.24W with a linear gain of 8dB at 2GHz. RF power output greater than 8.9W/mm was also achieved, indicating that a SiC MESFET with a multi-recess gate is a promising structure for high-voltage devices for their potential use in high-power solid-state amplifiers.
+
+Tao et al. \cite{Tao2013} fabricated 2$\times$30mm high-power SiC MESFETs. By load-pull testing at 1.5GHz and at $V_{ds}$ = 48V, they reported output power of 107W, PAE 48.1\%, and a gain of 10.3dB under continuous wave RF operation. They also reported that 1mm SiC MESFETs exhibited 35dBm output power, PAE greater than 55\%, and a gain of 12.3dB under continuous RF operation at 1.5GHz and at $V_{ds}$ = 48V.
+
+R. Thakkallapally et al. \cite{Thakkallapally2014} analyzed the performance of a unidirectional normally-on 3C-SiC/Si power MESFET. Electrical analysis showed that the drain current of this device was 100\% higher than a lateral device of the same dimension, while occupying 33\% less area compared to a lateral device. Their study showed that at $V_{gs}$ = 0V, the drain current, $I_{dss}$ = 600 mA/mm; the breakdown voltage reached to 600V, and the critical breakdown electric field increased to 3.9$\times$10$^{6}$ V/cm. Thermal analysis was also conducted using Si substrate as a heat sink at $T$ = 300K. Drain current was set 600mA/mm and $V_{ds}$ = 600 V. Results showed that highest surface temperature, due to self-heating, did not exceed 312K.
+
+M. Alexandru et al. \cite{Alexandru2013} developed a new 4H-SiC planar-MESFET for high density ICs integration using a typical Si CMOS layout approach. ICs scalability requirement was demonstrated at room as well as at higher temperatures. They also fabricated high density SiC based ICs having three different metal levels (the transistor's electrodes metal plus the two thick interconnection metals) demonstrating a fabrication flow similar to that of a Si-CMOS process. Their fabrication paved a way for high power SiC based ICs for RF applications. Table \ref{Table 2.2} shows RF performance of SiC MESFETs as a function of $L_g$ and $W$.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\caption{RF Power Performance of submicron SiC MESFETs.}
+\begin{center}
+\begin{tabular}{lcccccc}
+%\setlength{\tabcolsep}{1pt}
+\hline
+$ L_{g}$($\mu m$) &$ W$ ($\mu m$) & PD(W/mm) & $f_{max}$(GHz) & $f_{T}$(GHz) & $PAD$\% & Reference\\
+\hline
+0.3 & 200 & 1.8 CW & 33 & 11.3 & - & \cite{Honda2003}\\
+%\hline
+0.4 & 400 & 7.8 CW & 21.2 & 9.9 & 70 & \cite{Andersson2006}\\
+%\hline
+0.5 & 400 & 0.85 & 12.4 & 3.2 & 34.5 & \cite{Song2004}\\
+%\hline
+0.6 & 200 & 7.8 CW & 25.5 & 8.7 & 40 & \cite{Gang2010}\\
+%\hline
+0.7 & 100 & 5.27 & 18.8 & 8.2 & 43 & \cite{Jia2011}\\
+%\hline
+0.8 & 250 & 8.9 & - & - & 30 & \cite{Deng2011}\\
+\hline
+\end{tabular}
+\label{Table 2.2}
+\end{center}
+\end{table}
+
+\section{Short Channel Effects}
+
+RF performance of a MESFET depends on its $L_g$ and saturation velocity, $\upsilon_s$ of its carriers. With reduction in $L_g$, an obvious benefit is an increase in $f_T$. However, when $L_g$ is less than 1$\mu$m, the device suffers from short channel effects and performance of the device is degraded \cite{Yim2011}, which included reduction in $g_m$ and an increase in $g_d$ of the device as shown in Fig. \ref{Fig:2.1} \cite{Honda2003}. The figure shows that $g_m$ increases from 25.9 to 30 mS mm$^{-1}$ as  $L_g$ decreases form 1.5 to 0.8$\mu $m and decreases from 30 to 24.6 mS mm$^{-1}$  as $L_g$ decreases from 0.8 to 0.3$ \mu $m. The figure also indicates that $g_d$ increases from 2.2 to 6.45 mS mm$^{-1}$ as $L_g$ decreases from 1.5 to 0.3$ \mu $m.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig2_1.pdf}
+\caption{$g_m$ and $g_d$ as function of $L_g$.}
+\label{Fig:2.1}
+\end{figure}
+
+In short channel devices, the horizontal electric field becomes stronger and even at smaller drain biasing, the mobility of carriers starts to reduce. Young et al. \cite{Cha2005}, in their study of transport characteristics of SiC MESFETs, reported that $\upsilon_s$ and the low field mobility, $\mu_0$ of the carriers are 1.7$\times$10$^7$ cm/s and 300 cm$^2$/Vs, respectively, which are smaller than previously reported values.
+
+Another important short channel effect is drain induced barrier lowering (DIBL). Primarily, Schottky barrier depletion layer is controlled by the gate biasing. However, with increased drain biasing, there is an enhancement in charge layer accumulation near the drain-side of the gate. These charges create their image charges in the gate electrode, as a result, there is a reduction in the magnitude of gate potential, which reduces Schottky barrier called as DIBL. In short channel devices, this effect becomes more prominent and leads to an increase in $g_d$.
+
+Furthermore, in short channel devices, carriers become hot due to high field available in the channel and get diverted towards the substrate, resulting in large substrate current. Honda et al. \cite{Honda2003} and Manabu et al. \cite{Arai2003} in their respective investigations of short channel effects, observed that when $L_g$ is less than 1$\mu$m, gate loses its control over the channel current due to DIBL. As a result, $f_T$ and $f_{max}$ started to saturate and at $L_g$ $\sim$ 0.3$\mu$m, they were even less than the maximum values as shown in Fig. \ref{Fig:2.2}. They also observed that $g_d$ increases and $V_T$ shifts towards more negative values to pinch off the channel. Moreover, $V_T$ also became strong function of $V_{ds}$ and increases with its increasing values. Furthermore, power density (PD) also starts to reduce by decreasing the gate width as evident from Fig. \ref{Fig:2.3}.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig2_2.pdf}
+\caption{$f_{max}$ and $f_T$ as a function of $L_g$.}
+\label{Fig:2.2}
+\end{figure}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig2_3.pdf}
+\caption{Power density as a function of $L_g$ and $W$.}
+\label{Fig:2.3}
+\end{figure}
+
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\caption[]{Power density for gate width of 100, 200, 400 $\mu$m SiC MESFETs \cite{Arai2003}.}
+\begin{center}
+\begin{tabular}{lcccccc}
+%\setlength{\tabcolsep}{1pt}
+\hline
+$ L_{g}$($\mu$ m) &$ W$ = 100 $\mu$m & $ W$ = 200 $\mu$m & $ W$ = 400 $\mu$m\\
+\hline
+0.3  &  1.64  &  1.88  &  1.86\\
+0.5  &  1.82  &  1.96  &  2.27\\
+0.8  &  1.83  &  2.38  &  2.13\\
+1.0  &  1.36  &  2.32  &  2.22\\
+1.3  &  1.27  &  1.84  &  1.87\\
+1.5  &  1.14  &  1.70  &  1.80\\
+\hline
+\end{tabular}
+\label{Table 2.3}
+\end{center}
+\end{table}
+
+\section{Effects of Buffer Layer}
+
+Short channel effects can be controlled to some extent by optimizing device fabrication parameters. Rorsman et al. \cite{Rorsman2004} used thin highly doped $p$-type buffer layer in their devices which resulted in reduction in short channel effects. They reported an increase of 20\% and 25\% in $f_T$ and $f_{max}$, respectively, and a 12\% increase in output power. This is a significant improvement compared to lightly doped thick buffer layer \cite{Honda2003}. Hyuk et al. \cite{Yim2011}, in their experiment, with SiC MESFETs, also demonstrated that short channel effects can be reduced with shallow rather than deeper channel doping. Thus, further optimization of SiC MESFET's physical parameters is required, together with more lateral scaling to improve its output power, PAE and high frequency performance.
+
+Song et al. \cite{Song2004} fabricated SiC MESFET and investigated effects of $p$-type buffer layer grown between $n$-type channel and conducting substrate. They demonstrated that a heavily doped $p$-type buffer between the channel and the conducting substrate reduces the parasitic substrate current, thus, increases output power. They also reported that if the buffer layer thickness is increased from 2.2 to 6$\mu$m, the breakdown voltage increases from 38V to 275V.
+
+\section{Trapping and Substrate Effects}
+
+SiC is a wide-band gap material such that the vast majority of recombination events are indirect via recombination levels (trapping centers) in the band gap. The resulting energy loss by recombination, as a heat, is given up to the lattice. Any impurity or impurities and lattice defects can serve as recombination centers if these are capable of receiving a carrier of one type and capturing a carrier of opposite type as shown in Fig. \ref{Fig:2.4}.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig2_4.pdf}
+\caption{Direct and indirect transition in semiconductor (a) Direct transition with emission of photon, (b) Indirect transition via defect level.}
+\label{Fig:2.4}
+\end{figure}
+
+Trapping effects are known to come either from surface traps or from substrate traps and create instability in $I_{ds}$.  Also, traps influence the power performance through the formation of quasi-static charge distributions on the wafer surface, in the buffer layers underlying the active channel or in the substrate. The accumulated parasitic charge acts to limit $I_{ds}$ and voltage swing, thereby restricting the high-frequency power output \cite{Binari2002,Noblanc2000,Hilton2000}.
+
+Hjelmgren et al. \cite{Hjelmgren2010} compared measured and simulated transient characteristics by taking into account effects of self-heating, gate tunneling, substrate and surface traps. They found that inclusion of bulk traps even for high-purity semi-insulating substrate resulted in good agreement with measured drain lags. They also demonstrated that by reducing the occupation of near interface traps, it is possible to obtain a good agreement between measured and simulated characteristics. Andrei \cite{Los2006}, in his experiment, demonstrated that trapping takes place at the acceptor layer of the substrate in the devices with and without buffer layer. Asmi et al. \cite{Asmi2006} investigated the impact of traps and self-heating on the performance of SiC MESFETs, meant for microwave applications. Their results showed that an increase of trap concentration from 10$^{14}$cm$^{-3}$ to 10$^{16}$cm$^{-3}$ reduces $f_{T}$ by $\sim$ 40\%, and an increase in the temperature by $\sim$ 50K above the room temperature reduces $f_T$ by $\sim$ 45\%. Siriex et al. \cite{Siriex2000} investigated trapping effects in power SiC MESFETs using pulsed DC and AC measurement systems and reported that major contribution comes from substrate (buffer) traps which are sensitive to $V_{ds}$ and cause reduction in RF power. Sankha \cite{Mukherjee2004} reported an analytical model for SiC MESFET by incorporating trapping and thermal effects. In his study, he stated that trapping and detrapping from the surface, control the channel opening at the drain-end, thus causing the drain resistance to be gate and drain voltage dependent. He also reported that a significant reduction in trapping phenomenon is observed in the devices having thicker buffer layers.
+
+S. Mitra et al. \cite{Mitra2004} fabricated MESFETs by ion implantation using nitrogen source on a bulk semi-insulating 4H-SiC substrate and measured $g_m$ and frequency dispersion to observe bulk and surface traps in the channel region. Five traps were recorded in the energy range of 0.18-0.65eV. Traps at 0.52eV and 0.65eV were the bulk traps in the channel region. The three traps at 0.4, 0.3 and 0.18eV were surface traps found at ungated surface region. Henry et al. \cite{Henry2004} fabricated SiC MESFETs using an undoped-spacer-layer on top of the channel, forming a buried-channel structure, which stopped the induced surface states to approach the conducting channel. As a result, RF dispersion got reduced with relatively broad and uniform $g_m$. M. Gassoumi et al. \cite{Gassoumi2006} performed conductance deep-level transient spectroscopy (CDLT) to obtain the information about the traps of 4H-SiC MESFETs. Two unexpected hole-like traps, one with activation energy of 0.9eV and second with activation energy of 0.56eV were observed in the spectra. Thus, investigation of the traps, their causes and minimization still requires the attention of researchers for better performance of the device.
+
+H J. Na et al. \cite{Na2006} fabricated 4H-SiC MESFETs by employing an ion implantation process instead of recess gate etching technique and reported $I_{dss}$ = 500mA/mm, $g_m$ = 41mS/mm and $f_T$ = 9.3GHz. The reported MESFETs were free from drain current instability, which is usually observed in SiC MESFETs due to trapping effects. They observed that drain current recovery characteristics were also improved by passivating the surface with thermally evaporated oxide layer, which minimizes the surface traps.
+
+Song Kun et al. \cite{Kun2011} proposed a novel SiC MESFET structure having buried gate and $p$-type spacer layer on top of the channel to suppress surface traps and to reduce gate-drain capacitance, $C_{gd}$. Simulation results showed relatively smaller frequency dispersion and reduced current instability. The gate lag ratio (ratio of $I_d$ transient to $I_d$ quiescent) showed improvement and it was close to 90\% at $V_{ds}$ = 20V. $C_{gd}$ also showed reduction up to 17.8\%, and improvement in $f_T$ and $f_{max}$ was also shown.
+
+Deep levels in semiconductors can act as carriers traps, which increase the resistance of the sample. They can also act as a recombination centers limiting the carriers life time. Deep levels in 4H-SiC are called as life time killer. K. Kawahara et al. \cite{Kawahara2013} investigated deep levels in $n$-type 4H-SiC epilayer. They employed different techniques to study deep level defects in the same samples. They showed that deep levels were the dominant defects responsible to degrade the device performance.
+
+\section{Frequency Dispersion in SiC MESFETs}
+
+Frequency dispersion of a parameter is a variation in its intrinsic value with respect to the frequency. Ideally, intrinsic parameters of a device should be independent of frequency, in a desired frequency band, for satisfactory performance. When bulk traps are present in the gated region of the channel, their occupancy and hence the depletion width, under the gated channel region, becomes frequency dependent. As a result, $g_m$ and the gated channel resistance ($R_i$) also become frequency dependent. AC signal at the gate, modulates the gate-source and gate-drain leakage current, which in turn also modulates the occupancy of surface states in the ungated gate-source and gate-drain channel regions. In SiC MESFETs, like GaAs, low frequency dispersion in their output and transfer characteristics is observed, which can cause errors in power and efficiency computation in an RF power amplifier design.
+
+Sghaier et al. \cite{Sghaier2003} compared MESFETs fabricated on a highly V-doped Si substrates versus low-metal-content substrate. The static output characteristics measurements as a function of temperature were performed along with frequency dispersion of $g_m$ and $g_d$. Results gave clear evidence of the presence of deep traps having an activation energy of 1.05eV in V-doped substrates. These traps have a capture cross-section between 10$^{-18}$ cm$^{-2}$ to 10$^{-19}$ cm$^{-2}$. They suggested that the easiest way to suppress these parasitic effects is to use high purity Si substrates.
+
+Deng et al. \cite{Deng2008} performed a two dimensional AC and transient analysis to investigate effects of surface traps on the frequency dispersion of $g_m$ in SiC MESFETs. The simulation results showed that $g_m$ exhibited negative frequency behavior. The presence of acceptor traps, acting as electron traps on the surface have been identified as an important cause of current degradation in SiC MESFETs.
+
+H. Lu et al. \cite{Lu2009} presented a comprehensive model describing traps properties and their influence on SiC MESFETs frequency characteristics. The frequency dispersion of $g_m$ and $R_i$ were analyzed in detail by considering the gate and the drain biasing. They found that traps located at buffer and substrate are the main cause of frequency dispersion in SiC MESFETs.
+
+\section{Threshold Potential ($V_T$)}
+
+A constant $V_T$ and low $g_d$ are desirable parameters for a microwave SiC MESFET. But for short-channel devices, $V_T$ is a function of $L_g$ and $V_{ds}$. Gate-length to channel-thickness ratio, $L_g/a$ should be large enough to make $V_T$ independent of $L_g$ and $V_{ds}$ as shown in Figs. \ref{Fig:2.5} and \ref{Fig:2.6} \cite{Arai2003}. This is possible only when $a$ is reduced for short channel devices, but to meet the target $I_{ds}$ and to maintain $g_m$, the doping of the channel ought to be increased.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig2_5.pdf}
+\caption{$V_T$ as a function of $L_g$.}
+\label{Fig:2.5}
+\end{figure}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig2_6.pdf}
+\caption{$V_T$ as a function of $V_{ds}$ and $L_g$.}
+\label{Fig:2.6}
+\end{figure}
+
+Rusli et al. \cite{Rusli2006} fabricated thin channel SiC MESFETs with increased doping and demonstrated that $V_T$ is almost independent of $V_{ds}$. Their devices had $L_g$ = 1$\mu$m and exhibited fairly small $g_d$. This improvement was achieved at the cost of reduced $g_m$.
+
+H. Yim et al. \cite{Yim2011} fabricated SiC MESFETs with variable $L_g$, ranging from 0.3 $\mu$m to 3.0 $\mu$m to investigate short channel effects. They demonstrated that for $a$ = 0.32 $\mu$m devices, $V_T$ shifted from -10.7V to -25.6V as $L_g$ reduced from 3$\mu$m to 0.3 $\mu$m. The dependence of $V_T$ on $L_g$ became larger at $V_{ds}$ = 40V than at $V_{ds}$ = 10V where the observed shift in $V_T$ was -10V to -18V. More precisely, $V_T$ is a function of $L_g/a$ and is almost constant for $L_g/a$ $>$ 3, but increases towards negative values as the ratio got lowered than 3. For $a$ = 0.22$\mu$m devices, the short-channel effects enhanced when $L_g/a$ got lowered than 5. Therefore, for submicron devices, one can say that $V_T$ is a function of $V_{ds}$, $L_g$ and $a$.
+
+\section{Transport Parameters in SiC MESFETs}
+
+Electrical performance of a SiC MESFET is greatly dependent on its transport properties; associated with carriers mobility and drift velocity. Accurate knowledge of transport characteristics helps to optimize the design and thus the performance of a SiC MESFET.
+
+Transport parameters, especially, mobility and velocity of the carriers are the most important parameters and have significant influence on $I-V$ characteristics and RF performance of a SiC MESFET. Therefore, knowledge of transport parameters in the development of a model, aimed to represent the device characteristics, is of paramount importance. Hongliang et al. \cite{Lv2004} used multi parameters mobility model to develop an analytical model for SiC MESFET and its velocity characteristics. Their multi-parameters model based on Monte Carlo calculation reproduced accurately the drift velocity characteristics of SiC carriers. The resulting $I-V$ characteristics were in good agreement with experimental data.
+
+For low field, the velocity of carriers is linearly related to the applied electric field. However at high field the proportionality ceases due to increased scattering and carrier's velocity saturates at certain value of electric field. Imran et al. \cite{Khan-b2000} reported experimental measurements of $\upsilon_s$ for 6H and 4H-SiC as a function of applied electric field at 23$^\circ$C and 32$^\circ$C. Data confirm that $\upsilon_s$ of SiC carriers saturate $\sim$ 2$\times$10$^{7}$cm/s and it is dependent on ambient temperature.
+
+On the other hand, mobility of a charge carrier represents an ease by which a carrier can move. Mobility of $n$-carriers in SiC is relatively smaller; however, this smaller value is compensated by larger value of $\upsilon_s$ and it is twice as that of Si. Generally speaking, mobility is a function of temperature, impurity concentration and applied electric field. Based on these parameters, number of mobility models are reported in the literature. Caughey et al. \cite{Caughey1967} presented an empirical expression to achieve mobility profile as a function of doping and electric field. They demonstrated the validity of their proposed expression using experimental data for Si. Roschke et al. \cite{Roschke2001}, based on experimental data and Monte Carlo results, developed a mobility model consisting of an analytical equation for 4H, 6H, and 3C-SiC. The model showed dependence of carrier mobility on doping concentration, temperature, and field.
+
+Bertilsson et al. \cite{Bertilsson2001} used Monte Carlo, drift diffusion and hydrodynamic models to extract mobility, saturation velocity, and relaxation time for short channel 6H and 4H-SiC MESFETs. They exhibited a good agreement in modeled and experimental data. They also showed superiority of 4H-SiC over 6H-SiC by computing $I_{dss}$, $g_m$ and $f_T$ for both the devices.
+
+Tucker et al. \cite{Tucker2002} fabricated MESFETs on semi-insulating 4H-SiC substrate by ion implantation. Effective channel carrier mobility was measured to be 29cm$^2$/Vs, and bulk carriers mobility of the channel found to be 240cm$^2$/Vs.
+
+\section{Breakdown Voltage of SiC MESFET}
+
+Performance and reliability studies are essential parts of SiC MESFET development. Anil Prasad et al. \cite{Prasad2013} studied effects of surface on breakdown voltage by comparing different surface structures of 4H-SiC MESFETs such as non-recessed, channel-recessed, non-recessed buried-gate and channel-recessed buried-gate structures. Buried gate structure with recessed channel showed highest breakdown voltage compared to all other structures but with low $I_{dss}$ magnitude. In addition, the effect of depth of buried region and $L_g$ on breakdown voltage were also studied by them \cite{Prasad2013}. It was established that better device performance in terms of breakdown voltage could be achieved when $L_g$ is 0.7$\mu$m and depth of buried region is 0.15$\mu$m with source and drain doping concentrations at 10$^{19}$cm$^{-3}$.
+
+Electro-Static discharge (ESD) stress is one of the main sources of failure in electronic devices \cite{Fayyaz2012}. Phulpin et al. \cite{Phulpin2014} investigated the robustness of a SiC-MESFET to ESD. The ESD robustness was rather low and found to be related to both current non-uniformity and a quite unexpected parasitic NPN bipolar transistor triggering. The outcome of this study allowed proposing first guidelines to optimize ESD robustness of such devices. He stated that SiC devices failure mechanism appears to be significantly different than Si devices \cite{Phulpin-a2015}. This is mainly due to two reasons which are related to SiC material properties. First, its higher dielectric strength induces higher junction breakdown, which, as a consequence, tends to narrow the classical ESD design window by reducing or even inverting the triggering and oxide breakdown margin. This requires higher caution for metal-layers layout design and/or working on the dielectrics strength. Second, as SiC has no liquid phase at atmospheric pressure and is thus sublimated while attaining high temperatures, the observed defects would essentially be different than those observed in Si. While melted and recrystallized regions are often observed as ESD related defect in Si, material-hole defects are observed is SiC as shown in \cite{Phulpin-a2015}. Wherein, structure has been proposed against ESD failure for SiC MESFETs. It is demonstrated experimentally in  \cite{Phulpin-b2015} that internal protection against ESD is higher in planar SiC MESFET. Adding a Zener, allows to increase the ESD robustness of this device. As this protection doesn't change the static characteristics it is, therefore, a promising solution for the development of robust SiC devices.
+
+The simulation results presented in \cite{Elahipanah2010} reveal that a 95\% improvement in breakdown voltage can be obtained with a metal plate between gate and drain electrodes without causing much negative to its $f_T$. Ali A. Orouji et al. \cite{Orouji2011} proposed a novel structure of 4H-SiC MESFET with partly undoped space region in the $n$-channel between gate and drain. The simulation results showed that breakdown voltage increased from 109V to 144V. Breakdown voltage can also be enhanced by using multiple-recessed gate as proposed in \cite{Aminbeidokhti2011}. Modification in the gate drain region changes the depletion region in the channel towards the drain-side, which in turn improves the electrical characteristics of the device. Amini et al. \cite{Moghadam2011} reported a novel super junction MESFET where a $p$-type pillar is introduced in the drift region in order to improve breakdown voltage. The performance of the super junction MESFET was evaluated by two-dimensional simulation and compared with a conventional MESFET. On the basis of simulation results, the presence of $p$-type pillar improved breakdown voltage by modifying the electric field distribution inside the channel. Investigation showed that output power improved by a factor of 3 relative to a conventional MESFET.
+
+A novel symmetrical structure of SiC MESFET was presented by  Ramezani et al. \cite{Ramezani2016} to improve the breakdown voltage and other electrical parameters. Using two-dimensional device simulation, they observed that breakdown voltage improved by a factor 3.3 in comparison with a symmetrical conventional MESFET structure. Also, the maximum output power improved $\sim$250\% compared to conventional MESFET structures.
+
+\section{RF Characteristics}
+
+SiC MESFETs can comfortably operate in L and S-bands and, therefore, are very attractive devices for present communication systems such as cellular and satellite communications, and microwave links, etc. Due to their superior characteristics such as: high breakdown field; large $\upsilon_s$ and high thermal conduction, SiC MESFETs are replacing the bulky, low efficient and expensive devices like TWT and magnetron. This provides a cost effective, light weight, smaller size and more importantly, efficient communication systems.
+
+Zhu et al. \cite{Zhu2006} proposed a double recessed gate SiC MESFET and investigated its electrical performance by a numerical simulation. The simulation showed 77\% improvement in $I_{dss}$ over the conventional device structure with small shift in $V_T$. A 37\% improvement in output power density is obtained at the cost of lower breakdown voltage. $f_T$ and $f_{max}$ were 15.3GHz and 70.6GHz, respectively for the double recessed structure, which were higher than the conventional structure. Wojtasiak et al. \cite{Wojtasiak2010} designed amplifier for L-band transmitter/receiver (T/R) modules, using two 60W SiC MESFETs, for an active phased-array radar with output power of more than 100W for both pulsed and CW operations from 1.2GHz to 1.4GHz frequency range. T/R modules were located directly behind the radiating elements thus, eliminating the feeder loss and noise. Manabu et al. \cite{Arai2003} fabricated SiC high frequency MESFETs with $f_T$ = 9.3GHz and $f_{max}$ = 34GHz. The normalized power was 6.3W/mm at 1GHz to 2GHz frequency of operation, which was much higher than Si and GaAs devices. They also demonstrated experimentally that high frequency performance cannot be improved by simply reducing $L_g$ because short channel effects dominate at shorter $L_g$ and deteriorate the device performance.
+
+Deng et al. \cite{Deng2007} investigated gate-source scaling effects on SiC MESFET's characteristics by a two dimensional simulation. It was found that by down scaling gate-source distance, both DC and AC characteristics improved. DC and RF simulations and experimental results of a 4H-SiC MESFET for a high purity semi-insulating substrate are reported in \cite{Gang2010}. For this purpose, 4H-SiC $n$-channel MESFETs with 100$\mu$m gate periphery were designed and then fabricated. A maximum current $I_{dss}$ = 440mA/mm with a maximum $g_m$ = 33mS/mm was obtained. CW measurement at a frequency of 2GHz exhibited maximum output power 6.6W/mm, with a gain of 12dB and PAE of 33.7\%. Observed $f_T$ and $f_{max}$ were 9GHz and 24.9GHz, respectively whereas, simulated results of $f_T$ and $f_{max}$ were 11.4GHz and 38.6GHz, respectively.
+
+In \cite{Xiao2013}, SiC MESFETs were designed by employing a dual $p$-buffer layer and a multi-recessed gate for an S-band power amplifiers. A SiC MESFET with 20mm gate periphery biased at $V_{ds}$ = 85V demonstrated a pulsed wave saturated output power of 94W, a linear gain of 11.7dB, and PAE of 24.3\% at 3.4GHz. Further, RF power output greater than 4.7W/mm was achieved, showing the potential of the device for high-voltage and high-power RF applications.
+
+\section{Novel Structures}
+
+Elahipanah et al. \cite{Elahipanah2010} proposed a double-recessed metal-plate SiC MESFET structure for reliable RF and high power applications. Their results showed that the breakdown voltages of the proposed structure were 55\% and 195\% larger than double recessed (DR-MESFETs) and recessed MESFETs (R-MESFETs) respectively, while maintaining the same $I_{dss}$. Maximum output power was 107\% and 186\% larger than DR-MESFETs and R-MESFETs, respectively. Results of the novel structure, called double recessed with a partly undoped space (DRUS-MESFET), as proposed by Orouji et al. \cite{Orouji2011}, showed improvement in breakdown voltage along with 25.4\% increase in maximum output power over DR-MESFETs. Moreover, their $f_T$ and $f_{max}$ were 95.6\% and 13.07\% larger than DR-MESFETs. MAG of DRUS-MESFETs was 4.5dB higher than DR-MESFETs at 40 GHz. Amirhossein et al. \cite{Aminbeidokhti2011} proposed multiple-recessed structure for SiC MESFETs (MR-MESFETs) for improved electrical characteristics. They performed 2D numerical simulation to view the performance of their proposed structure. Their results showed that as the number of recessed gate sections were increased, breakdown voltage enhanced. Also, improvement in $f_T$, $f_{max}$ and MAG were reported.
+
+In \cite{Elahipanah2011}, a SiC MESFET structure is proposed by incorporating L-gate and source field-plates (LSFP) for high power and RF applications. Their evaluation showed that the breakdown voltage of LSFP-MESFET is 91\% higher than a conventional MESFET. LSFP-MESFET exhibited 77\% higher $I_{dss}$ compared to conventional MESFETs (C-MESFETs). The output power increased by a factor of 4 and 7.6dB enhancement in MSG at 3.1GHz over C-MESFET was observed. Also, they reported $f_T$ $\approx$ 23.1 GHz and $f_{max}$ $\approx$ 85.3GHz for LSFP-MESFET which were much higher than the C-MESFETs.
+
+In \cite{Elahipanah2012}, authors investigated a multi recessed (MR) SiC MESFET with recessed metal ring (MR2-MESFET) for RF embedded circuits. Their results allowed 119\% higher breakdown voltage and 85\% higher $I_{dss}$ compared to C-MESFETs. Further, an exceptionally high output power of 23.1W/mm was claimed compared to 5.5 W/mm of C-MESFETs. $f_T$ $\approx$ 24.9GHz and $f_{max}$ $\approx$ 91.7GHz were obtained for MR2-MESFETs as contrast to 11GHz and 40GHz of C-MESFETs, respectively. H. Jia et al. \cite{Jia2012} proposed a SiC MESFET having L-gate and partial $p$-type spacer (LP-MESFET). They presented 17\% improvement in $I_{dss}$, 36\% higher voltage breakdown (VBR) and 95\% larger output power compared to C-MESFETs. RF performance of the proposed device also showed improvement due to decrease in $C_{gd}$. SiC MESFET electrical performance showed improvement by using double source field-plates (DSFP-MESFET) \cite{Noorbakhsh2012}. Simulation results showed improvement in VBR, output power, $f_T$, $f_{max}$, and MSG at 3.1GHz when compared with LSFP-MESFETs.
+
+An L-gate SiC MESFET structure with a partial $p$-type spacer layer in source/drain drift region was proposed in \cite{Jia2013}. Their results demonstrated improved DC performance and $C_{gs}$ of the device reduced by 26\% compared to LP-MESFET structure. The partial $p$-type spacer modulated the channel transverse electric field thus, the distribution of the depletion layer under the gate was modified. This improved the device performance by showing reduction in $C_{gs}$ and $C_{gd}$. S. M. Razavi et al. \cite{Razavi2012} proposed two novel SiC MESFET structures; in 1$^{\text{st}}$ structure a recessed $p$-buffer layer on the source-side (SS-RPB) of the device, and in 2$^{\text{nd}}$ structure towards the drain-side (DS-RPB) of the device were incorporated. They showed that in SS-RPB devices there were reduction in $C_{gs}$ and thus, improvement in $f_T$ and $f_{max}$ and $g_m$ of the devices were observed relative to DS-RPB structures. Further, it was reported that short channel effects in SS-RPB structure were lower compared to DS-RPB structure. Moreover, VBR of DS-RPB were higher than those of SS-RPB devices.
+
+S. M. Razavi et al. \cite{Razavi2013} also reported three structures for SiC MESFET: a) gate was recessed to the channel along with source side of the device, b) with gate recess, drain side of the device was also recessed to the $p$-buffer layer and c) along with gate both source and drain sides of the device were recessed, also to the $p$-buffer layer. For all the three structures, recessed gate depth into channel and recessed channel depth into $p$-buffer layer were 0.05$\mu$m. Authors compared the results of the proposed structures with the conventional one \cite{Razavi2012}. Simulation results revealed that structure (c) exhibited increased $g_m$, increased output resistance ($r_0$) and relatively high VBR. They also reported that this structure offered lower short channel effects compared to other two structures, i.e. structure (a) and (b).
+
+Jun et al. \cite{Xian2012} proposed a new structure for 4H-SiC MESFETs by embedding a thinner and heavily doped buffer layer between the gate and the channel layer. They developed a physics based analytical model to evaluate the performance of the proposed device by solving 2D Poisson's equation. The simulation results showed significant improvement in $I_{ds}$, $f_T$, and $f_max$.
+
+Z. Ramezani et al. \cite{Ramezani2014} proposed a double-recessed structure for 4H-SiC MESFET in which the channel of the device had a floating metal region (FMR-MESFET). The electric field lines were allowed to be scattered by the floating metal thus, more electrons were allowed to participate in the channel current. They demonstrated that VBR and $I_{dss}$ of the device were improved by 54\% and 22\%, respectively, compared to DR-MESFETs. Moreover, maximum output power improved by a factor of 3.38 compared to DR-MESFETs. They also showed significant improvement in $f_T$ and $f_{max}$ of the device.
+
+H. Jia et al. \cite{Jia-a2015} reported a novel clival gate 4H-SiC MESFET (CG-MESFET). The device characteristics were simulated using ISE-TCAD software. Results indicated $I_{dss}$ of 545 mA/mm which was considerably higher than DR-MESFETs. Moreover, CG-MESFETs offered high VBR, i.e. 15\% higer than DR-MESFETs with superior DC performances. Jia et al. \cite{Jia-b2015} in another design also proposed a structure having ultrahigh upper gate (UU-MESFET), conceived by selective source-side etching. The proposed design gave modification in drain-side depletion, which improved simultaneously DC as well as RF characteristics as demonstrated by simulation results. Using ISE-TCAD simulation, they observed that VBR of the proposed structure increased from 109V to 168V compared to DR-MESFETs, because of the electric field modulation at lower gate corner. UU-MESFETs exhibited $I_{dss}$ $\sim$ 515.4mA/mm and normalized output power 10.26W/mm in comparison with 448 mA/mm and 5.77 W/mm of the DR-MESFET, respectively. $C_{gs}$ and $C_{gd}$ of UU-MESFET were $\sim$17\% and $\sim$8\% lower than that of DR-MESFETs at $V_{gs}$ = 0V and $V_{ds}$ = 40V, respectively; leading to improved RF characteristics.
+
+An improved clival gate 4H-SiC MESFET with recessed drain drift region and recessed $p$-buffer layer (RDRP-CG-MESFET) was proposed and numerically simulated in \cite{Jia-c2015}. Results showed VBR $\sim$ 116.3V, which was about 51.8\% higher than that of CG-MESFETs. There was an 11.9\% increase in $I_{dss}$ of RDRP-CG MESFET compared to CG-MESFET. Maximum output power was $\sim$70\% higher than that of CG-MESFETs, which could, primarily, be associated with increased $I_{dss}$ and VBR.  Capacitor $C_{gs}$ showed 32\% and 27\% reduction whereas, capacitor $C_{gd}$ exhibited a reduction of 21\% and 23.8\%, and $g_0$ showed an improvement by 38\% and 28\%, compared to DR-MESFETs and MR-MESFETs, respectively.
+
+An improved 4H-SiC MR-MESFET with double-recessed $p$-buffer layer (DRB-MESFET) was proposed and simulated in \cite{Jia-e2015}. The simulation showed that $I_{dss}$ of DRB-MESFET was $\sim$42.4\% higher than that of MR-MESFETs. DRB-MESFETs $g_m$ was $\sim$15\% higher than that of MR-MESFETs, which was close to that of DR-MESFETs when $V_{gs}$ = 0V and $V_{ds}$ = 4V. The proposed structure showed an improvement of 26.1\% and 74.2\% in maximum output power compared to that of MR-MESFETs and DR-MESFETs, respectively. Furthermore, the proposed structure exhibited smaller $C_\mathrm{gs}$ capacitance therefore, reported $f_T$ and $f_{max}$ were 24.6GHz and 63.7GHz, compared to 21.1GHz and 58.2GHz, respectively, for MR-MESFETs.
+
+A 4H-SiC MESFET with $\Gamma$-gate and recessed $p$-buffer layer ($\Gamma$RP-MESFET) was proposed and simulated to evaluate its performance parameters \cite{Jia-d2015}. Results showed that $I_{dss}$  and  VBR  of the proposed structure were $\sim$18.5\% and 19.4\% higher compared to DR-MESFET. Maximum output power was 42\% higher than that of reported one. Due to smaller $C_{gs}$, offered by the $\Gamma$-gate, the obtained $f_T$ was also higher than DR-MESFETs.
+
+An improved structure of 4H-SiC MESFET with multi-recessed source/drain drift regions (MRD-MESFET) is proposed in \cite{Jia-f2015}. Simulated results indicated that VBR of MRD-MESFET is 141V compared to 119V of single-recessed source/drain region MESFET (SRD-MESFET). Maximum output power was $\sim$19.1\% larger than that of SRD-MESFETs. Also, $f_T$ and $f_{max}$ of the proposed structure were 17GHz and 68GHz compared to 15GHz and 59GHz of SRD-MESFETs. The lowest $C_{gs}$ and $C_{gd}$ of the MRD-MESFETs were obtained by optimizing source drain drift region recess depth.
+
+In 2016, a 4H-SiC MESFET with a novel dual well in the buffer layer (DW-MESFET) was presented by Orouji \cite{Orouji2016}. There was 34.7\% increase in $I_{dss}$ whereas, maximum output power and $g_m$ showed an increase of 45.23\% and 72.5\%, respectively, compared to C-MESFETs. In 2016, Jia et al. also presented a novel structure of 4H-SiC MESFET with double upper gate and recessed $p$-buffer (DURP MESFETs) \cite{Jia-a2016}. A 22.5\% increase in $I_dss$ and a 17.9\% increase in VBR compared to DR MESFETs were reported for DURP-MESFET. $C_{gs}$ of DURP-MESFET was 0.439 pF/mm compared to 0.573 pF/mm of DR MESFET thus, offering promising RF characteristics.
+
+An improved double-recessed $p$-buffer 4H-SiC MESFETs with a partial heavy doped channel (HD-MESFET) is proposed in \cite{Jia-b2016}. Simulation showed that $I_{dss}$ of the proposed structure increased by 18.4\% relative to DURP-MESFETs. There was a slight decrease in VBR however, maximum output power was still showing an upward trend and an increase of $\sim$16.5\% was observed when compared with DURP-MESFETs. In addition, $g_m$ showed an increase of $\sim$32\% relative to that of DURP-MESFETs.
+
+\section{Radiation Hardness}
+
+Along with other specific advantages offered by SiC technology, radiation hardness is another feature, which makes SiC MESFETs suitable to operate in radiation-rich environments. Electron and neutron irradiation has negligible effects on SiC schottky barrier junction characteristics as discussed in \cite{Hazdra-a2014,Hazdra-b2014}. The study of gamma-rays irradiation to 4H-SiC MESFET showed a slight variation in $V_T$ after an absorbed dose of 10.4MGy. Further, it is shown in \cite{Onoda2009} that $I-V$ characteristics of a SiC MESFET showed little variation by gamma irradiations thus, the device can comfortably be used in an electromagnetic/gamma rich environment.
+
+Ohyama et al. \cite{Ohyama2007} studied impact of radiation damage on the performance of 4H-SiC MESFETs. For this purpose they irradiated SiC MESFETs by electrons having energy 2MeV, at room temperature, and also by 20MeV protons. No performance degradation was observed by 1$\times$10$^{12}$ e/cm$^2$ and 5$\times$10$^{11}$ p/cm$^2$ doses, while a slight increase of the linear drain current together with a decrease in $V_T$ were noticed above higher fluence. The damage coefficient for protons was $\sim$3 orders of magnitude larger than that for electrons. Zhang Lin \cite{Lin2010} investigated radiations related degradation of 4H-SiC MESFETs by using 1MeV neutron. It was observed that irradiating a SiC MESFET with a neutron flux of 10$^{13}$ n/cm$^2$, there was a slight change in $I-V$ characteristics of the device. However, increasing the neutron flux from 10$^{13}$ n/cm$^2$, there was sufficient damage caused by the impinging neutrons and as a result a decrease in $I_{ds}$ coupled with an increase in $V_T$ magnitude were noticed. It was also shown that a high doping concentration of the active region improve the neutron radiation tolerance.
+
+\section{Self-Heating Effects}
+
+SiC is a wide band-gap semiconductor material with excellent thermal conduction characteristics. Compared to other semiconductor materials such as Si and GaAs, SiC MESFETs based devices can operate over a large temperature range and thus, can comfortably be used in harsh environments \cite{Chattopadhyay2008}. SiC MESFETs and their integrated circuits had been successfully fabricated and their characteristics were investigated at elevated temperatures by many reserchers \cite{Alexandru2014,Devie2010}.
+
+Although, thermal conduction of SiC is much better than other semiconductors, yet due to large power dissipation, the temperature of a SiC MESFET quickly rises referred to as self-heating of the device. Due to self-heating, $\mu_0$ and $\upsilon_s$ of the carriers in the active part of the channel decrease thus, degrading the performance of the device. Thermal resistance associated with self-heating effects is a function of device surface layout parameters and the power it can handle \cite{Feradji2012,Bertilsson2004}.
+
+It is an established fact that with increase in the device inner temperature, due to self-heating effects, there is a change in the device static as well as dynamic characteristics. The self-heating, due to the large power dissipation, leads to the lowering of current derive capabilities in the static regime of operation and hence, the performance of the device is degraded. Therefore, self-heating effects must be taken into account in device modeling and design processes for correct assessment of its performance \cite{Royet2000}. Bisewski et al.  investigated thermal parameters of SiC MESFETs and evaluated thermal resistance and transient thermal impedance \cite{Bisewski2011}. They showed that both of the parameters are strong function of ambient temperature and power dissipation caused by the device.
+
+Deng et al. \cite{Deng2007}, reported an electrothermal analytical model of multi-finger 4H-SiC MESFETs while taking into account self-heating effects. They investigated the dependence of peak temperature on $V_{ds}$, gate-to-gate pitch and substrate thickness. Hans et al. \cite{Hjelmgren2007} performed electrothermal simulation and showed that effects of electrical heating had significant role on power MESFETs transport characteristics and must be taken into account for precise modeling and parameters assessment.
+
+\section{SiC MESFET Modelling}
+
+For efficient and economical design of a device, a reliable model capable to predict the device characteristics is required. If a model gives a closed form solution, in terms of device geometry, doping profile, field dependent electron velocity, low-field mobility, barrier height, impact ionization, surface states, etc., and is able to give insight of the device then it is referred to as an analytical model. In case of SiC MESFETs, the development of an analytical model requires solution of two dimensional Poisson's equation subject to certain boundary conditions determined by the device geometry.
+
+An extensive work has been carried out on the development of analytic models of junction field effect transistors including MESFETs \cite{Chang1989,Shey1989,Chin1992,Ahn1994}. The models were developed for the devices fabricated using Si, GaAs, and other semiconductor materials. Analytical model developed for SiC MESFETs so far, are based upon the theory of GaAs MESFETs. Since SiC MESFETs can comfortably be used at higher temperature ($\sim300^\circ$C) and also in harsh environment, moreover, they offer high VBR and high $\upsilon_s$, etc. therefore, SiC MESFETs models require further amendment for their improved high temperature operation both at DC and AC levels.
+
+A number of analytical models for SiC MESFETs are reported in the literature. Tsap et al. \cite{Tsap1995} developed an analytical model by dividing the depletion layer underneath the Schottky barrier gate into two regions: a region below the velocity saturation and a region operating at velocity saturation. Their model also considered field-dependent mobility and velocity saturation as per the channel conditions. They reported that since the critical field for velocity saturation is large in SiC MESFETs, unlike GaAs MESFETs, the electrons do not reach their saturation velocity for a reasonable portion of the channel. As a result, the constant mobility approximation is adequate to describe the electron transport in major part of the channel otherwise it will lead to an inaccurate estimation of $I_{ds}$ and the device characteristics.
+
+Murray et al. \cite{Murray2002} developed an improved two region analytical model for SiC MESFETs which takes into account not only the field-dependent mobility of the electrons near the source, but also the charge buildup effects due to the velocity saturation at the drain-end of the channel. However, the model did not consider the voltage drop across the un-gated section of the depletion region, especially, high field region near the drain. Thus, the accuracy is compromised, especially, for the devices which offer high $I_{dss}$.
+
+Zhu et al. \cite{Zhu2006} proposed an analytical model by dividing the depletion layer underneath the Schottky barrier into three regions: a) a region operating below velocity saturation; b) a region operating at velocity saturation and c) a region defining extension of charges after the onset of velocity saturation towards the drain-side of the device. They also incorporated effects of parasitic resistances and an incomplete ionization of dopants. The model gave better results than that of Murray model devices having $L_g$ $<$ 1$\mu$m, but still considerable deviations from experimental data were there, especially for the devices having high $g_d$.
+
+On the other hand, scientists and engineers working on the device design require quick handling of the device geometry and its relation to the targeted characteristics without involving much into the device physics. They preferred an expression, which can predict the device characteristics by involving the device design parameters and biasing referred to as empirical expression. In an empirical expression, there are number of empirical variables, which require optimization tool and thus, an optimization tool is usually needed in an empirical modeling process. Such models are frequently employed in device characterization and circuit design softwares and offer sufficient accuracy \cite{Angelov1992,Quanjun2008,McCamant1990}.
+
+There is yet another approach, which is more popular than the empirical modeling called as semi-empirical technique; to model the device characteristics. In semi-empirical approach, 1$^{\text{st}}$ order behavior of the device is determined by an analytical expression; square law in case of a MESFET, and 2$^{\text{nd}}$ order effects are then incorporated by appropriately modifying the square law expression. Such an approach does not deviate much from the device physics, yet it offers a simple comprehensive expression to accommodate all those variables which can potentially affect the device performance. There are numerous examples of semi-empirical models reported in the literature \cite{Curtice1985,McNallay2001,Memon2007}. These models, by and large, are based on the fundamental square law expression of a  MESFET, which is modified to accommodate different 2$^{\text{nd}}$ order effects namely: a) finite $g_0$ after the onset of current saturation; b) $V_T$ dependance on $V_{ds}$; c) shift in $V_T$ due to submicron geometry; d) non-ideality in Schottky barrier junction; e) depletion layer modification at high $V_{ds}$, etc.
+
+AC response of a SiC MESFET can be evaluated by knowing its intrinsic small signal parameters. Primarily, these parameters are associated with the device Schottky barrier depletion and dielectric relaxation time of the material \cite{Ladbrooke1989}. It is a known fact that Schottky barrier depletion is a function of $V_{ds}$ and $V_{gs}$. Thus, intrinsic small signal parameters are also biased dependent. Ladbrooke \cite{Ladbrooke1989} developed a set of expressions which can predict biased dependent intrinsic AC parameters of a GaAs MESFET. He also demonstrated the variation of these parameters as a function of device biasing. The concept discussed by Ladbrroke in \cite{Ladbrooke1989} is, in general, valid for SiC MESFET, but it does not take into account the intense channel conditions which are usually there in SiC MESFETs.
+
+By extending the concept of Ladbrooke, Murray et al. \cite{Murray2002} also developed a set of expressions by involving charge accumulation in Schottky barrier depletion layer, to predict AC small signal parameters. In Murray model first DC characteristics are modeled and based on DC assessment, AC small signal parameters are then evaluated. It was reported that Murray model gives good DC accuracy for low current devices and its accuracy deteriorates when $I_{dss}$ of the device is $\sim50$mA or higher \cite{Riaz2016}, which is usually the case for SiC power MESFETs. Thus, the need to have an AC small signal model, which can predict AC response of the device meant for microwave power applications is still alive.
+
+In conclusion, one can say that there are different techniques available in the literature to model DC and AC characteristics of SiC MESFETs but, their applicability is limited. They are not fully accommodating high biasing conditions of the device especially, when the device $L_g$ is in submicron regime. Thus, there is still a need to have a comprehensive DC as well as an AC model particularly, for the devices having submicron $L_g$; to predict the device response accurately and to allow its integration in high power circuitry in an optimized way.
+
+\section{Summary}
+
+In this chapter an overview of SiC MESFETs, their characteristics and applications are presented. Progress made so far in the device design to get improved performance is discussed. It is shown that the device has a very good potential to be used in  microwave communication systems. It is discussed that SiC MESFETs exhibit stable performance at high ambient temperature and also in radiation rich environment. The work reported by different research groups established the fact that SiC MESFETs could stand with high power requirement along with superior linearity characteristics in microwave amplifiers. Furthermore, owing to relatively better thermal conductivity, SiC MESFETs provide superior conduction of the heat generated by high power operating conditions thus, maintaining their stable performance. The ultimate operating temperature of the device is determined by its ceramic packaging, so new packaging materials for the circuits containing SiC MESFETs should be searched to realize full benefits of the device.
+
+Novel structures of SiC MESFETs are discussed, which are reported in the literature, to improve the device power handling capabilities and to increase its $f_T$ and $f_{max}$ of operation. To improve $g_m$ of the device and to reduce its $g_0$, in the saturation of operation, different channel layers and recessed technologies are discussed. It has been established that a thin heavily doped channel with low drain side resistance would provide relatively high $g_m$ and VBR.
+
+To explore the fullest capacity of the device, and to know its physical behavior, simulation and modeling techniques are usually employed. Analytical, empirical and semi-empirical models developed for SiC MESFETs were reviewed. A need of a comprehensive model was established to predict DC characteristics. Moreover, it is discussed that an accurate AC model is needed to predict intrinsic small signal parameters of the devices designed for microwave power applications.

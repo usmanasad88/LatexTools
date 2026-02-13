@@ -1,0 +1,559 @@
+\chapter{An Improved Model for Current-Voltage Characteristics of Submicron SiC MESFETs}
+
+This chapter presents an improved model to simulate $I-V$ characteristics of submicron SiC MESFETs, designed for microwave power applications. The proposed model adequately addresses a non-ideal Schottky behavior, commonly observed in submicron devices, by adjusting the device biasing through simulation variables. Swarm optimization technique has been applied to investigate gate length ($L_g$) dependent performance of various SiC MESFETs models. It has been found that the proposed model provides an improved accuracy, ranging from 7~\% to 24~\%, compared to the best models available in the literature. This enhanced performance is primarily associated with the extra control, provided by the proposed model to simulate the movement of the depletion region in the channel as a function of applied voltages. An attempt has been made to identify the location underneath the Schottky barrier gate, where the depletion region gets its maximum height and thus controls the saturation current of the channel. Physical and electrical parameters of various SiC MESFETs having $L_g=0.4~\mu$m, $0.5~\mu$m, $0.6~\mu$m and $0.7~\mu$m have also been assessed. An accurate assessment of the physical parameters of the device exhibits the validity of the model for submicron SiC MESFETs.
+
+\section{Introduction}
+
+Silicon Carbide (SiC) MESFETs have shown a great potential in microwave power applications, mainly because of their material properties. Since their inception in the mid-eighties, these devices have improved significantly over a period of time \cite{Yoshida1986}. Today SiC MESFETs offer high power density, high operating voltage and high operating temperature, compared to Si and GaAs based FETs. Moreover, the operating frequency of SiC MESFETs has also improved, and submicron devices can comfortably work in X-band with CW power density as high as 7.8 W/mm \cite{Gang2010}.
+
+The superior high power performance of SiC MESFETs is primarily associated with the properties offered by SiC which include: a) wide band gap; b) high electron saturation velocity; c) high thermal conductivity and d) high break down electric field. The high operating voltages, on the one hand, provided capability to SiC MESFETs to handle large power, but, on the other hand, it imposed stringent conditions on the device fabrication and physical geometry to realize its intended performance \cite{Deng2011,Chen2008,Allen1999,Huang1998,Sadler1998}.
+
+A simple way to improve the high frequency performance of a SiC MESFET is to reduce its gate length, $L_g$, as this improves its unity gain frequency, $f_T$ as \cite{Cha2002}:
+\begin{equation}
+\label{Eq:1}
+f_T=\frac{g_m}{2\pi C_{gs}}~,
+\end{equation}
+where $g_m$ is the extrinsic transconductance and $C_{gs}$ is gate to source capacitance. However, reduction in $L_g$, especially to submicron dimensions, enhances the short channel effects namely: a) shift in threshold voltage, $V_T$; b) increase in output conductance, $g_d$, in the saturation region of operation; c) compression in $g_m$ and d) an early self-regulating break down \cite{Ahmed2000}.
+
+For S-band applications, Clark and Palmour fabricated $L_g=0.7~\mu$m SiC MESFETs and their AC and power characteristics were investigated \cite{Clarke2002}. Gang \emph{et al}. reported $L_g=0.6~\mu$m SiC MESFETs and investigated their pulsed $I-V$ response to determine the effects of self-heating on its DC characteristics \cite{Gang2010}. Song \emph{et al}. fabricated $L_g=0.5~\mu$m SiC MESFETs and investigated effects of buffer layer thickness on the device breakdown \cite{Song2004}. Hjelmgren \emph{et al}. fabricated and studied electro-thermal simulation of microwave SiC MESFETs having $L_g=0.4~\mu$m. Their devices exhibited self-regulating break down much earlier than the channel pinch-off \cite{Hjelmgren2007,Andersson2006}.
+
+Assessment of $I-V$ characteristics of a SiC MESFET is the first step to establish the quality of a device. An accurate assessment of the device $I-V$ characteristics will enable a design engineer to use the device successfully in microwave power amplifiers \cite{Lim2015,Garcia2011}. There are two main techniques which can be employed to predict the device performance: The first one is the analytical approach which employs the device physics and predicts the output characteristics with nominal or zero fitting variables, whereas the second one is referred to as the empirical or the semi-empirical approach. A semi-empirical, contrary to an empirical approach, is preferred because it involves the ease inherent to an empirical modeling and uses basic variables defining the device characteristics without getting involved into complicated mathematical solutions \cite{Memon2007,Ahmed2003}.
+
+There are numerous non-linear models available in the literature with the claim to simulate $I-V$ characteristics of SiC MESFETs \cite{Quanjun2008,Dobes2004,Manohar2002,McNallay2001,Angelov1999,Yuk2008,Robert1999,McCamant1990,Statz1987,Curtice1985,Waldron2013}. In this chapter, as a first part, the accuracies of these models have been investigated for $L_g=0.4~\mu$m, $0.5~\mu$m, $0.6~\mu$m and $0.7~\mu$m SiC MESFETs. To accomplish this, a device simulator was developed in MATLAB involving particle swarm optimization. In order to know the relative performance of a model, simulated characteristics were then compared with experimental data to assess biased dependent RMS errors. Further, in the $2^{\text{nd}}$ part of this chapter, a new model is proposed and its gate length dependent performance has been evaluated. It has been demonstrated that the proposed model has the ability to simulate $I-V$ characteristics of submicron SiC MESFETs with an accuracy better than the earlier reported data. It is further demonstrated that the proposed model works equally well to generate static as well as pulsed $I-V$ characteristics of a SiC MESFET.
+
+The organization of the remaining part of the chapter is as follows: Section-2 describes the model development whereas, Section-3 contains $I-V$, $g_d$ and $g_m$ characteristics of submicron devices simulated by employing swarm optimization technique. Section-4 presents a comparison of RMS error values of different models, evaluated for the devices under discussion and assessment of their variables thereof. The last section presents the conclusions drawn from this study.
+
+\section{Model Development}
+
+As shown in Fig. \ref{Fig:1}, Schottky barrier height of a SiC MESFET as a function of its biasing parameters is given by:
+\begin{equation}
+\label{Eq:2}
+h(x)=\sqrt{\frac{2\epsilon(E_s L_g-V_{gs}+V_{bi})}{qN_d}}~,
+\end{equation}
+where $\epsilon$ is the relative permittivity of SiC, $E_s$ is the saturation field, $V_{gs}$ is the gate to source potential, $V_{bi}$ is the built-in potential, $N_d$ is the channel doping and $q$ represents the electronic charge. The current flowing through the available channel after the onset of current saturation is defined as:
+\begin{equation}
+\label{Eq:3}
+I_{dss}=qN_d v_s [a-h(x)]W~,
+\end{equation}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=2in]{ThesisFigs/Fig4_1.pdf}
+\caption{Crossectional view of a SiC MESFET.}
+\label{Fig:1}
+\end{figure}
+
+\begin{table}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2}
+\renewcommand{\tabcolsep}{0.5cm}
+\caption{Physical parameters of submicron SiC MESFET.}
+\begin{tabular}{lllll}
+\hline
+Ref. No. &  $L_g~(\mu$m) & $W~(\mu$m) & $a~(\mu$m)  &  $N_d$
+\\
+\hline
+Ref \cite{Clarke2002} & 0.7    & 250 & 0.22 & $3.0\times 10^{17}$
+\\
+Ref \cite{Gang2010}  & 0.6    & 200 & 0.22 & $3.0\times 10^{17}$
+\\
+Ref \cite{Song2004} & 0.5    & 400 & 0.30 & $1.5\times 10^{17}$
+\\
+Ref \cite{Andersson2006} & 0.4    & 200 & 0.20 & $2.7\times 10^{17}$
+\\
+\hline
+\end{tabular}
+\label{Tab:1}
+\end{table}
+where $I_{dss}$ is saturation drain current at $V_{gs}=0$~V, $a$ is the channel epi-layer thickness, $v_s$ is the saturation velocity of electrons and $W$ represents the width of the device. According to Schokley, the FET drain current, $I_{ds}$ in the saturation region of operation as a function of $V_{gs}$ and $V_T$ can be represented by a non-linear expression given by \cite{Neamen2007}:
+\begin{equation}
+\label{Eq:4}
+I_{ds}=〖I_{dss} (1-V_{gs}/V_T )^2~.
+\end{equation}
+In submicron devices, there is a shift in $V_T$, caused by the submicron geometry of the device, which is represented by $\Delta V_T$. Thus, the modified representation of the threshold voltage is $V_T+\Delta V_T$. Further, due to finite conductance in the saturation region of operation, $V_T$ of a device also depends on drain to source voltage, $V_{ds}$, therefore, $V_T$ of a device can be simulated more effectively by writing its expression as $V_ T +\Delta V_T+\gamma V_{ds}$ where $\gamma$ is a fitting variable. Thus, one can write:
+\begin{equation}
+\label{Eq:5}
+I_{ds}=I_{dss} \left(1-\frac{V_{gs}}{V_T+\Delta V_T+\gamma V_{ds}}\right)^2~.
+\end{equation}
+In submicron devices, a non-ideal Schottky barrier response is a commonly observed phenomenon and with its presence it is very hard to simulate the device characteristics to a reasonable accuracy \cite{Memon2007}. The presence of interface states consumes a finite amount of potential which can be incorporated into the model by adjusting $V_{gs}$ as:
+\begin{equation}
+\label{Eq:6}
+I_{ds}=I_{dss} \left(1-\frac{\delta V_{gs}}{V_T+\Delta V_T+\gamma V_{ds}}\right)^2~,
+\end{equation}
+where $\delta$ is an adjustment factor for interface states. To incorporate the simulation of linear region, \eqref{Eq:6} is multiplied with $\tanh(\alpha V_{ds})$, where $\alpha$ represents the slope of $I-V$ characteristics of SiC MESFET for linear region. Further, the finite output value of $g_d$ after the onset of current saturation and its dependence on $V_{ds}$ and $V_{gs}$ is simulated by $[1+\lambda V_{ds}+\delta V_{gs}/V_{ds(\mathrm{sat})}]$, where $\lambda$ is a fitting variable and $V_{ds(\mathrm{sat})}$ is the value of $V_{ds}$ where $I_{ds}$ saturates. Thus, \eqref{Eq:6} is modified accordingly as:
+\begin{equation}
+\label{Eq:7}
+I_{ds}=I_{dss} \left(1-\frac{\delta V_{gs}}{V_T+\Delta V_T+\gamma V_{ds}}\right)^2\times \left(1+\lambda V_{ds}+\frac{\delta V_{gs}}{V_{ds(\mathrm{sat})}}\right) \tanh(\alpha V_{ds})~,
+\end{equation}
+where
+\begin{equation}
+\label{Eq:8}
+V_T=V_{bi}-\frac{qN_da^2}{2\epsilon}~.
+\end{equation}
+Instead of using the values of $I_{dss}$ and $V_T$ determined from \eqref{Eq:3} and \eqref{Eq:8} respectively, one can also evaluate these two variables by an optimization process. Thus, we can redefine these variables of \eqref{Eq:7} as:
+\begin{equation}
+\label{Eq:9}
+I_{ds} =  \ \psi \left(1-\frac{\delta V_{gs}}{\xi V_T+\Delta V_T+\gamma V_{ds}}\right)^2\\
+\times \left(1+\lambda V_{ds}+\frac{\delta V_{gs}}{V_{ds(\mathrm{sat})}}\right) \tanh(\alpha V_{ds})~,
+\end{equation}
+where $ \psi $ and $\xi V_T$ are the assessed values of $ I_{dss} $ and $V_T$ respectively, for a given device through an optimization process.\\
+To simulate $g_d$ and $g_m$, \eqref{Eq:9} was differentiated with respect to $V_{ds}$ and $V_{gs}$ respectively, which yielded:
+\begin{equation}
+\label{Eq:10}
+\begin{split}
+g_d = &\frac{\partial I_{ds}}{\partial V_{ds}}{\Bigg|_V}_{gs(\textrm{const})}= \ \psi  \left(1-\frac{\delta V_{gs}}{\xi V_T+\Delta V_T+\gamma V_{ds}}\right)\\
+\\
+&\times \Bigg\{\left(1-\frac{\delta V_{gs}}{\xi V_T+\Delta V_T+\gamma V_{ds}}\right)\times \Bigg[
+\lambda\tanh(\alpha V_{ds})
++ \alpha \left(1+\lambda V_{ds}+\frac{\delta V_{gs}}{V_{ds(\mathrm{sat})}}\right)\\
+\\
+&\times\textrm{sech}^2(\alpha V_{ds})\Bigg]
++2\left(1+\lambda V_{ds}+\frac{\delta V_{gs}}{V_{ds(\mathrm{sat})}}\right)\times\frac{\delta \gamma V_{gs} \tanh(\alpha V_{ds})}{(\xi V_T+\Delta V_T+\gamma V_{ds})^2}
+\Bigg\}~.
+\end{split}
+\end{equation}
+\begin{equation}
+\label{Eq:11}
+\begin{split}
+g_m=&\frac{\partial I_{ds}}{\partial V_{gs}}{\Bigg|_V}_{ds(\textrm{const})}= \ \psi  \tanh(\alpha V_{ds})
+\left(1-\frac{\delta V_{gs}}{\xi V_T+\Delta V_T+\gamma V_{ds}}\right)\\
+\\
+&\times\Bigg\{\frac{\delta}{V_{ds(\mathrm{sat})}}
+-\frac{2\delta (1+\lambda V_{ds})}{\xi V_T+\Delta V_T+\gamma V_{ds}}-\frac{3\delta^2V_{gs}}{(\xi V_T+\Delta V_T+\gamma V_{ds})V_{ds(\mathrm{sat})}}
+\Bigg\}~.
+\end{split}
+\end{equation}
+In brief, \eqref{Eq:9} can be employed to simulate output characteristics of SiC MESFETs whereas, \eqref{Eq:11} defines their transfer characteristics. In these expressions, the effect of parasitic source ($R_s$) and drain ($R_d$) resistances were taken care of by the variables $\alpha$ and $\lambda$, respectively. Further, \eqref{Eq:9} is a quadratic equation which complies to the fundamental Schokly expression and it represents adequately the device characteristics before its breakdown.
+
+\begin{table}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2}
+\renewcommand{\tabcolsep}{0.6cm}
+\caption{Shows values of different parameters of \eqref{Eq:9} for submicron SiC MESFETs.}
+%\pbox{10cm}{$L_g=$\\$0.7~\muup$m}
+\begin{tabular}{lcccc}
+\hline
+Variables        & $0.7~\mu$m  & $0.6~\mu$m & $0.5~\mu$m  &  $0.4~\mu$m
+\\
+\hline
+$\alpha (1/V)$   & 0.3402  & 0.1535 & 0.1838 & 0.1277
+\\
+$\lambda (1/V)$  & 0.0402  & 0.0125 & 0.0253 & 0.0053
+\\
+$\psi $ (mA/mm)  & 296.38  & 322.89 & 187.22 & 427.64
+\\
+$V_T (V)$       & -10.00   & -15.00  & -12.00  & -20.00
+\\
+$\gamma$         & 0.1051  & 0.0646	& 0.1217 & 	0.0633
+\\
+$\Delta$   		 &-0.2471	&	0.0017	&	-0.6623	&	-0.0988
+\\
+$\delta$		&-0.5110	&	-0.6229	&	-1.0409	&	-0.2148
+\\
+$\xi$			&-0.2046	&	-0.6275	&	-0.2620	&	-0.0603
+\\
+\hline
+\end{tabular}
+\label{Tab:2}
+\end{table}
+
+\section{Simulation}
+
+To demonstrate the validity of the proposed model, submicron SiC MESFETs of various $L_g$ were chosen and the detail of which is given in Table \ref{Tab:1}. A MATLAB simulator was developed wherein the respective model equations were used \cite{Quanjun2008,Dobes2004,Manohar2002,McNallay2001,Angelov1999,Yuk2008,Robert1999,McCamant1990,Statz1987,Curtice1985}. Optimization of different variables of a model has been carried out using Particle Swarm Optimization (PSO) technique and a brief of which is as under \cite{Memon2013,Mousa2012}.
+
+PSO was initialized with random position and velocity for the parameters which were to be optimized. Positions were initialized within a boundary defined by $x_{max}$ and $x_{min}$ and the velocity was initialized somewhere between 0 to $v_{max}$, where $v_{max}$ is given by:
+\begin{equation}
+\label{Eq:12}
+v_{max}=\frac{x_{max}-x_{min}}{2}~.
+\end{equation}
+For an $n$-dimensional problem with $m$ number of particles and for $k^{th}$ iteration, the positions were represented by:
+\begin{equation}
+\label{Eq:13}
+X^k=
+\begin{bmatrix}
+x_{11}^k & x_{12}^k & \hdots & x_{1j}^k & \hdots & x_{1n}^k \\
+x_{21}^k & x_{22}^k & \hdots & x_{2j}^k & \hdots & x_{2n}^k \\
+\vdots   & \vdots   & \ddots & \vdots   & \vdots & \vdots   \\
+x_{i1}^k & x_{i2}^k & \hdots & x_{ij}^k & \hdots & x_{in}^k \\
+\vdots   & \vdots   & \hdots & \vdots   & \ddots & \vdots   \\
+x_{m1}^k & x_{m2}^k & \hdots & x_{mj}^k & \hdots & x_{mn}^k
+\end{bmatrix}
+\end{equation}
+where $m$ is swarm size and $n$ is swarm dimension. The associated velocities of these particles were represented as:
+\begin{equation}
+\label{Eq:14}
+V^k=
+\begin{bmatrix}
+v_{11}^k & v_{12}^k & \hdots & v_{1j}^k & \hdots & v_{1n}^k \\
+v_{21}^k & v_{22}^k & \hdots & v_{2j}^k & \hdots & v_{2n}^k \\
+\vdots   & \vdots   & \ddots & \vdots   & \vdots & \vdots   \\
+v_{i1}^k & v_{i2}^k & \hdots & v_{ij}^k & \hdots & v_{in}^k \\
+\vdots   & \vdots   & \hdots & \vdots   & \ddots & \vdots   \\
+v_{m1}^k & v_{m2}^k & \hdots & v_{mj}^k & \hdots & v_{mn}^k
+\end{bmatrix}
+\end{equation}
+Modification of the particle position was realized by using the current position and the velocity information as defined by:
+\begin{equation}
+\label{Eq:15}
+X^{k+1}=V^{k+1}+X^k~,
+\end{equation}
+where $X^{k+1}$ was the modified position and $V^{k+1}$ was the modified velocity. The velocity of a particle was calculated by the equation:
+\begin{equation}
+\label{Eq:16}
+v_{ij}^{k+1}=w_{ij} v_{ij}^k+v_{p\mathrm{best}}+v_{g\mathrm{best}}~,
+\end{equation}
+where the term $w_{ij} v_{ij}^k$ was called inertia and it specified the velocity which was retained from the previous step. The $2^{\text{nd}}$ term $v_{p\mathrm{best}}$ of \eqref{Eq:16} was given by:
+\begin{equation}
+\label{Eq:17}
+v_{p\mathrm{best}}=c_1\times \Phi_1\times ({p_{\mathrm{best}}}_{ij}^k-x_{ij}^k)~.
+\end{equation}
+The $3^{\text{rd}}$ term $v_{g\mathrm{best}}$ of \eqref{Eq:16} represented global velocity referred to as social influence which was defined by:
+\begin{equation}
+\label{Eq:18}
+v_{g\mathrm{best}}=c_2\times \Phi_2\times (g_{\mathrm{best}}-x_{ij}^k )~.
+\end{equation}
+In \eqref{Eq:16} to \eqref{Eq:18} $x_{ij}^k$ represented current position of a particle at $k^{th}$ iteration, $v_{ij}^k$ current velocity of a particle, $v_{ij}^{k+1}$ modified velocity, $\Phi_1$  and $\Phi_2$ random numbers between 0 and 1, ${p_{\mathrm{best}}}_{ij}^k$ personal best, $g_{\mathrm{best}}$ global best and $w_{ij}$ weighting factor of the velocity of a particle at position $x_{ij}$.
+
+Further, $c_1$ was a cognitive parameter and represented individual best success so far whilst $c_2$ was a social parameter and neighbor best success so far. Increasing $c_1$ encourages each particle to move towards its own $p_{\mathrm{best}}$ while increasing $c_2$ encourages exploration of $g_{\mathrm{best}}$. In our simulation the values of $c_1$ and $c_2$ were changed iteratively by using following expression:
+\begin{equation}
+\label{Eq:19}
+c_1=c_{1\mathrm{max}}+\frac{c_{1\mathrm{max}}-c_{1\mathrm{min}}}{\text{max.iter}} \text{(max.iter}-k)~.
+\end{equation}
+\begin{equation}
+\label{Eq:20}
+c_2=c_{2\mathrm{max}}+\frac{c_{2\mathrm{max}}-c_{2\mathrm{min}}}{\text{max.iter}} (\text{max.iter}-k)~.
+\end{equation}
+The convergence of PSO was achieved by devising an objective function given by:
+\begin{equation}
+\label{Eq:21}
+\varepsilon=\sqrt{\sum_{Q=1}^N \left\{\sum_{P=1}^M\left( I_{ds(\mathrm{exp})}^{P,Q}-I_{ds(\mathrm{sim})}^{P,Q}\right)^2
+\Bigg/
+\sum_{P=1}^M I_{ds(\mathrm{exp})}^{P,Q}
+\right\}}~.
+\end{equation}
+And the root mean square error (RMSE) between the simulated and the experimental data was assessed by using:
+\begin{equation}
+\label{Eq:22}
+\textrm{RMSE}=\sqrt{\frac{1}{M} \sum_{P=1}^M\left( I_{ds(\mathrm{exp})}^P-I_{ds(\mathrm{sim})}^P\right)^2}~.
+\end{equation}
+In \eqref{Eq:21} $P$ represents steps in $V_{ds}$ starting from zero to its maximum biasing value given by $M$, whereas $Q$ represents number of steps in $V_{gs}$  with its highest number given by $N$. To avoid discontinuity, which may be caused by the denominator of the square term of \eqref{Eq:9}, optimization variables' bounds were defined to ensure the convergence and the same was observed routinely.
+
+Following steps were used in the implementation of PSO algorithm:
+\begin{enumerate}[topsep=0pt,itemsep=0.5ex,partopsep=1ex,parsep=1ex]
+\item{define swarm dimension and size with initialized position and velocity;}
+\item{define objective function for error estimation;}
+\item{update each particle's position using \eqref{Eq:15};}
+\item{obtain personal best, $p_{\mathrm{best}}$ (according to the particle's previous best positions) with the help of defined objective function;}
+\item{obtain global best, $g_{\mathrm{best}}$;}
+\item{update velocity based on previous best and global best positions through \eqref{Eq:16};}
+\item{terminate if stopping criteria are satisfied, otherwise go to step 3.}
+\end{enumerate}
+
+Fig. \ref{Fig:2} shows experimental and simulated $I-V$ characteristics of four SiC MESFETs having submicron gate lengths but of varying geometry and doping density as given in Table 1. Simulation was carried out using \eqref{Eq:9} whereas, the variables of the equation were optimized using PSO algorithm discussed hitherto. The values of different variables of \eqref{Eq:9} which were achieved repeatedly after several executions of PSO are listed in Table \ref{Tab:2}.
+
+Fig. \ref{Fig:3} shows simulated and experimental $g_d$ characteristics for the devices under discussion. Simulation was carried out by using \eqref{Eq:10} and the respective device data is listed in Table \ref{Tab:2}. The plots show that the experimental data is of scattered nature but it follow a definite pattern in which it exhibit a rapid decline in $g_d$ magnitude and subsequently it attain a saturation value.
+
+Fig.~\ref{Fig:4} shows dependence of $g_m$ on $V_{ds}$ and $V_{gs}$ for submicron SiC MESFETs. The figure  shows that each device, dependent upon its channel conditions and Schottky barrier quality, offers a unique response. It is pertinent to mention that the simulated $g_m$ characteristics of Fig. \ref{Fig:4} are attained by employing \eqref{Eq:11} which exhibited a good agreement to the experimental data for entire $V_{gs}$ biasing.
+
+\section{Discussion}
+
+Examination of Fig. \ref{Fig:2} clearly reveals that the proposed model offers a reasonable accuracy both in the linear as well as in the saturation region of operation for submicron SiC MESFETs. It also demonstrates that \eqref{Eq:9} is versatile enough to simulate, without compromising on accuracy, devices having different physical dimensions (Table \ref{Tab:1}).  Further a careful investigation of Fig. \ref{Fig:2} showed that the profile of $I_{ds}(V_{ds}, V_{gs})$ characteristics differs from device to device. Fig. \ref{Fig:2}(a) exhibits a typical behavior of a short channel device and for such devices the observed $V_T$ conforms well to the value evaluated from \eqref{Eq:8}. On the other hand, all the remaining devices exhibited a non-ideal response (shift in $V_T$) most probably due to the presence of interface states at the Schottky barrier gate \cite{Ahmed1995}. A good agreement between simulated and experimental characteristics showed that \eqref{Eq:9} addresses adequately the device physical parameters and thus can be used for a wider range of $I-V$ characteristics simulation involving SiC MESFETs.
+
+\begin{landscape}
+\begin{table*}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2.5}
+\renewcommand{\tabcolsep}{0.4cm}
+%\captionsetup{width=16cm}%13.5
+\caption{Comparison of RMS error values of simulated and observed $I-V$ characteristics for $L_g=0.7~\mu$m SiC MESFET.}
+%\pbox{10cm}{$L_g=$\\$0.7~\muup$m}
+\begin{tabular}{llllllllc}
+\hline
+%Sr. $\#$	&Model $V_{gs}$			&$0$~V	&$-2$~V	&$-4$~V	&$-6$~V	&$-8$~V	&$-10$~V	&Average RMSE
+Sr. $\#$	&Model		&$V_{gs}=0$~V	&$V_{gs}=-2$~V	&$V_{gs}=-4$~V	&$V_{gs}=-6$~V	&$V_{gs}=-8$~V	&$V_{gs}=-10$~V	 &Average RMSE
+\\
+\hline
+1.			&McCamant \cite{McCamant1990}	&64.0767		&29.8551		&10.7927		&2.7182			&4.3158			 &2.4748			 &19.0389
+\\
+2.			&Statz \cite{Statz1987}		&19.2515		&8.6289			&5.8586			&9.8817			&12.3217		 &7.1683			 &10.5184
+\\
+3.			&Quanjun \cite{Quanjun2008}	&12.6972		&12.8619		&11.6023		&4.3739			&9.4902			 &6.3954			 &9.5701
+\\
+4.			&Angelov \cite{Angelov1999}	&11.3748		&10.5521		&7.3408			&5.0490			&4.3637			 &2.1253			 &6.8010
+\\
+5.			&Curtice Cubic \cite{Curtice1985}	&14.4243	&12.5448		&9.1742			&4.0533			&2.6886			 &0.7722			 &7.2762
+\\
+6.			&TOM3 \cite{Robert1999}		&13.2623		&5.9781			&6.2050			&5.6673			&7.0449			 &2.8998			 &6.8429
+\\
+7.			&Manohar \cite{Manohar2002}	&12.1343		&9.1201			&1.3711			&5.4848			&3.6272			 &2.1425			 &5.6466
+\\
+8.			&Dobes \cite{Dobes2004}		&11.2693		&5.4973			&5.7242			&4.8875			&6.3989			 &2.3718			 &6.0248
+\\
+9.			&McNallay \cite{McNallay2001}	&7.3266			&4.1321			&5.4288			&2.2807			&1.7310			 &0.7884			 &3.6146
+\\
+10.			&Proposed		&5.7396			&3.3568			&3.7161			&1.5081			&1.7927			&0.9815			 &2.8491
+\\
+\hline
+\end{tabular}
+\label{Tab:3}
+\end{table*}
+\end{landscape}
+
+\begin{landscape}
+\begin{table*}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2.5}
+\renewcommand{\tabcolsep}{0.4cm}
+%\captionsetup{width=16cm}%13.5
+\caption{Comparison of RMS error values of simulated and observed pulsed $I-V$ characteristics for $Lg=0.6~\mu$m SiC MESFET.}
+%\pbox{10cm}{$L_g=$\\$0.7~\muup$m}
+\begin{tabular}{llllllllc}
+\hline
+%Sr. $\#$&Model / $V_{gs}$				&$0$~V	&$-3$~V	&$-6$~V	&$-9$~V	&$-12$~V	&$-15$~V	&Average RMSE
+Sr. $\#$&Model				&$V_{gs}=0$~V	&$V_{gs}=-3$~V	&$V_{gs}=-6$~V	&$V_{gs}=-9$~V	&$V_{gs}=-12$~V	 &$V_{gs}=-15$~V	&Average RMSE
+\\
+\hline
+1.		&McCamant \cite{McCamant1990}		&19.9197		&12.8061		&15.2194		&11.4368 		&8.5160			 &6.2916			 &12.3649
+\\
+2.		&Dobes \cite{Dobes2004}			&18.5558		&9.4022			&12.2580		&9.7774			&8.6395			 &6.1346			 &10.7946
+\\
+3.		&Manohar \cite{Manohar2002}		&14.4182		&14.0668		&8.7749			&5.6574			&7.2247			 &3.3763			 &8.9197
+\\
+4.		&Statz \cite{Statz1987}			&11.7194		&9.7149			&7.1013			&5.5615			&9.4671			 &5.7238			 &8.2147
+\\
+5.		&Quanjun \cite{Quanjun2008}		&11.7074		&9.1969			&10.8905		&4.9563			&5.9221			 &4.8107			 &7.9140
+\\
+6.		&TOM3 \cite{Robert1999}			&12.2308		&6.9659			&7.8541			&5.5355			&7.5383			 &4.3661			 &7.4151
+\\
+7.		&McNallay \cite{McNallay2001}		&14.3405		&6.5084			&9.9534			&7.6486			&4.0030			 &1.8211			 &7.3792
+\\		
+8.		&Angelov \cite{Angelov1999}		&11.0768		&7.4610			&9.4935			&5.2868			&7.7218			 &2.8725			 &7.3188
+\\
+9.		&Curtice Cubic \cite{Curtice1985}	&12.0517		&9.8707			&9.1814			&5.1111			&2.1994			 &1.1570			 &6.5952
+\\
+10.		&Proposed			&8.4683			&6.2710			&6.4509			&4.2810			&3.0655			&1.2315			 &4.9614
+\\
+\hline
+\end{tabular}
+\label{Tab:4}
+\end{table*}
+\end{landscape}
+
+\begin{landscape}
+\begin{table*}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2.5}
+\renewcommand{\tabcolsep}{0.4cm}
+%\captionsetup{width=14cm}
+\caption{Performance comparison of various models used to simulate $I-V$ characteristics for $L_g=0.5~\mu$m SiC MESFET.}
+%\pbox{10cm}{$L_g=$\\$0.7~\muup$m}
+\begin{tabular}{llllllllc}
+\hline
+%Sr. $\#$&Model / $V_{gs}$		&$0$~V	&$-2$~V	&$-4$~V	&$-6$~V	&$-8$~V	&$-10$~V	&Average RMSE
+Sr. $\#$&Model		&$V_{gs}=0$~V	&$V_{gs}=-2$~V	&$V_{gs}=-4$~V	&$V_{gs}=-6$~V	&$V_{gs}=-8$~V	&$V_{gs}=-10$~V	 &Average RMSE
+\\
+\hline
+1.		&Quanjun \cite{Quanjun2008}	&11.0271	&8.8984		&10.8880	&3.0078	&6.6033	&9.0938	&8.2531
+\\
+2.		&McCamant \cite{McCamant1990}	&12.6637	&4.4472		&8.6165		&9.0970	&3.8954	&5.8057	&7.4209
+\\
+3.		&Statz \cite{Statz1987}		&12.2399	&6.7847		&2.5536		&3.3498	&7.6273	&7.3939	&6.6582
+\\
+4.		&Dobes \cite{Dobes2004}		&11.3211	&4.2043		&5.6500		&6.7281	&4.5907	&5.5839	&6.3463
+\\
+5.		&Curtice Cubic \cite{Curtice1985}	&10.3334&10.1003	&8.5879		&5.2977	&2.5341	&1.0969	&6.3251
+\\
+6.		&TOM3 \cite{Robert1999}		&11.3769	&3.9043		&5.4832		&6.6559	&4.6282	&5.6040	&6.2754
+\\
+7.		&Manohar \cite{Manohar2002}	&9.6982		&7.5871		&3.4433		&4.7577	&4.2250	&2.8025	&5.4190
+\\
+8.		&McNallay \cite{McNallay2001}	&6.4532		&3.7352		&4.7306		&3.9954	&3.3952	&9.5265	&5.3060
+\\
+9.		&Angelov \cite{Angelov1999}	&4.1173		&2.7018		&4.3114		&2.4930	&3.0239	&1.7988	&3.0744
+\\
+10.		&Proposed		&3.7750		&2.9790		&3.0838		&2.5088	&1.8359	&0.9967	&2.5299
+\\
+\hline
+\end{tabular}
+\label{Tab:5}
+\end{table*}
+\end{landscape}
+
+\begin{landscape}
+\begin{table*}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2.5}
+\renewcommand{\tabcolsep}{0.4cm}
+%\captionsetup{width=15.1cm}%12.8
+\caption{A comparative analysis of RMS error values for $L_g=0.4~\mu$m SiC MESFET. }
+%\pbox{10cm}{$L_g=$\\$0.7~\muup$m}
+\begin{tabular}{lllllllc}
+\hline
+%Sr. $\#$&Model / $V_{gs}$		&$0$~V	&$-4$~V	&$-8$~V	&$-12$~V	&$-16$~V	&Average RMSE
+Sr. $\#$&Model		&$V_{gs}=0$~V	&$V_{gs}=-4$~V	&$V_{gs}=-8$~V	&$V_{gs}=-12$~V	&$V_{gs}=-16$~V	&Average RMSE
+\\
+\hline
+1.		&Statz \cite{Statz1987}		&44.9791	&17.9251	&12.3408	&24.0375	&23.6267	&24.5819
+\\
+2.		&Quanjun \cite{Quanjun2008}	&21.6728	&23.2851	&16.5332	&10.7469	&23.8640	&19.2204
+\\
+3.		&McCamant \cite{McCamant1990}	&28.8111	&15.4188	&9.2325		&14.5757	&12.3475	&16.0771
+\\
+4.		&Dobes \cite{Dobes2004}		&16.9427	&10.6453	&11.2868	&10.6669	&10.7732	&12.0630
+\\
+5.		&Manohar \cite{Manohar2002}	&11.7292	&9.0861		&7.4474		&7.9619		&6.3995		&8.5248
+\\
+6.		&Curtice Cubic \cite{Curtice1985}	&14.5864&11.3852	&3.4714		&6.4696		&3.1167		&7.8059
+\\
+7.		&McNallay \cite{McNallay2001}	&11.1004	&9.2427		&4.9724		&5.3301		&2.7765		&6.6844
+\\
+8.		&TOM3 \cite{Robert1999}		&7.7455		&5.0381		&4.5421		&7.5330		&5.0194		&5.9756
+\\
+9.		&Angelov \cite{Angelov1999}	&9.2921		&9.8149		&3.3570		&4.7859		&2.2903		&5.9080
+\\
+10.		&Proposed		&9.0400		&8.2382		&3.5631		&4.6199		&1.9076		&5.4738
+\\	
+\hline
+\end{tabular}
+\label{Tab:6}
+\end{table*}
+\end{landscape}
+
+\begin{figure*}[ht]
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=6in, height=5in]{ThesisFigs/Fig4_2.pdf}
+\caption{Experimental ($\bullet$) and simulated ($-$) output characteristics of submicron SiC MESFETs (a) $0.7~\mu$m gate length device, (b) $0.6~\mu$m gate length device, (c) $0.5~\mu$m gate length device and (d) $0.4~\mu$m gate length device.}
+\label{Fig:2}
+\end{figure*}
+
+\begin{figure*}[ht]
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=6in, height=5in]{ThesisFigs/Fig4_3.pdf}
+\caption{Experimental ($\bullet$) and simulated ($-$) output conductance as function of gate and drain biasing of submicron SiC MESFETs (a) $0.7~\mu$m gate length device, (b) $0.6~\mu$m gate length device, (c) $0.5~\mu$m gate length device and (d) $0.4~\mu$m gate length device.}
+\label{Fig:3}
+\end{figure*}
+\begin{figure*}[ht]
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=6in, height=5in]{ThesisFigs/Fig4_4.pdf}
+\caption{Experimental ($\bullet$) and simulated ($-$) transconductance  as function of gate and drain biasing of submicron SiC MESFETs (a) $0.7~\mu$m gate length device, (b) $0.6~\mu$m gate length device, (c) $0.5~\mu$m gate length device and (d) $0.4~\mu$m gate length device.}
+\label{Fig:4}
+\end{figure*}
+
+To compare the performance of \eqref{Eq:9} with other models commonly used for MESFET simulation a comprehensive  comparative study was carried out. Table 3 shows RMS error values at different $V_{gs}$ biasing evaluated using \eqref{Eq:22} for $L_g=0.7~\mu$m device. The last column of the table also lists the average RMS error by which a model can be compared with its counterparts. From data of Table \ref{Tab:3}, it is evident that the proposed model for $L_g=0.7~\mu$m device offers 21.17~\% improved performance compared to the $2^{\text{nd}}$ best observed model, i.e., McNallay model \cite{McNallay2001}.
+
+A similar comparison was also carried out for devices having $L_g=0.6, 0.5, 0.4~\mu$m and the results are shown in Table \ref{Tab:4}, \ref{Tab:5} and \ref{Tab:6} respectively. Table \ref{Tab:4} shows that for $L_g=0.6~\mu$m device, the proposed model is 24.77~\% better than the $2^{\text{nd}}$ best observed model which in this case is the Curtice Cubic model \cite{Curtice1985}. The comparative analysis of Table \ref{Tab:4} was for pulsed $I-V$ characteristics which were chosen in order to observe the model performance for pulsed input. The data demonstrated that the proposed model has once again out performed  with good margin the other models listed in the table.
+
+Table \ref{Tab:5} shows that for $L_g=0.5~\mu$m device, the proposed model offers 17.71~\% improved performance compared to the next best observed model which in this case is the Angelov model \cite{Angelov1999}.
+
+\begin{table}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2}
+\renewcommand{\tabcolsep}{0.8cm}
+\caption{Fundamental values used for the evaluation of
+SiC MESFET parameters.}
+\begin{tabular}{l l}
+\hline
+Variable 								&Value
+\\
+\hline
+Mobility, $\mu_0$						&0.095 (m/V-s)
+\\
+Saturation field, $E_s$					&$2\times10^7$(V/m)
+\\
+Relative permittivity, $\epsilon$		&$8.854\times10^{-11}$
+\\
+Saturation velocity, $v_s$				&$2.0\times10^5$ (m/s)
+\\
+Built-in-potential, $V_{bi}$			&1.1 eV
+\\
+\hline
+\end{tabular}
+\label{Tab:7}
+\end{table}
+
+Table \ref{Tab:6} provides error data for $L_g=0.4~\mu$m SiC MESFET. The characteristics of this device were the most difficult  one to simulate because, the device at higher biasing exhibited self-regulating break down as evident from the plot. A good observed accuracy in simulated characteristics as seen in Fig. \ref{Fig:2}(d) demonstrates that the proposed model is a quite comprehensive one and takes into account $2^{\text{nd}}$ order  effects which can influence the device behavior.
+
+Table \ref{Tab:6} data clearly shows that the error margin for this device is higher than all previously reported cases. However, the proposed model has once again shown better performance relative to other models. The next best observed model in this case was the Angelov model but, the proposed model performance in aggregate was 7.35~\% better than the Angelov model.
+
+In general, one can say that \eqref{Eq:9} can be employed to simulate both static as well as pulsed $I-V$ characteristics of SiC MESFETs with a high degree of accuracy, especially for those devices which are designed for microwave power applications. Further, \eqref{Eq:9} is based on fundamental square law which governs the channel characteristics of a device as a function of its geometrical parameters.
+
+Output conductance $(g_d)$ of the devices under discussion exhibits an exponential decay as a function of $V_{ds}$ as evident from Fig. \ref{Fig:3}. The simulation which was carried out using \eqref{Eq:10} complies well with the experimental data. The point at which $g_d$ saturates is the same where $I_{ds}$ saturates for a given $V_{gs}$. Examination of Fig. \ref{Fig:3}(a) shows that $g_d$ saturates at $V_{ds}\sim~7$~V whereas, this is $\sim$~17 V for the device of Fig.~\ref{Fig:3}(d). Saturation at relatively higher $V_{ds}$ values is primarily associated with high source resistance and the value of $\alpha$ in \eqref{Eq:10} simulates this effect. From Table \ref{Tab:1}, $\alpha=0.3402$ for the device of Fig. \ref{Fig:3}(a) and $\alpha=0.1277$ for the device of Fig. \ref{Fig:3}(d). A relatively high value of $\alpha$ will then mean that the device $g_d$ will saturates quickly thus, indicating that the device offers low source resistance.
+
+\begin{table*}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.9}
+\caption{Extracted parameters for submicron SiC MESFET at biasing voltage
+$V_{ds}=15$~V and $V_{gs}=0$~V, if otherwise reported.}
+\begin{tabular}{llllll}
+\hline
+$Sr.~\#$	&Estimated Parameters		&$L_g=0.7~\mu$m 	&$L_g=0.6~\mu$m 	&$L_g=0.5~\mu$m 	&$L_g=0.4~\mu$m
+\\
+\hline
+1.		&Channel thickness, $a$		&220.91 nm		&219.8 nm		&300.99 nm		&199.96 nm
+\\
+2.		&Built-in-depletion			&62.7 nm		&63.7 nm		&88.68 nm		&66.12 nm
+\\
+3.		&Available channel, $a_{\mathrm{eff}}$	&30.85 nm		&32.29 nm		&39.00 nm		&49.49 nm
+\\
+4.		&Saturation current, $I_{\mathrm{dss}}$	&76.2 mA		&61.4 mA		&74.88 mA		&171.2 mA
+\\
+5.		&Depletion height, $h$ at $d_m$	&190.06 nm		&187.2 nm		&261.99 nm		&150.47 nm
+\\
+6.		&Distance $d_m$				&0.45~$\mu$m			&0.42~$\mu$m		&0.425~$\mu$m		&0.23~$\mu$m
+\\
+7.		&Threshold Voltage, $V_T$ (V)		&-12.77 		&-12.019 	&-11.5706 	&-8.9699
+\\
+8.		&$L_g/a$ Ratio					&3.18			&2.727			&1.67			&2.00
+\\
+9.		&Output conductance, $g_d$		&2.98 mS		&1.4 mS			&2.33 mS		&3.51 mS
+\\
+10.		&Maximum observed $g_m$	       & 16 mS         & 6.05 mS       & 4.36 mS       & 12.6 mS
+\\
+        &                              & at $V_{gs}$=0 V & at $V_{gs}$=-5.8 V & at $V_{gs}$=-4 V & at $V_{gs}$=-3 V
+\\
+\hline
+\end{tabular}
+\label{Tab:8}
+\end{table*}
+
+Simulation of $g_m$ by \eqref{Eq:11} and its compliance to the experimental data is demonstrated in Fig. \ref{Fig:4}. It is a well-established fact that for a good Schottky barrier device, the transconductance peak normally occurs at $V_{gs}~\sim 0$~V. However, a shift in $g_m$ peak towards higher $V_{gs}$ values may be witnessed in devices having submicron $L_g$ as observed in Fig. \ref{Fig:4}(b) \& (c). This shift is normally caused by the interface states as discussed in \cite{Ahmed1997}. A good compliance of \eqref{Eq:11} to the experimental data once again exhibits that the proposed model is versatile enough to simulate $I-V$ characteristics of the devices having different gate lengths and Schottky barrier qualities. Once a good dc simulation is achieved, ac parameters can then be assessed by using a technique given in \cite{Ahmed2003}.
+
+Plot of Fig. \ref{Fig:4}(d) shows that $g_m(V_{gs})$ characteristics are changing its nature at certain gate and drain biasing marked in the figure. The point where the $g_m$ slope  changes its profile represents that the Schottky barrier gate is losing its control and this could be associated with the carrier generation inside the channel under intense electric filed. Probably, due to this fact the device of Fig. \ref{Fig:4}(d) exhibits pinch-off at much higher value $(V_T=-20$~V) compared to what has been calculated by using \eqref{Eq:8}, i.e., $V_T=-9$~V.
+
+By assuming the parameters listed in Table \ref{Tab:7}, various parameters of the devices were then assessed and given in Table \ref{Tab:8}. The value of $a$ evaluated from electrical measurements by using \eqref{Eq:2} and \eqref{Eq:3} and given on serial No. 1 of Table \ref{Tab:8} matches well with the wafer data as listed in Table \ref{Tab:1} .
+
+Variation in built-in depletion region as shown at the serial No. 2 of the table is due to the channel doping variation and the highest assessed value is 88.68 nm which is for the device having lowest value of $N_d$. Further, effective channel width, $a_{\mathrm{eff}}$ available for the flow of carriers  is assessed from the $I-V$ data and given at serial No. 3 of the table.
+\begin{equation}
+\label{Eq:23}
+a_{\mathrm{eff}}=\frac{I_{dss}}{qNv_sW}~.
+\end{equation}
+An important factor given in Table \ref{Tab:8} is the distance $d_m$ as marked in Fig. \ref{Fig:1}. It is the point where it is assumed that the depletion region gets its maximum width underneath the Schottky barrier gate and thus controls the flow of current for a given biasing. The variable $d_m$ is evaluated by using \eqref{Eq:2}, where $L_g$ has been replaced with $d_m$ and the magnitude of $d_m$ is then evaluated for a known depletion region height.
+
+The assessed value of $V_T$ for $L_g=0.7~\mu$m device conforms to the experimental value whereas, all remaining devices exhibited higher $|V_T|$   than what has been calculated. The reported values are based on \eqref{Eq:8}, which does not take into account the quality of Schottky barrier and the changes in the device channel under intense electric field inside the channel may cause carrier generation; flow of current from the buffer layers and gate depletion region modification resulting into wider channel crossection. These factors could potentially contribute to shift the magnitude of $V_T$ to a higher value. The assessed value of $V_T$ for $L_g=0.4~\mu$m device is $\sim$~-9~V and by examining Fig. \ref{Fig:4}(d) one can clearly see that this is the point where, there is a shift in the profile of the curve indicating that the channel conditions have been changed and \eqref{Eq:8} might not be valid under these conditions.
+
+It is also noted that a SiC MESFET having aspect ratio, $L_g/a\sim3$ offers better performance compared to low aspect ratio devices given in Table \ref{Tab:8}.
+
+\section{Summary}
+
+In this chapter, an improved model has been presented to simulate DC and pulsed $I-V$ characteristics of SiC MESFETs. The validity of the model is demonstrated by applying it on submicron SiC MESFETs especially designed for power applications. A comparative analysis has been carried out by employing swarm optimization technique and it has been established that the proposed model, dependent upon the device characteristics, is $\sim~7-24~\%$ better than its counterparts. Expressions have been developed to simulate output conductance $(g_d)$ and transconductance $(g_m)$ of submicron SiC MESFETs which showed a good compliance to the experimental data. Based on simulated characteristics, numerous parameters defining the device geometrical structure have been estimated to a good degree of accuracy. It has been shown that the developed technique is versatile enough to predict the device characteristics even if it exhibits $2^{\text{nd}}$ order effects  and thus the technique could be a useful tool for device simulation softwares.
+
+
+% ------------------------------------------------------------------------
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End:

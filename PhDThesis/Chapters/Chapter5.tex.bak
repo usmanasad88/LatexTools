@@ -1,0 +1,407 @@
+\chapter{Assessment of Intrinsic Small Signal Parameters}
+
+%%
+\section{Introduction}
+
+SiC MESFETs offer large breakdown field, high saturation velocity, and high thermal conductivity \cite{Hjelmgren2007,Song2004}. They can operate at high biasing voltages and have high thermal robustness with large output resistance relative to other semiconductor devices, such as GaAs MESFETs \cite{Gang2010,Elahipanah2010,Clarke2002}. SiC MESFETs exhibit stable thermal performance, i.e. only 10\% change in their characteristics is observed when operated at 500$^\circ$C \cite{Spry2004}. They offer the highest absolute power density due to large breakdown voltage \cite{Deng2011,Xiao2013,Weitzel1995}. Therefore, SiC MESFETs are very attractive for high power microwave applications, such as transmitters for communication and RADAR.
+
+SiC MESFETs used in RF applications have been reported in the literature.  Song et al. \cite{Song2004} fabricated 4H-SiC MESFETs on a conducting SiC substrate and measurements showed that unity current gain frequency, $f_T$ = 3.2GHz, maximum frequency of oscillation, $f_{max}$ = 12.4GHz, an RF power gain of 5.9dB, and a maximum output power of 25.3dBm (0.85 W/mm) at 2GHz, which is much higher than Si and GaAs equivalent size transistors.
+
+It is an established fact that  RF performance of a MESFET depends on its gate length, $L_g$ and saturation velocity, $\upsilon_s$ of its carriers. In general, with reduction in $L_g$, the value of $f_T$ increases. However, when $L_g$ is less than 1$\mu$m, the device suffers from short channel effects and performance of the device is degraded \cite{Yim2011}, which includes: reduction in transconductance, $g_m$; shift in threshold voltage, $V_T$ and increase in the device output conductance, $g_d$ \cite{Honda2003}.
+
+Additionally, in short channel devices, vertical electric field becomes stronger to an extent that even at smaller values of $V_{ds}$, the mobility, $\mu_0$ of the carriers starts to reduce. Ho-Young et al. \cite{Cha2005}, in their study of transport characteristics of short channel SiC MESFETs, reported that $\upsilon_s$ and $\mu_0$ of such devices are 1.7$\times$10$^7$ cm/s and 300 cm$^2$(Vs)$^{-1}$ respectively, which are smaller than those of earlier reported values.
+
+Another important short channel effect is the drain induced barrier lowering (DIBL), causing less gate control on the channel current, $I_{ds}$ thus, increasing $g_d$ and decreasing $g_m$ of the device. Further, at high $V_{ds}$, the flow of carriers can also divert towards the substrate resulting in large substrate current. Honda \cite{Honda2003} and Manabu \cite{Arai2003} in their investigation of short channel effects, demonstrated that when $L_g$ is less than 1 $\mu$m, gate loses its effective control over $I_{ds}$ due to DIBL. They also reported that $f_T$, power density, and $g_m$ start to saturate at $ L_g\sim$ 0.3$\mu$m. $f_T$ of a SiC MESFET is given by \cite{Orouji2011,Ladbrooke1989}
+\begin{equation}
+\label{Eq:5.1}
+f_{T} \approx \left[\frac{g_{m}}{2\pi(C_{gs}+C_{gd})}\right]~,
+\end{equation}
+where, $C_{gs}$ is gate-to-source capacitance and $C_{gd}$, is gate-to-drain capacitance defined as \cite{Ladbrooke1989}
+\begin{equation}
+\label{Eq:5.2}
+C_{gs} \approx \left[\frac{\varepsilon_sWL_g}{h_0}\right]\left[1+\frac{X}{2L_g}-\frac{2h_0}{L_g+2X}\right]~.
+\end{equation}
+\begin{equation}
+\label{Eq:5.3}
+C_{gd} \approx \left[\frac{2\varepsilon_sW}{1+2X/L_g}\right]~.
+\end{equation}
+$X$ represents extension of gate depletion layer towards the drain-side of the gate and is given by \cite{Ladbrooke1989}
+\begin{equation}
+\label{Eq:5.4}
+X \approx \sqrt{\left[\frac{2\varepsilon_s}{qN_d(-V_{gs}+V_{bi})}\right]}(V_{ds}-V_{gs}+V_{bi})~,
+\end{equation}
+and $h_0$ of Eq. \ref{Eq:5.2} is given by
+\begin{equation}
+\label{Eq:5.5}
+h_0 = \sqrt{\frac{2\varepsilon_s(-V_{gs}+V_{bi})}{qN_d}}~.
+\end{equation}
+In above expressions, $\varepsilon_s$ represents permittivity of SiC material, $V_{gs}$ is gate-to-source biasing, $V_{bi}$ is the built-in potential, $W$ represents width of the device, $q$ is the electronic charge and $N_d$ channel doping density. Theoretical value of $g_m$, after considering the reduction in $\upsilon_s$, because of the transverse electric field, is defined as \cite{Ladbrooke1989}
+\begin{equation}
+\label{Eq:5.6}
+g_m = \frac{\varepsilon_s\upsilon_sW}{3h_0}~.
+\end{equation}
+Transconductance delay, $\tau$ is given by
+\begin{equation}
+\label{Eq:5.7}
+\tau \approx \frac{1}{\upsilon_s}\left[\frac{X}{2}-\frac{2h_0}{1+2X/L_g}\right]~.
+\end{equation}
+Channel resistance, $R_i$ after the onset of current saturation is defined as
+\begin{equation}
+\label{Eq:5.8}
+R_i = \left[\frac{\upsilon_sL_g}{\mu I_{ch}}\right]~,
+\end{equation}
+where $I_{ch}$ is given by
+\begin{equation}
+\label{Eq:5.9}
+I_{ch} = qN_d\upsilon_s[a-h(x)]W~,
+\end{equation}
+where $a$ represents epi-layer thickness and $h(x)$ is given by
+\begin{equation}
+\label{Eq:5.10}
+h(x) = \sqrt{\frac{2\varepsilon_s(V_{ds}-V_{gs}+V_{bi})}{qN_d}}~.
+\end{equation}
+Since there is non uniformity in $h(x)$ underneath the Schottky barrier gate caused by the applied voltage $V_{ds}$, which generates $C_{ds}$ capacitor thus, by assuming that the depletion layer involved in the definition of $C_{ds}$ is $h(x)/2$ and also because of submicron geometry, the shape of depletion tends to become circular. And it can safely be assumed that one quarter of a circle under $L_g$ is involved in defining $C_{ds}$ thus, \cite{Ahmed2003, Riaz2016}
+\begin{equation}
+\label{Eq:5.11}
+C_{ds} \approx \left[\frac{W\varepsilon_sh(x)/2}{L_g/4}\right]~.
+\end{equation}
+And output conductance, $g_{d}$ can be approximated as \cite{Ladbrooke1989}
+\begin{equation}
+\label{Eq:5.11a}
+g_{d}\approx\frac{I_{ch}}{4V_{ds}}~.
+\end{equation}
+Eqns. \ref{Eq:5.2} to \ref{Eq:5.11a} represent intrinsic small signal elements, here onward referred to as conventional technique to assess intrinsic small signal parameters of a SiC MESFET \cite{Ladbrooke1989}. These parameters are, primarily, responsible for determining high frequency and high power characteristics of the device. As evident from Eqns. \ref{Eq:5.2} to \ref{Eq:5.11a}, intrinsic small signal parameters are material, biasing and device design dependent. Effects of source and drain parasitic resistances, $R_S$ and $R_D$ can be incorporated by using
+\begin{equation}
+\label{Eq:5.11c}
+R_{S}= \frac{L_{sg}}{qN\mu aW}+R_C~~\text{and} ~~R_{D}= \frac{L_{dg}}{qN\mu aW}+R_C~,
+\end{equation}
+where $L_{sg}$ and $L_{dg}$ are the source-to-gate and gate-to-source separations, and $R_C$ is ohmic contact resistance, typically $2\Omega$ for microwave devices. Thus, effective $V_{dse}$ is evaluated using either $V_{dse}=V_{ds}-I_{ch}(R_S+R_D)$, or $V_{dse}=V_{ds}-I_{ch}(R_S)$, whichever is applicable.
+
+It is an established fact that SiC MESFETs are meant for high biasing and high temperature related applications where conventional approach to assess intrinsic small signal parameters may not be fully valid. At high biasing, there are considerable self-heating effects inside the device, which make the carriers hot and their scattering probability into the buffer and Schottky barrier layers increase. Expressions involved in the conventional technique are, primarily, dependent on gate depletion layer thus, any modification in depletion layer thickness because of high temperature/biasing is bound to generate errors in the assessed values of these parameters.
+
+In this chapter, a technique has been developed to assess the intrinsic small signal parameters of submicron SiC MESFETs by involving experimental $I-V$ characteristics. The developed technique takes into account possible depletion layer modification due to high temperature/biasing and is capable of predicting AC small signal parameters to an acceptable accuracy. The remaining part of the paper consists of development of a proposed technique for the assessment of small signal parameters for submicron SiC MESFETs. Followed by its comparison with experimental data and also with the conventional approach. The dependence of small signal parameters on the device biasing has been discussed at the end, using a MATLAB based simulation process.
+
+\section{Model Development}
+A crossectional view of a SiC MESFET is shown in Fig. \ref{Fig:5.1a}. It has $n$-channel doping of 2.7$\times$10$^{17}$cm$^{-3}$ grown on a buffer layer having a $p$-doping of 5$\times$10$^{15}$cm$^{-3}$ as shown in Table \ref{Tab:5.1}. It is an interdigitated device having total gate periphery of 2$\times200\mu$m \cite{Hjelmgren2007}. Device to device isolation is achieved by mesa etching whereas, drain-source leakage is controlled by a fully depleted buffer grown on a semi-insulating substrate.
+
+Fundamental difference in the proposed and the conventional technique is that $I_{ch}$ of the conventional approach is changed with $I_{ds}$, which is evaluated using expression \cite{Riaz2016}
+\begin{equation}
+\label{Eq:5.12}
+\begin{split}
+I_{ds}=&I_{dss} \left(1-\frac{\delta V_{gs}}{V_T+\Delta V_T+\gamma V_{ds}}\right)^2\\
+\\
+&\times \left(1+\lambda V_{ds}+\frac{\delta V_{gs}}{V_{ds(sat)}}\right) \tanh(\alpha V_{ds})~,
+\end{split}
+\end{equation}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=3in, height=2.5in]{ThesisFigs/Fig5_1a.pdf}
+\caption{Crossectional view of a SiC MESFET.}
+\label{Fig:5.1a}
+\end{figure}
+
+where $\delta$ represents non-ideality in Schottky barrier of a SiC MESFET, $\Delta V_T$ corresponds to shift in $V_T$ because of submicron geometry, $\gamma$ simulates $V_T$ dependence on $V_{ds}$, $\lambda$ takes care of finite output conductance in the saturation region of operation, $\alpha$ defines the slope of the linear region, $I_{dss}$ represents drain-to-source current at $V_{gs}=0$V and saturation knee voltage is represented by $V_{ds(sat)}$. The output impedance of the MESFET has been taken care of by the term $\lambda V_{ds}$. A relatively high value of $\lambda$ would mean that the device has high output conductance as a function of $V_{ds}$, resultantly its output impedance will be relatively low. Differentiating Eq. \ref{Eq:5.12} with respect to $V_{gs}$ and $V_{ds}$, one will have
+\begin{equation}
+\label{Eq:5.12b}
+g_{m}=\frac{\partial I_{ds}}{\partial V_{gs}}\bigg|_{V_{ds-const}}~.
+\end{equation}
+Also
+\begin{equation}
+\label{Eq:5.12c}
+g_{d}=\frac{\partial I_{ds}}{\partial V_{ds}}\bigg|_{V_{gs-const}}~.
+\end{equation}
+
+Reason for changing $I_{ch}$ with $I_{ds}$ is that in short channel devices, especially at elevated temperatures and biasing, there could be a possible modification in the Schottky barrier depletion layer due to increased occupancy of high energy states by the energetic carriers. Such a modified depletion layer can be assessed to a reasonable accuracy by knowing $I_{ds}$ having dependance on  available channel crossection, i.e. $a-h(x)$ as shown in Fig. \ref{Fig:5.1a}. Following this concept, expressions based on $h(x)$ can be modified, such as gate-to-source capacitance, $C_{gsm}$ can be redefined as \cite{Ahmed2003}
+
+\begin{equation}
+\label{Eq:5.13}
+C_{gsm} \approx (\varepsilon_sWL_g)\left[a-\frac{I_{ds}}{qN_d\upsilon_sW}\right]^{-1}~.
+\end{equation}
+
+While developing Eq. \ref{Eq:5.13}, it has been assumed that because of submicron geometry, carriers are attaining saturation velocity in a close vicinity of the source side of the gate electrode hence, saturation current has been used in Eq. \ref{Eq:5.13}. Extending the logic of parallel plate capacitor gate-to-drain capacitance, $C_{gdm}$ follows an expression of the form defined by Eq. \ref{Eq:5.14a} \cite{Ladbrooke1989}
+\begin{equation}
+\label{Eq:5.14a}
+C_{gdm} =\dfrac{\varepsilon_sW}{\bigg(1+\dfrac{2X}{L_g}\bigg)}~.
+\end{equation}
+But in submicron devices, depletion underneath the Schottky barrier becomes circular and its extension in such cases towards the drain side can be assumed as identical in all directions thus, $X\approx h(x)$. Therefore, Eq. \ref{Eq:5.14a} can be written as
+\begin{equation}
+\label{Eq:5.14b}
+C_{gdm} =\dfrac{\varepsilon_sW}{\bigg(1+\dfrac{2h(x)}{L_g}\bigg)}~.
+\end{equation}
+From Eq. \ref{Eq:5.9}
+\begin{equation}
+\label{Eq:5.14c}
+h(x)=\bigg[a-\dfrac{I_{ds}}{qN_d \upsilon_s W}\bigg]~.
+\end{equation}
+By combining Eq. \ref{Eq:5.14b} and \ref{Eq:5.14c} and rearranging, we get
+\begin{equation}
+\label{Eq:5.14}
+C_{gdm} \approx \left[\frac{\varepsilon_sW}{1+(2/L_g)\bigg[a-\biggl(I_{ds}/{qN_d\upsilon_sW}\biggr)\bigg]}\right]~.
+\end{equation}
+
+Drain-to-source capacitance, $C_{dsm}$ of a SiC MESFET is defined by the non-uniform depletion layer distribution underneath the Schottky barrier gate of the device. Thus, separation between the two layers of charges defining $C_{dsm}$ capacitor will be determined by length $L_g$ of the device. Considering quarter circle approximation because of the submission geometry \cite{Riaz2016}, the capacitor $C_{dsm}$ can be expressed as
+\begin{equation}
+\label{Eq:5.15}
+C_{dsm} \approx \left[\frac{2W\varepsilon_s\biggl\{a-\biggl(I_{ds}/{qN_d\upsilon_sW}\biggr)\biggr\}}{L_g/4}\right]~.
+\end{equation}
+Using Eqns. \ref{Eq:5.14} and \ref{Eq:5.15}, modified unity gain frequency, $f_T$ is defined as
+
+\begin{equation}
+\label{Eq:5.16}
+f_{T1} \approx \left[\frac{g_{mm}}{2\pi(C_{gsm}+C_{gdm})}\right]~,
+\end{equation}
+where $g_{mm}$ is given by
+
+\begin{equation}
+\label{Eq:5.17a}
+g_{mm} = (g_{m0})e^{-j\omega \tau_m}
+\end{equation}
+such that $g_{m0}$ can be attained by differentiating Eq. \ref{Eq:5.12} with respect to $V_{gs}$, keeping $V_{ds}$ constant \cite{Memon2007}. Transconductance delay, $\tau_m$ is defined as
+
+\begin{equation}
+\label{Eq:5.18}
+\tau_m \approx\biggl[ \frac{C_{gsm}+C_{gd1}}{2g_{mm}}\biggr]~.
+\end{equation}
+In Eq. \ref{Eq:5.18}, a factor of two is used to adjust the depletion modification caused by high electric field. Since the device under discussion, by using its physical parameters given in Table \ref{Tab:5.1}, should pinch-off at $V_{gs}$ = -5.6V by considering both $V_T$ and $\triangle V_T$ \cite{Ahmed1995}. Since the observed pinch-off, as evident from Fig. \ref{Fig:5.1}, is much higher than the calculated value because of self-heating effects, a factor of 2 is used to accommodate low $g_m$, which is a direct consequence of high $V_T$.
+
+Channel resistance, $R_{im}$ is given by Eq. \ref{Eq:5.19}
+
+\begin{equation}
+\label{Eq:5.19}
+R_{im} = \left[\frac{\upsilon_sL_g}{\mu I_{ds}}\right]~.
+\end{equation}
+Since in a distributed network where a current path is modelled by a combination of multiple series resistors and parallel capacitors as offered by the MESFET channel with respect to its gate metal, the magnitude of the current decreases progressively while travelling through the channel hence, offering a non-uniform resistance. Therefore, an AC resistance, in principle, would be less than its DC counterpart \cite{Ladbrooke1989}, which for a submicron device can be assumed as one half of the DC resistance, thus, output conductance, $g_{dm}$ can be approximated as,
+
+\begin{equation}
+\label{Eq:5.20}
+g_{dm}\approx \frac{1}{2}\frac{\partial I_{ds}}{\partial V_{ds}}\bigg|_{V_{gs(cont)}}~,
+\end{equation}
+where $I_{ds}$ is given by Eq. \ref{Eq:5.12}. In summary, Eqs. \ref{Eq:5.12} to \ref{Eq:5.20} define a proposed set of expressions to estimate intrinsic small signal elements of microwave SiC MESFETs.
+
+\section{Measured and Simulated DC Characteristics}
+
+To check the validity of the proposed model and to compare it with experimental data, a MATLAB code has been developed involving swarm optimization technique wherein, Eq. \ref{Eq:5.12} has been implemented \cite{Riaz2016}. A submicron SiC MESFET is chosen \cite{Hjelmgren2007} whose details are given in Table \ref{Tab:5.1}. Wherein, buffer layer thickness is represented by, $b$ and its doping density with variable, $N_b$. It is worth mentioning that buffer layer depletion, $x_P$, evaluated using Eq. \ref{Eq:5.21}, has the thickness of $0.48\mu$m, which shows that entire buffer layer is depleted under built-in conditions \cite{Neamen2007}.
+\begin{table}
+\centering
+%\footnotesize
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabcolsep}{1cm}
+\caption[]{Shows physical parameters of a submicron SiC MESFET whose experimental $I-V$ characteristics given in Ref. \cite{Hjelmgren2007} were used to validate the proposed model.}
+\begin{tabular}{l|l}
+\hline
+ Variables          &Values\\
+ \hline
+ $L_g$($\mu$m)      &0.4\\
+ $W$($\mu$m)        &4$\times$100\\
+ $a$($\mu$m)        &0.20\\
+ $N_d$(cm$^{-3}$)   &2.7$\times$10$^{17}$\\
+ $b$($\mu$m)        &0.34\\
+ $N_b$(cm$^{-3}$)   &5$\times$10$^{15}$\\
+ $x_P$($\mu$m)      &0.48\\
+ $x_n$($\mu$m)      &0.06\\
+\hline
+\end{tabular}
+\label{Tab:5.1}
+\end{table}
+\begin{table}
+\centering
+%\footnotesize
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabcolsep}{1cm}
+\caption{Shows values of different parameters of Eq. \ref{Eq:5.12} for the device of Table \ref{Tab:5.1}, attained after optimization process to model $I-V$ characteristics of Figure \ref{Fig:5.1}.}
+\begin{tabular}{l|l}
+\hline
+Variables               & Values\\
+\hline
+$\alpha$(1/V)           & 0.1274 \\
+$\lambda$(1/V)          & 0.0052 \\
+$I_{dss}$(mA)           & 171.40 \\
+$V_T$(V)                & -20.00 \\
+$\gamma$                & 0.0631 \\
+$\Delta$                & -0.1926 \\
+$\delta$                & -0.2140\\
+$\xi$                   & 0.0342 \\
+\hline
+\end{tabular}
+\label{Tab:5.2}
+\end{table}
+
+\begin{table*}
+\centering
+%\footnotesize
+\renewcommand{\arraystretch}{2}
+\renewcommand{\tabcolsep}{0.35cm}
+\caption{RMS error values of a 0.4$\mu$m SiC MESFET for the characteristics shown in Figure \ref{Fig:5.1}.}
+\begin{tabular}{l|ccccc|c}
+\hline
+$V_{gs}$        & -16V      & -12V      & -8V       & -4V       & 0V        &Average \\
+\hline
+RMSx$10^{-3}$   & 1.4389    & 2.2007    & 1.3606    & 3.1456    & 3.5249    & 2.3341\\
+\hline
+\end{tabular}
+\label{Tab:5.3}
+\end{table*}
+
+\begin{equation}
+\label{Eq:5.21}
+x_P=\biggl[\biggl(\frac{2\epsilon_sV_{bi}}{q}\biggr)\biggl(\frac{N_d}{N_b}\biggr)\biggl(\frac{1}{N_d+N_b}\biggr)\biggr]^{1/2}~.
+\end{equation}
+
+Optimization was carried out using an objective function whose details are given elsewhere \cite{Riaz2016}. Optimized variables of Eq. \ref{Eq:5.12} are listed in Table \ref{Tab:5.2}. RMS errors for experimental and simulated $I-V$ characteristics, as a function of biasing voltages, are given in Table \ref{Tab:5.3}. Whereas, observed and simulated $I-V$ characteristics are shown in Fig. \ref{Fig:5.1}.
+
+Table \ref{Tab:5.3} shows that average RMS error for the $I-V$ characteristics of Fig. \ref{Fig:5.1} is $2.3341\times10^{-3}$. Such a small magnitude of error demonstrates the validity of Eq. \ref{Eq:5.12}. It can be seen from Fig. \ref{Fig:5.1} that the device under discussion offers high resistance in its linear region of operation. This could be associated with relatively high values of $R_S$ and $R_D$  caused by the combination of contact resistance, $R_C$ and bulk hesitance, $R_B$. Since $R_B$ is a doping dependent variable and for a given doping, a relatively high value of $R_S$ and  $R_D$ can then be associated with a high value of $R_C$, which is fabrication dependent and may vary from process to process. Since the chosen device has $L_g$ = 0.4$\mu$m, it was therefore, obvious that this device will have short channel effects and the same are visible from the output characteristics shown in Fig. \ref{Fig:5.1} wherein, the device is presenting a considerable high value of $g_d$ and also the performance of Schottky barrier gate is deteriorating with increasing values of $V_{ds}$ and $V_{gs}$ \cite{Ahmed1997, Ahmed2001}. Such devices do not comply to standard square law expressions for their output characteristics, in the saturation region of operation, and therefore, a non-linear expression of the form shown by Eq. \ref{Eq:5.12} is required to simulate $I-V$ characteristics of such devices.
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_1.pdf}
+\caption{Simulated ($-$) using Eq. \ref{Eq:5.12} and experimental ($\bullet$) output characteristics of a 0.4$\mu$m SiC MESFET.}
+\label{Fig:5.1}
+\end{figure}
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_2.pdf}
+\caption{Transconductance of a submicron SiC MESFET. ($-$) represents a plot achieved using Eq. \ref{Eq:5.12b} and ($\bullet$) represent differentiation of observed $I-V$ characteristics with repect to $V_{gs}$. Point `shift' represents biasing voltage where the Schottky barrier gate starts performing relatively poor compared to lower biasing voltages.}
+\label{Fig:5.2}
+\end{figure}
+
+By differentiating Eq. \ref{Eq:5.12} with respect to $V_{gs}$, one gets $g_m$ of the device as shown by Eq. \ref{Eq:5.12b}. The $g_m$ of the device under discussion has been plotted in Fig. \ref{Tab:5.3} where the symbols represent differentiation of experimental data of the $I-V$ characteristics of Fig. \ref{Fig:5.1} and solid lines are plotted using Eq. \ref{Eq:5.12b}. The plot of Fig. \ref{Fig:5.2} clearly shows that at $V_{ds}=30$V and at $V_{gs}\approx-10$V, Schottky barrier gate starts losing its grip on the channel, probably due to the self-heating effects and as a result, the slope of the curve changes at that biasing. This increases effective crossectional area available for the flow of current, i.e. $a-h(x)$, which results into an increase in $g_d$ and decrease in $g_m$. The term $a-h(x)$ defines available channel crossection as shown in Fig. \ref{Fig:5.1}, and a decrease in $h(x)$ due to increased carriers scattering into the depletion region under intense electric field will reduce the the depletion height $h(x)$, which will eventually increase $a-h(x)$. So, the assessment of small signal parameters, under such conditions, using the conventional technique would be really hard. This requires a modification in the conventional approach to predict AC small signal parameters of a submicron SiC MESFET.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_4.pdf}
+\caption{Output conductance of a submicron SiC MESFET. Plot exhibits that the output conductance which was concave upwards changed to concave downwards with changing gate biasing.}
+\label{Fig:5.4}
+\end{figure}
+
+Figure \ref{Fig:5.4} demonstrates changing behavior of $g_d$ of a SiC MESFET with changing values of $V_{gs}$ and $V_{ds}$. Solid lines are plotted using definition given in Eq. \ref{Eq:5.12c} whereas, symbols are achieved by differentiating the experimental $I-V$ characteristics with respect to $V_{ds}$. This figure clearly illustrates that the device, which was presenting negative profile for its $g_d$ started showing  positive profile for the same variable, when biasing conditions were further enhanced. For $V_{gs} = -12 V$ curve of Fig. \ref{Fig:5.4}, the initial rise in $g_d$ is due to the linear increase in the velocity of carriers under increasing values of $V_{ds}$. And when the velocity of carriers reaches $\upsilon_s$, at this point of time any further increase will not be translated into an increase in $I_{ds}$ thus, $g_d$ starts decreasing and reaches to its saturation value at $V_{ds}=V_{ds(sat)}$. On the other hand, for $V_{gs} = -15 V$ curve of Fig. \ref{Fig:5.4}, the carriers under high electric field become so hot that their scattering both into the depletion and buffer are the dominating factors in defining the device characteristics as a result, the magnitude of $g_{d} (V_{ds}$) though small but increasing; showing the broadening of the channel for a given $V_{gs}$. The magnitude of $g_d$ then saturates for a biasing sufficient to attain $\upsilon_s$. These results clearly demonstrate that at increased biasing, there is change in gate depletion layer and any element (e.g. $C_{gs}$, $C_{gd}$, etc.) associated with the gate depletion layer can only be assessed, with reasonable accuracy, if depletion layer modification has been taken into account \cite{Ahmed2003}.
+
+\section{Assessment of Intrinsic AC Parameters}
+
+Basic philosophy for assessing small signal parameters of a SiC MESFET is based on accurate DC modeling of the device as described in Section 5.2. Using swarm optimization technique, $I-V$ characteristics of a submicron device have been simulated. Once $I-V$ characteristics of an acceptable accuracy are achieved, the optimized variables, as shown in Table \ref{Tab:5.2}, are then used to simulate $I_{ds}$ and then AC small signal parameters. In small signal parameter assessment, it is obvious from Eqs. \ref{Eq:5.13} to \ref{Eq:5.19} that variable $h(x)$ has been eliminated and it has been substituted with an $I_{ds}$ based expression. Thus, any change in channel condition, if it is going to modify Schottky barrier depletion, will be directly translated into the available channel height, $a-h(x)$, which determines $I_{ds}$. Thus, the developed approach will incorporate carriers scattering into Schottky barrier depletion under self heating or intense transverse electric field.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_5.pdf}
+\caption{Gate-to-source capacitance, $C_{gs}(V_{ds},V_{gs})$ of a 0.4$\mu$m SiC MESFET. Open circles $(\circ)$ represent values of $C_{gs}$ attained from the conventional approach whereas, solid circles $(\bullet)$ show calculated $C_{gs}$ from the proposed model.}
+\label{Fig:5.5}
+\end{figure}
+
+Figure \ref{Fig:5.5} represents variation in $C_{gs}$ as a function of $V_{ds}$  for chosen values of $V_{gs}$. An apparent view of the figure revealed that variation in capacitance profiles by varying $V_{ds}$ are almost identical for both the models, except the initial points. At $V_{gs}=0$V, conventional model predicts a value of $\sim 50$fF; whereas, the proposed model gives the value for the same variable about 3 times higher, i.e. $\sim 140$fF. This clearly shows that in conventional approach, the Schottky barrier depletion layer is much thicker than the proposed approach; whereas, in reality, due to the intense channel conditions, Schottky barrier layer is thinner than its ideal value, which results in a much higher value of $C_{gs}$. In saturation region of operation ($V_{ds}=40$V and $V_{gs}=0$V), conventional model gives $C_{gs}=202$fF whereas, the value evaluated from the proposed technique is $C_{gsm}=165.6$fF. Experimental value attained from AC measurement gave $C_{gs}=164$fF \cite{Andersson2006}. A reasonably close match between the experimental value and the one calculated using the proposed technique confirms the validity of Eq. \ref{Eq:5.13}.
+
+Figure \ref{Fig:5.6} shows the behavior of $C_{gd}$ capacitance as a function of applied biasing. An obvious contrast in the behavior of the conventional and the proposed models is observed. It is evident from the figure that with increasing magnitude of $V_{ds}$, the conventional model shows a parabolic decline in the values of $C_{gd}$; whereas, the proposed model representing Eq. \ref{Eq:5.14} exhibits a slight upward trend with increasing values of $V_{ds}$.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_6.pdf}
+\caption{Gate-to-drain capacitance, $C_{gd}(V_{ds},V_{gs})$ of a 0.4$\mu$m SiC MESFET. Open circles $(\circ)$ represent values of $C_{gd}$ attained from the conventional approach whereas, solid circles $(\bullet)$ show calculated $C_{gd}$ from the proposed model.}
+\label{Fig:5.6}
+\end{figure}
+
+Eq. \ref{Eq:5.3}, which represents the conventional model has $X$, a bias dependent variable, sitting in the denominator of the equation. With increasing drain biasing, the value of $X$ also increases resulting into a decrease in the value of $C_{gd}$. But, this is an ideal scenario, usually observed in FET devices at low power and also at low biasing. Devices in which self heating and high electric field are the predominant phenomena, such a response is bound to fail because of Schottky barrier depletion layer modification. Extension in gate depletion layer caused by the increasing values of $V_{ds}$ and its reduction due to self heating and vertical electric field are almost balancing each other. Rather, there is a slight reduction in the gate depletion layer, which is responsible for increase in $C_{gd}$  with increasing $V_{ds}$, as evident from Fig. \ref{Fig:5.6}. These arguments are also supported by the experiment because, experimentally observed value of $C_{gd}$ at $V_{ds}=40$V and $V_{gs}=0$V is 24.1fF \cite{Andersson2006}, and the one calculated by using the proposed model is 24.27fF. On the other hand, the value of $C_{gd}$ attained by using the conventional technique is 5.46fF, much lower than the actual one.
+
+Figure \ref{Fig:5.7} shows simulated results of $C_{ds}$ as a function of $V_{ds}$ with $V_{gs}$ as a variable. The plot exhibits that by changing $V_{gs}$, there is a change (increase) in the magnitude of $C_{ds}$ which is an understandable response, because increase in the magnitude of $C_{gs}$ increases the depletion layer thickness, which results into an increase in the crossectionl area of $h(x)$, a variable responsible to define $C_{ds}$. It is obvious from Fig. \ref{Fig:5.7} that $V_{gs}$ dependent response for both the cases, the conventional and the proposed, follow the same behavior that is, by increasing the magnitude of $V_{gs}$, the value of $C_{ds}$ increases. But, $C_{ds}$ variation with respect to $V_{ds}$ exhibits opposite nature for the conventional and the proposed model as is evident from Fig. \ref{Fig:5.7}. The proposed model shows a decline in $C_{ds}$ with increasing values of $V_{ds}$, while the conventional technique shows an upward trend for the same parameter. The response of the conventional model is understandable for the devices, which function at low biasing or at low temperature, where self heating is not a big consideration. In the proposed approach, the value of $C_{ds}$ is decreasing with increasing values of $V_{ds}$, presumably due to the modification of gate depletion layer under intense channel conditions caused by high vertical electrical field or/and self heating effects, which have not been considered as variables in the convectional approach. These have been accommodated in the proposed approach by replacing $h(x)$ with an appropriate expression involving $I_{ds}$, which has a good accuracy, due to an optimized simulation process discussed hitherto.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_7.pdf}
+\caption{Drain-to-source capacitance, $C_{ds}(V_{ds},V_{gs})$ of a 0.4$\mu$m SiC MESFET. Open circles $(\circ)$ represent values of $C_{ds}$ attained from the conventional approach whereas, solid circles $(\bullet)$ show calculated $C_{ds}$ from the proposed model.}
+\label{Fig:5.7}
+\end{figure}
+
+Behavior of transit time, $\tau$ as a function of $V_{ds}$ is shown in Fig. \ref{Fig:5.8}. The figure shows that the magnitude of $\tau$ is increasing almost linearly by increasing $V_{ds}$. However, the slope of the conventional and the the proposed model is different. Further, at $V_{gs}=0$V, there is a significant difference in the starting value of $\tau$. Primarily, $\tau$ represents time required by the depletion to readjust itself with changing values of potential at gate electrode. Therefore, to accommodate the entire gate depletion layer, both $C_{gs}$ and $C_{gd}$ are included in the definition of $\tau$ as given by Eq. \ref{Eq:5.18}. Since $g_m$ is significantly lower because of the intense vertical electric field, therefore, to accommodate that a scaling factor of 2 has been used in Eq. \ref{Eq:5.18}. At $V_{gs}=0$V and $V_{ds}=40$V, the observed value is $\tau\approx8.55$ps whereas, the evaluated value is $\tau\approx7.98$ps. A reasonably good estimation of $\tau$ confirms the validity of Eq. \ref{Eq:5.18}. On the other hand, the value of $\tau$ attained from the conventional model, for the same biasing, is 5.25ps. Comparison of the data clearly shows that Eq. \ref{Eq:5.18} provides a better assessment compared to that of Eq. \ref{Eq:5.7}. This is so because, Eq. \ref{Eq:5.7} is based on $\upsilon_s$ whose value deteriorates due to intense vertical electric field, which has not been taken into account while developing this expression. Thus, a significant discrepancy is noticed in the observed and the evaluated values of $\tau$ using the conventional approach.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_8.pdf}
+\caption{Transit time, $\tau$ of a 0.4$\mu$m SiC MESFET. Open circles $(\circ)$ represent values of $\tau$ attained from the conventional approach whereas, solid circles $(\bullet)$ show simulated values of $\tau$ using the proposed model.}
+\label{Fig:5.8}
+\end{figure}
+
+Figure \ref{Fig:5.9} represents $g_{m}$ of a submicron SiC MESFET. The plot is achieved using Eqns. \ref{Eq:5.6} and \ref{Eq:5.17a}. The conventional model exhibited much higher values of $g_m$ compared to the proposed model. A basic reason, which could be associated with high values of $g_m$ attained from the conventional model is, non consideration of self heating effects or/and high transverse electric field \cite{Rao2015}. Both of these variables reduce the effectiveness of Schottky barrier gate action, which defines $g_m$. On the other hand, involving $I_{ds}$ in $g_m$ definition, as given by Eq. \ref{Eq:5.17a}, implies that channel conditions, which eventually control the device $g_m$, are taken into consideration. Therefore, the proposed model response is more representative to that of the actual device response and the same is supported by the fact that at $V_{ds}=40$V and $V_{gs}=0$V, the observed response is 11.1mS whereas, the evaluated response using the proposed and the conventional models are 11.9mS and 36.30mS, respectively. This clearly shows that the accuracy of the proposed model is much higher than the conventional model in predicting $g_m$ of a submicron SiC MESFET.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_9.pdf}
+\caption{AC transconducatnce, $g_{m}$ of a 0.4$\mu$m SiC MESFET. Open circles $(\circ)$ represent values of $g_{m}$ attained from the conventional approach whereas, solid circles $(\bullet)$ show simulated values of $g_{m}$ using the proposed model.}
+\label{Fig:5.9}
+\end{figure}
+
+Channel resistance, $R_i$ and its variation as a function of $V_{gs}$ and $V_{ds}$ is shown in Fig. \ref{Eq:5.10}. Values of $R_i$ given by the conventional model are negative indicating breakdown of Eq. \ref{Eq:5.8}. However, $R_i(V_{ds},V_{gs})$ variation offered by the proposed model presents a quite convincing profile. The observed difference between two models can easily be figured out by comparing Eq. \ref{Eq:5.8} and Eq. \ref{Eq:5.19}. In Eq. \ref{Eq:5.8}, $I_{ch}$ is used in evaluating $R_i$ while in the subsequent case, $I_{ds}$ has been employed. Since $I_{ch}$ is determined by $a-h(x)$ and $h(x)$, in the given situation, gives an over estimation as explained before therefore, the predicted values of $R_i$, are negative, which could not be possible. These results clearly demonstrate limitations pertaining to the conventional model applicability on SiC MESFETs.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_10.pdf}
+\caption{Channel resistance, $R_i$ of a 0.4$\mu$m SiC MESFET. Open circles ($\circ$) represent values of $R_i$ attained from the conventional approach whereas, solid circles ($\bullet$) show simulated values of $R_i$ using the proposed model.}
+\label{Fig:5.10}
+\end{figure}
+
+Unity gain frequency, $f_T$ is an important feature, which determines the AC response of a SiC MESFET \cite{Jia-f2015}. $f_T$ of a submicron SiC MESFET as a function of $V_{gs}$ and $V_{ds}$ is shown in Fig. \ref{Fig:5.11}. Once again, the values predicted by the conventional model are substantially different than what is received from the proposed model especially, at higher gate biasing, i.e. $V_{gs}=-8$V. Experimentally achieved value of $f_T$ at $V_{gs}=0$V and $V_{ds}=40$V is 10.2GHz and for the same biasing, the evaluated values of $f_T$ are 13.63GHz and 9.97GHz for the conventional and the proposed models, respectively. An important feature observed from Fig. \ref{Fig:5.11} is the change in the magnitude of $f_T$ by changing $V_{gs}$. There is a nominal change in the values of $f_T$ by changing $V_{gs}=0$V to $V_{gs}=-8$V. This is so because, in the proposed model, the changed channel conditions caused by the self heating have been adjusted by $I_{ds}$, which is experimentally corrected to a reasonable accuracy.
+
+\begin{figure}[t]
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_11.pdf}
+\caption{Unity gain frequency, $f_T$ of a 0.4$\mu$m SiC MESFET. Open circles $(\circ)$ represent values of $f_T$ attained from the conventional approach whereas, solid circles $(\bullet)$ show simulated values of $f_T$ using the proposed model.}
+\label{Fig:5.11}
+\end{figure}
+
+Figure \ref{Fig:5.12} represents variation in output resistance, $r_0$ as a function of $V_{ds}$. An interesting point, which is exhibited by the plot is that both the models are showing a similar increasing trend in $r_0$ values by increasing $V_{ds}$; however, the conventional model predicted a linear increase; whereas, the proposed model predicted a non-linear increase in the values of $r_0$. It is also worth noticing that the non-linear increase, as demonstrated by the proposed model, has two distinct regions. A region defined by $V_{ds}=0$V to $V_{ds}\approx17$V followed by a region from $V_{ds}\approx17$V to $V_{ds}=40$V. The $1$\textsuperscript{st} region is concaved upward whereas, $2$\textsuperscript{nd} region is concaved downward. If we assume that scattering of carriers to the buffer layer is nominal \cite{Mukherjee2004, Huang1998}, then magnitude of $r_0$ is primarily controlled by the Schottky barrier depletion layer. As is known that changing $V_{ds}$ changes Schottky barrier depletion layer in a non-linear fashion which is precisely evident from ($\bullet$) plot of Fig. \ref{Fig:5.12}, which as expected, saturates at high $V_{ds}$ potential. Thus, a non-linear increase with concave upward profile represents $1$\textsuperscript{st} region and then a non-linear saturation with concave downward profile represents $2$\textsuperscript{nd} region of operation. It is assumed that in $1$\textsuperscript{st} region of operation, horizonal electric field dominates whereas, in $2$\textsuperscript{nd} region of operation, transverse electric field dominates causing inversion of $r_0$ profile from concave upward to concave downward.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig5_12.pdf}
+\caption{Output resistance, $r_0$ of a 0.4$\mu$m SiC MESFET. Open circles $(\circ)$ represent values of $r_0$ attained from the conventional approach whereas, solid circles $(\bullet)$ show simulated values of $r_0$ using the proposed model.}
+\label{Fig:5.12}
+\end{figure}
+
+Table \ref{Tab:5.5} summarises intrinsic small signal parameters of a submicron SiC MESFET evaluated using the conventional as well as the proposed models along with experimentally reported data \cite{Andersson2006}. Examination of the table clearly revealed that values of intrinsic small signal parameters assessed using the proposed model are far better and closer to experimentally achieved values than what is predicted by the conventional model. The fundamental reason of better accuracy of the proposed model is that the modification in Schottky barrier depletion layer caused by the vertical electric field and self heating has been incorporated in the proposed model by involving $I_{ds}$ of the device, which has been experimentally corrected using Eq. \ref{Eq:5.12} before assessing small signal elements.
+
+\begin{table}
+\centering
+%\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\renewcommand{\tabcolsep}{0.4cm}
+\caption{Shows experimental and evaluated intrinsic small signal parameters of 0.4$\mu$m SiC MESFET.}
+\begin{tabular}{lccc}
+\hline
+Parameters      & Experimental \cite{Andersson2006}     & Conventional     & Proposed \\
+\hline
+$C_{gs}$(fF)    & 164                                   & 202              & 165.6 \\
+$C_{gd}$(fF)    & 24.1                                  & 5.46             & 24.27 \\
+$C_{ds}$(fF)    & 62.3                                  & 69.39            & 56.96 \\
+$g_m$(mS)       & 11.1                                  & 36.30            & 11.90 \\
+$g_{d}$(mS)     & 2.0                                   & 1.676            & 1.790 \\
+$\tau$(ps)      & 8.55                                  & 5.25             & 7.98 \\
+$R_i$($\Omega$) & -                                     & 1.17             & 4.42\\
+$f_T$(GHz)      & 10.2                                  & 13.63            & 9.97 \\
+\hline
+\end{tabular}
+\label{Tab:5.5}
+\end{table}
+
+AC equivalent circuit model of a SiC MESFET is shown in Fig. \ref{Fig:5.13} \cite{Lu2009}. The current source in Fig. \ref{Fig:5.13} is dependent on $V_{gse}$, i.e. the gate voltage drop across $C_{gs}$ capacitor. It has been established before (Fig. \ref{Fig:5.5}) that $C_{gs}$ capacitor is primarily dependent on $V_{gs}$ but, it has variation, though small, because of $V_{ds}$ biasing for a submicron device. Further, the conventional model gives poor estimation of $C_{gs}$ thus, the voltage dependent source of the circuit (Fig. \ref{Fig:5.13}), when used for submicron SiC MESFET, requires a new definition, because of the Schottky barrier depletion layer modification due to intense transverse electric field and/or self-heating effects. It is proposed that the current source should have a combined dependence as $I_{ds}=g_{m}V_{gse}(\alpha V_{dse})$ where, $\alpha$ is an adjustment variable.
+
+To accommodate $V_{ds}$ dependence in the current source of the circuit shown in Fig. \ref{Fig:5.13}, it is proposed that variable $h_0$ of Eq. \ref{Eq:5.6} should be replaced with $h(x)$, which is defined by Eq. \ref{Eq:5.10}. Considering the reduction in $\upsilon_s$ as $1.4\times10^7$cm/s and replacing $h_0$ with $h(x)$, in Eq. \ref{Eq:5.10}, the value of $g_m$ evaluated at $V_{ds}=40$V and $V_{gs}=0$V is found to be 12.0mS, which is very close to the the actual value given in Table \ref{Tab:5.5}.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=3.5in]{ThesisFigs/Fig5_13.pdf}
+\caption{AC equivalent circuit of a SiC MESFET.}
+\label{Fig:5.13}
+\end{figure}
+
+\section{Summary}
+
+In this chapter, a technique has been developed to assess intrinsic small signal parameters of submicron SiC MESFETs. Self heating effects coupled with a high transverse electric field cause depletion layer modification of Schottky barrier gate especially, when channel length is reduced to submicron regime. It has been shown that conventional expressions used to assess FET devices, meant for low voltage operation, lose their accuracy to predict small signal elements of a microwave SiC MESFET. It has been demonstrated that intense channel conditions of a SiC MESFET can be accommodated in a modeling process, if drain-to-source current, $I_{ds}$, which is determined by the available channel, $a-h(x)$ of the device is first modeled by using an appropriate $I_{ds}$ expression. The accuracy of $I_{ds}$ is achieved by comparing it with experimental data. Subsequently intrinsic small signal expressions are then developed by involving $I_{ds}$ instead of Schottky barrier depletion layer expression, which is conventionally employed to assess the device small signal parameters. Following the same concept, a set of expressions has been developed and its validity for assessing small signal elements of SiC MESFETs has been demonstrated. It has been shown that the developed technique is considerably better in assessing small signal elements of a high voltage FET compared to the conventional technique. 

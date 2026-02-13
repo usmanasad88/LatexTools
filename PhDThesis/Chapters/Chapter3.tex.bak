@@ -1,0 +1,634 @@
+\chapter{Analytical Model for Submicron SiC MESFETs}
+
+\section{Introduction}
+
+SiC offers low intrinsic carrier concentration, larger band gap than Si, a high avalanche break down electric field, and high electron saturation velocity \cite{mahabadi2015}. Thus, for high power applications SiC MESFETs are preferred than GaAs MESFETs. Current-Voltage ($I-V$) characteristics of a SiC MESFET is the primary evaluation used to assess the quality of a device. Because of wide band gap and high thermal conductivity, SiC devices can handle relatively higher power than GaAs/AlGaAs based FETs and are usually subjected to harsh environmental conditions. Moreover, in order to allow these devices to operate at microwave frequencies, it is mandatory that gate length, $L_g$ of the device should be in submicron regime \cite{Ahmed2003,Riaz2016}. However, a submicron $L_g$ device requires stringent fabrication constraints and, thus, non-uniformities in the device characteristics are commonly witnessed \cite{Ahmed1998}. Like other MESFETs, submicron SiC MESFETs also exhibit short channel effects which include \cite{Ahmed1995,Ahmed1997,Saremi2012}:
+\begin{enumerate}
+\item high output conductance in the saturation region of operation;
+\item compression in its transconductance and
+\item shift in pinch-off voltage
+\end{enumerate}
+Short channel effects are classified as second order effects in their nature, imposing additional challenges to engineers and scientists involved in the device modeling; whereby, making the device's analytical modeling a more demanding and cumbersome task.
+
+This chapter discusses in detail the analytical modeling techniques of submicron SiC MESFETs. In the fist part of the chapter, the mobility of free carriers under a channel electric field is discussed, whilst, the second part of the chapter deals with potential distribution inside the channel. In this section regions have been identified underneath the Schottky barrier gate responsible for the flow of the carriers initially with constant mobility followed by the constant velocity region. In the third part of the chapter, the idea of depletion layer modification has been introduced to achieve improved accuracy in the device modeling, and finally to establish the validity of the proposed idea, modeled and observed $I-V$ characteristics have been presented.
+
+\section{Field Dependent Mobility and Velocity}
+
+\label{sec:1}
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=3in]{ThesisFigs/Fig3_1.pdf}
+\caption{An operating submicron SiC MESFET with three distinct depletion layer regions underneath Schottky barrier gate.}
+\label{Fig:3.1}
+\end{figure}
+
+Consider an operating submicron SiC MESFET, as shown in Fig. \ref{Fig:3.1}, the device is \emph{n}-doped with channel doping $1.7 \times 10^{17}cm^{-3}$. The Schottky barrier gate is placed in recess which defines the desired target current, $I_{dss}$ and pinch-off voltage, $V_P$. The depletion layer underneath the Schottky barrier gate is divided into three regions \cite{Azizi2012}: Region-I is the one where carriers are moving below saturation velocity limit, and the mobility in this region can be taken as constant. Region-II is the region where carriers are moving with saturation velocity ($\upsilon_s$) and drain current of the device, under ideal conditions, becomes independent of drain potential. Region-III represents the extension of the depletion layer towards the drain side of the device. This region defines the maximum electric field of the device and, thus, is responsible for its breakdown.
+
+It is an established fact that doping dependent mobility, $\mu_0$ follows a Fermi-Dirac profile and can be expressed as \cite{Caughey1967,Mnatsakanov2002}
+\begin{equation}
+\label{Eq:3.1}
+\mu_0={\mu }_{\mathrm{min}}+\frac{{\mu }_{\mathrm{max}}-{\mu }_{\mathrm{min}}}{1+{\left(N_d/N_r\right)}^{\alpha }}~,
+\end{equation}
+where $\mu_{min}$ and $\mu_{max}$ are the minimum and maximum mobilities, respectively. $N_d$ is the doping concentration. $N_r$ and $\alpha$ represent empirical constants. Field dependent mobility, $\mu(E)$ can be expressed as \cite{Lu2009}
+\begin{equation}
+\label{Eq:3.2}
+\mu(E)=\frac{{\mu }_0}{{\left[1+{\left(\mu_0E(x)/\upsilon_s\right)}^{\beta }\right]}^{{1}/{\beta }}}~,
+\end{equation}
+where $\beta$ is a constant having value $\leqslant$ 1 and $\upsilon_s$ represents saturation velocity. By using \eqref{Eq:3.2} one can write the field dependent velocity, $\upsilon(E)$ of carriers moving in a SiC MESFET channel as \cite{Khan2000}
+\begin{equation}
+\label{Eq:3.3}
+v(E)=\frac{{\mu }_0E(x)}{{\left[1+{\left(\mu_0E(x)/\upsilon_s\right)}^{\beta }\right]}^{{1}/{\beta }}}~.
+\end{equation}
+
+\begin{table}
+\centering
+%\footnotesize
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabcolsep}{0.5cm}
+\caption{Data used for simulation of Fig. \ref{Fig:3.2}}
+\begin{tabular}{l|l}
+\hline
+\textbf{Parameters} & \textbf{Values}\\
+\hline
+$\mu_{min}$ &40 cm${^2}$/V-s\\
+%\hline
+$\mu_{max}$ &950 cm${^2}$/V-s\\
+%\hline
+$N_{ref}$ &1 $\times$ 10$^{17}$ cm$^{-3}$\\
+%\hline
+$N_{d}$ &1.7 $\times$ 10$^{17}$ cm$^{-3}$\\
+%\hline
+$\alpha$ &2.6\\
+\hline
+\end{tabular}
+\label{Tab:3.1}
+\end{table}
+
+Figure \ref{Fig:3.2}(a) demonstrates the $\beta$ dependent $\mu(E)$ for a SiC device; whereas, Fig. \ref{Fig:3.2}(b) illustrates dependence of $\upsilon(E)$ on the chosen values of $\beta$ as given in \eqref{Eq:3.2}. The simulated values of both $\upsilon(E)$ and $\mu(E)$ are identical to those which are reported in the literature for SiC devices \cite{Mnatsakanov2002,Lv2004,Bertilsson2001,Roschke2001}.
+
+Figure \ref{Fig:3.2} was plotted by using the data given in Table \ref{Tab:3.1}. Plots of Fig. \ref{Fig:3.2} show that by considering the material quality, device geometry and biasing conditions, $\alpha$, $\beta$ and $N_r$ can be chosen appropriately to achieve a reasonable match between modeled and experimental characteristics of SiC MESFETs.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=6.5in]{ThesisFigs/Fig3_2.pdf}
+\caption{Field dependent (a) mobility and (b) velocity of a SiC MESFET.}
+\label{Fig:3.2}
+\end{figure}
+
+\section{Potential Distribution Inside the Channel}
+
+Consider Fig. \ref{Fig:3.1}, at $V_{ds}$ $>$ 0V, the drain current density, $J_d$ inside SiC MESFET channel is given by $J_d = qN_d{\upsilon}$, where $\upsilon$ is the low field velocity. The channel current can be defined as \cite{Ladbrooke1989}
+\begin{equation}
+\label{Eq:3.4}
+I_d=qN_d{\upsilon}W\left[a-h_x\right]~,
+\end{equation}
+where $W[a-h_x]$ is the available channel cross-section for the flow of current as shown in Fig. \ref{Fig:3.1}, $q$ is the electronic charge, $a$ represents epi-layer thickness and $h_x$ represents depletion layer height at any point $x$. For low field regions, $\beta$ can be substituted as unity in \eqref{Eq:3.3} and combining it with \eqref{Eq:3.4} yields
+\begin{equation}
+\label{Eq:3.5}
+I_d=qN_d\left(\frac{{\mu }_0E\left(x\right)}{1+\left[{\mu }_0E\left(x\right)/\upsilon_s\right]}\right)W\left(a-h_x\right)~.
+\end{equation}
+or
+\begin{equation}
+\label{Eq:3.7}
+I_d\left(1+\frac{{\mu }_0}{\upsilon_s}\frac{dV\left(x\right)}{dx}\right)=qN_d{\mu }_0W\frac{dV\left(x\right)}{dx}\left(a-h_x\right)~.
+\end{equation}
+Since depletion height underneath the Schottky barrier gate at point $x$ is given by \cite{Ladbrooke1989},
+\begin{equation}
+\label{Eq:3.8}
+{h^2_x}=\frac{2{\varepsilon}_s}{qN_d}\left[V\left(x\right)-V_g+V_{bi}\right]~,
+\end{equation}
+where $\varepsilon_s$ is the permittivity of SiC, $V_g$ is the gate biasing, $V_x$ is the potential at any point $x$ because of the drain biasing and $V_{bi}$ is the built-in potential. From the above expression, $2h_x dh_x = [2\varepsilon_s/qN_d]dV(x)$ and substituting the same in \eqref{Eq:3.7} gives
+\begin{equation}
+\label{Eq:3.9}
+\begin{aligned}
+I_d\left(dx+\frac{{\mu }_0}{\upsilon_s}\frac{qN_d}{{\varepsilon}_s}h_xdh_x\right)
+=qN_d{\mu}_0W\frac{qN_d}{{\varepsilon }_s}h_x\left(a-h_x\right)dh_x~.
+\end{aligned}
+\end{equation}
+Integrating both sides with appropriate limits as per the geometry of Fig. \ref{Fig:3.1}:
+\begin{equation}
+\label{Eq:3.10}
+\begin{aligned}
+I_d\left(\int^{L_g}_0{dx}+\frac{qN_d{\mu }_0}{\upsilon_s{\varepsilon }_s}\int^{h_d}_{h_0}{h_xdh_x}\right)=\frac{\left(qN_d\right)^2 \mu_0W}{\varepsilon_s}\int^{h_d}_{h_0}{h_x\left(a-h_x\right)dh_x}~.
+\end{aligned}
+\end{equation}
+or
+\begin{equation}
+\label{Eq:3.11}
+\begin{aligned}
+I_d\left[L_g+\frac{qN_d{\mu }_0a^2}{2v_s{\varepsilon }_s}\left(\frac{h^2_d}{a^2}-\frac{h^2_0}{a^2}\right)\right]=\frac{{\left(qN_d\right)}^2{\mu }_0W}{6{\varepsilon }_s}a^3\ \left[3\left(\frac{h^2_d}{a^2}-\frac{h^2_0}{a^2}\right)-2\left(\frac{h^3_d}{a^3}-\frac{h^3_0}{a^3}\right)\right]~.
+\end{aligned}
+\end{equation}
+The normalized depletion layer width, by using \eqref{Eq:3.8} at source, $u_0$ and drain, $u_d$ edges of the gate can be expressed respectively as,
+\begin{equation}
+\label{Eq:3.12}
+u_0=\frac{h_0}{a}=\frac{1}{a}\sqrt{\frac{2{\varepsilon }_s\left[V_{bi}-V_g\right]}{qN_d}}~.
+\end{equation}
+and
+\begin{equation}
+\label{Eq:3.13}
+u_d=\frac{h_d}{a}=\frac{1}{a}\sqrt{\frac{2{\varepsilon }_s\left[V_{bi}-V_g+V_d\right]}{qN_d}}~.
+\end{equation}
+Consider a submicron SiC MESFET whose device variables are defined in Table \ref{Tab:3.2}. For this device the depletion layer height, before the onset of current saturation, has been plotted by using \eqref{Eq:3.13} and shown in Fig. \ref{Fig:3.3}. It is obvious from the figure that with increasing magnitude of $V_g$, the depletion layer terminates at lower $V_d$ values because, it is linked with saturation drain voltage, $V_{d(sat)}$, which itself is dependent on $V_g$. Since the depletion layer is normalized with physical channel thickness ($a$), its value below unity indicates that for given $V_g$ biasing, a finite thickness of physical channel is still available for the conduction of current. Thus, current saturation in submicron SiC MESFET is caused by the velocity saturation of the carriers contrary to long channel devices where current saturation is associated with the channel pinch-off \cite{Ladbrooke1989}. Substituting $u_0$ and $u_d$ from \eqref{Eq:3.12} and \eqref{Eq:3.13} in Eqn. \eqref{Eq:3.11} and rearranging for $I_d$, we get
+
+\begin{table}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabcolsep}{0.25cm}
+\caption{Physical parameters of a submicron SiC MESFET.}
+\begin{tabular}{llll}
+\hline
+\textbf{Parameters} & \textbf{Value}   & \textbf{Parameters} & \textbf{Value} \\
+\hline
+$\varepsilon_0$ &8.85 $\times$ 10$^{-12}$ Fm$^{-1}$  &$V_{bi}$  &1.1eV\\
+%\hline
+$\varepsilon_s$ &9.7$\varepsilon_0$ Fm$^{-1}$ & $\gamma$ & 0.98 \\
+%\hline
+$\upsilon_s$  & 2 $\times$ 10$^{7}$ cms$^{-1}$  & $a$  & 0.26 $\mu$m\\
+%\hline
+ $L_s$ & 0.3 $\mu$m & $L_g$  & 0.7 $\mu$m\\
+%\hline
+$\beta$ & 0.87  & $L_d$  & 0.8 $\mu$m\\
+%\hline
+$N_{d}$ & 1.7 $\times$ 10$^{17}$ cm$^{-3}$ & $W$  & 332 $\mu$m \\
+%\hline
+$q$  & 1.6 $\times$ 10$^{-19}$ C  & $R_b$  & 2 k$\Omega$\\
+\hline
+\end{tabular}
+\label{Tab:3.2}
+\end{table}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig3_3.pdf}
+\caption{Variation in Schottky barrier depletion before the onset of current saturation for a submicron SiC MESFET.}
+\label{Fig:3.3}
+\end{figure}
+
+\begin{equation}
+\label{Eq:3.14}
+I_{d(\text{linear})}=\frac{I_p\left[3\left(u^2_{d}-u^2_{0}\right)-2\left(u^3_d-u^3_0\right)\right]}{1+z\left(u^2_d-u^2_0\right)}~,
+\end{equation}
+where
+\begin{equation}
+\label{Eq:3.15}
+z=\frac{qN_da^2{\mu }_0}{2{\varepsilon }_sL_g{\upsilon}_s}~.
+\end{equation}
+and
+\begin{equation}
+\label{Eq:3.16}
+I_p = \frac{q^2N_d^{2}\mu_0Wa^3}{6\varepsilon_sL_g}~.
+\end{equation}
+From \eqref{Eq:3.3} one can write
+\begin{equation}
+\label{Eq:3.17}
+\frac{\upsilon(E)}{\mu_0}=\frac{E(x)}{\left(1+\left[\mu_0E(x)/\upsilon_s\right]\right)}~.
+\end{equation}
+When $E(x)$ reaches to saturation field, $E_s$, $\upsilon(E)$ reaches to $\gamma\upsilon_s$ \cite{Zhu2006}, therefore
+\begin{equation}
+\label{Eq:3.18}
+\begin{aligned}
+&\frac{\gamma\upsilon_s}{\mu_0} = \frac{E_s}{1+\gamma\upsilon_s/\upsilon_s} = \frac{E_s}{1+\gamma}\\
+\\
+&E_s =\frac{(1+\gamma)\gamma\upsilon_s}{\mu_0}\approx \frac{2\gamma\upsilon_s}{\mu_0}~,
+\end{aligned}
+\end{equation}
+where $\gamma$ $\sim$ 0.98. Assuming that current saturation in a SiC microwave MESFET is due to the velocity saturation which is attained by the carriers at a location underneath the Schottky barrier gate where the depletion thickness is represented by $h_1$, then \eqref{Eq:3.4} can be rewritten as
+\begin{equation}
+\label{Eq:3.19}
+I_{d\left(\mathrm{sat}\right)}=qN_dW\gamma\upsilon_s\left(a-h_1\right)=qN_dWa\gamma\upsilon_s\left(1-\frac{h_1}{a}\right)~.
+\end{equation}
+\begin{equation}
+\label{Eq:3.20}
+I_{d\left(\mathrm{sat}\right)}=qN_dWa\gamma\upsilon_s\left(1-u_1\right)~.
+\end{equation}
+where $u_1$ is normalized depletion under which the carrier are moving with saturation velocity at $x = L_1$ wherein, $V\left(x\right) = V\left(L_{1}\right) = V_{sat}$ and $h_{x} = h_{1}$. Hence $u_1$ is obtained simply by replacing $u_d$ by $u_1$, $h_d$ by $h_1$ and $V_{d}$ by $V\left(L_{1}\right)$ in \eqref{Eq:3.13} as under
+\begin{equation}
+\label{Eq:3.13a}
+u_1=\frac{h_1}{a}=\frac{1}{a}\sqrt{\frac{2{\varepsilon }_s\left[V_{bi}-V_g+V\left( L_{1}\right) \right]}{qN_d}}~.
+\end{equation}
+The start of $u_1$, according to Fig. \ref{Fig:3.1}, is at the boundary of $L_1$. Thus, potential drop by using \eqref{Eq:3.13a} for the region defined by $L_1$, referred to as Region-I, is given by
+\begin{equation}
+\label{Eq:3.21}
+V(L_1) = u_1^2V_p-V_{bi}+V_g = V_{d\text{(sat)}}~,
+\end{equation}
+where
+\begin{equation}
+\label{Eq:3.22}
+V_p = \frac{qN_d}{2\varepsilon_s}a^2~.
+\end{equation}
+or
+\begin{equation}
+\label{Eq:3.23}
+V(L_1) = V_p\left(u_1^2-u_0^2\right)~.
+\end{equation}
+Assuming that the current in Region-I is represented by $I_c$ then by changing the integration limits of \eqref{Eq:3.10} from 0 to $L_1$ and $h_0$ to $h_1$, one can write
+\begin{equation}
+\label{Eq:3.10a}
+\begin{aligned}
+I_c\left(\int^{L_1}_0{dx}+\frac{qN_d{\mu }_0}{\upsilon_s{\varepsilon }_s}\int^{h_1}_{h_0}{h_xdh_x}\right)=\frac{\left(qN_d\right)^2 \mu_0W}{\varepsilon_s}\int^{h_1}_{h_0}{h_x\left(a-h_x\right)dh_x}~.
+\end{aligned}
+\end{equation}
+or
+\begin{equation}
+\label{Eq:3.11a}
+\begin{aligned}
+I_c\left[L_1+\frac{qN_d{\mu }_0a^2}{2v_s{\varepsilon }_s}\left(\frac{h^2_1}{a^2}-\frac{h^2_0}{a^2}\right)\right]=\frac{{\left(qN_d\right)}^2{\mu }_0W}{6{\varepsilon }_s}a^3\ \left[3\left(\frac{h^2_1}{a^2}-\frac{h^2_0}{a^2}\right)-2\left(\frac{h^3_1}{a^3}-\frac{h^3_0}{a^3}\right)\right]~.
+\end{aligned}
+\end{equation}
+Substituting $u_0$ and $u_1$ in \eqref{Eq:3.11a} as defined in \eqref{Eq:3.12} and \eqref{Eq:3.13a}
+\begin{equation}
+\label{Eq:3.11b}
+\begin{aligned}
+I_c\left[L_1+\frac{qN_d{\mu }_0a^2}{2v_s{\varepsilon }_s}\left(u^2_1-u^2_0\right)\right]=\frac{{\left(qN_d\right)}^2{\mu}_0W}{6{\varepsilon }_s}a^3\ \left[3\left(u^2_1-u^2_0\right)-2\left(u^3_1-u^3_0\right)\right]~.
+\end{aligned}
+\end{equation}
+Using \eqref{Eq:3.15} and \eqref{Eq:3.16}, \eqref{Eq:3.11b} can be written as
+\begin{equation}
+\label{Eq:3.11c}
+\begin{aligned}
+I_c\left[L_1+zL_{g}\left(u^2_1-u^2_0\right)\right]=I_{p}L_{g} \left[3\left(u^2_1-u^2_0\right)-2\left(u^3_1-u^3_0\right)\right]~.
+\end{aligned}
+\end{equation}
+or the channel current in Region-I is \cite{Tsap1995}
+\begin{equation}
+\label{Eq:3.24}
+I_c = \frac{I_p\left(L_g/L_1\right)\left[3(u_1^2-u_0^2)-2(u_1^3-u_0^3)\right]}{1+z(L_g/L_1)(u_1^2-u_0^2)}~.
+\end{equation}
+Since at the end of Region-I or at the start of Region-II, $I_c = I_{d\text{(sat)}}$, therefore, equating \eqref{Eq:3.20} and \eqref{Eq:3.24}
+\begin{equation}
+\label{Eq:3.25}
+\begin{aligned}
+qN_dWa\gamma\upsilon_s\left(1-u_1\right)=\left(\frac{q^2\ N^2_d{\mu}_0Wa^3}{6{\varepsilon }_sL_g}
+\right)\left[\frac{\left(L_g/L_1\right)\left[3\left(u^2_1-u^2_0\right)-2\left(u^3_1-u^3_0\right)\right]}{1+z\left(L_g/L_1\right)\left(u^2_1-u^2_0\right)}\right]~.
+\end{aligned}
+\end{equation}
+Using \eqref{Eq:3.15}, we have the length $L_1$ where the carriers are attaining saturation velocity
+\begin{equation}
+\label{Eq:3.30}
+L_1=L_gz\left[\frac{\left[\left(u^2_1-u^2_0\right)-{2}/{3}\left(u^3_1-u^3_0\right)\right]}
+{\gamma\left(1-u_1\right)}-\left(u^2_1-u^2_0\right)\right]\
+\end{equation}
+To assess the depletion height at $L_1$, let us assume two-dimensional potential distribution inside the channel expressed by the Poisson's expression \cite{Azizi2012,Lakhdar2011,Chang1989,Murray2002}:
+\begin{equation}
+\label{Eq:3.31}
+\frac{{\partial }^2V(x,y)}{\partial x^2}+\frac{{\partial }^2V(x,y)}{\partial y^2}=-\frac{qN_d}{{\varepsilon }_s}~.
+\end{equation}
+Using co-ordinate transformation $x^{'} = x-L_g$, as explained in Fig. \ref{Fig:3.1}, one can define \eqref{Eq:3.31} as a sum of two potentials $W\left(x',y\right) = \xi\left(y\right)+V(x,y)$ such that
+\begin{equation}
+\label{Eq:3.32}
+\frac{d^2\xi}{dy^2}=\frac{qN_d}{{\varepsilon }_s}~.
+\end{equation}
+and
+\begin{equation}
+\label{Eq:3.33}
+\frac{{\partial }^2W(x',y)}{\partial x^2}+\frac{{\partial }^2W(x',y)}{\partial y^2}=0~.
+\end{equation}
+such that
+\begin{equation}
+\label{Eq:3.34}
+W\left(x',y\right)=V\left(x,y\right)+\frac{qN_d}{2{\varepsilon }_s}y^2~.
+\end{equation}
+Equation \eqref{Eq:3.33} can be solved by assuming: a) potential is a continuous function of $(x,y)$ and it diminishes abruptly outside the depletion layer; b) potential at the gate edge is nothing but the applied gate potential or built-in potential if gate biasing is zero and c) the Schottky barrier gate is ideal and the entire gate biasing is consumed in changing the gate depletion layer. A general solution of \eqref{Eq:3.33} is by separation of variables
+\begin{equation}
+\label{Eq:3.38}
+W\left(x',y\right)=(Ae^{kx'}+Be^{-kx'})\times(C{\mathrm{cos} ky\ }+D{\mathrm{sin} ky\ })~,
+\end{equation}
+where $k = \sqrt{\lambda}$. The following is also a solution
+\begin{equation}
+\label{Eq:3.39}
+\begin{split}
+W\left(x',y\right)=\left(Ae^{kx'}+Be^{-kx'}\right)\left(C{\mathrm{cos} ky\ }+D{\mathrm{sin} ky\ }\right)+Ex'y+Fx'+Gy+H~,
+\end{split}
+\end{equation}
+where $A$ to $H$ are constants to be determined by the boundary conditions. At $y$ = 0, potential is $-(V_g+V_{bi})$ and it does not depend on $x'$. This implies that $C$ = 0 and $F$ = 0. Thus, $H = -(V_g+V_{bi})$.
+
+At $L_1$, one can write the potential as $H = -(V_g+V_{bi})$ and the potential caused by the depletion. Hence,
+\begin{equation}
+\label{Eq:3.42}
+V\left(L_1,y\right)=\frac{qN_d}{{\varepsilon }_s}\left[y\left(h_1-\frac{y}{2}\right)\right]-\left(V_g+V_{bi\ }\right)~.
+\end{equation}
+Here it is assumed that the depletion is increasing linearly towards the drain side under gradual channel approximation. Comparing Eqs. \eqref{Eq:3.39} and \eqref{Eq:3.42} at $x'$ = 0, we have
+\begin{equation}
+\label{Eq:3.43}
+\begin{aligned}
+\left(A+B\right)\times D{\mathrm{sin} ky\ }+Gy\ -\left(V_g+V_{bi}\right)=\frac{qN_dyh_1}{{\varepsilon }_s}-\frac{qN_dy^2}{2{\varepsilon }_s}\ -\left(V_g+V_{bi}\right)~.
+\end{aligned}
+\end{equation}
+which gives
+\begin{equation}
+\label{Eq:3.44}
+G=\frac{qN_dh_1}{{\varepsilon }_s}\quad and \quad A=-B~.
+\end{equation}
+\noindent Thus,
+\begin{equation}
+\label{Eq:3.45}
+\begin{aligned}
+W\left(x',y\right)=2AD{\mathrm{sin} h\left(kx'\right){\mathrm{sin} ky+Ex'y\ }\ }+\frac{qN_dh_1y}{{\varepsilon }_s}-\left(V_g+V_{bi}\right)~.
+\end{aligned}
+\end{equation}
+Differentiating \eqref{Eq:3.45}
+\begin{equation}
+\label{Eq:3.46}
+\begin{aligned}
+\left.\frac{\partial }{\partial y}W\left(x',y\right)\right|_{y=h_1}=2AD\sin{h}\left(kx'\right)k\cos{kh_1}+Ex'+\frac{qN_dh_1}{\varepsilon_s}~.
+\end{aligned}
+\end{equation}
+Now consider \eqref{Eq:3.34}
+\begin{equation}
+\label{Eq:3.47}
+\left.\frac{\partial }{\partial y}W\left(x',y\right)\right|_{y=h_1}
+=\left.\frac{\partial }{\partial y}V\left(x',y\right)\right|_{y=h_1}+\frac{qN_dh_1}{\varepsilon_s}~.
+\end{equation}
+At the edges of depletion, i.e., $y = h_1$
+\begin{equation}
+\label{Eq:3.48}
+\frac{\partial V\left(x,y\right)}{\partial y}=0~.
+\end{equation}
+Comparing Eqs. \eqref{Eq:3.46} and \eqref{Eq:3.47}
+\begin{equation}
+\label{Eq:3.49}
+2ADk{\mathrm{sin} h\left(kx'\right){\mathrm{cos} kh_1+Ex'+\frac{qN_dh_1}{{\varepsilon }_s}=\frac{qN_dh_1}{{\varepsilon }_s}}}~.
+\end{equation}
+Since, the above expression holds for all $x'$, therefore, $E$ = 0 and $k = (\pi/2h_1)$. Now, one can write \eqref{Eq:3.45}
+\begin{equation}
+\label{Eq:3.50}
+\begin{aligned}
+W\left(x',y\right)=2AD{\mathrm{sin} h\left(\frac{\pi x'}{2h_1}\right)\ }{\mathrm{sin} \left(\frac{\pi y}{2h_1}\right)}+{\frac{qN_dh_1y}{{\varepsilon }_s}-\left(V_g+V_{bi}\right)}~.
+\end{aligned}
+\end{equation}
+If we assume that $E$ changes to $E_s$ at $x = L_g$ or $x'$ = 0, then,
+\begin{equation}
+\label{Eq:3.51}
+\frac{\partial}{\partial x'}W\left(x', y\right)=2AD{\mathrm{cosh} \left(\frac{\pi x'}{2h_1}\right){\times \frac{\pi }{2h_1}\mathrm{\times sin} \left(\frac{\pi y}{2h_1}\right)}}~.
+\end{equation}
+\begin{equation}
+\label{Eq:3.52}
+{\left.\frac{\partial W\left(x',y\right)}{\partial x'}\right|}_{x'=0}=AD\frac{\pi }{h_1}{\mathrm{sin} \left(\frac{\pi y}{2h_1}\right)}~.
+\end{equation}
+Equation \eqref{Eq:3.52} represents a field, which is $E_s$, thus
+\begin{equation}
+\label{Eq:3.53}
+E_s=-AD\frac{\pi }{h_1}{\mathrm{sin} \left(\frac{\pi y}{2h_1}\right)}~.
+\end{equation}
+At the boundaries of depletion, i.e., $y = h_1$ leads to
+\begin{equation}
+\label{Eq:3.54}
+AD=\frac{E_sh_1}{\pi}~.
+\end{equation}
+Now from \eqref{Eq:3.34}
+\begin{equation}
+\label{Eq:3.55}
+V\left(x,y\right)=W\left(x',y\right)-\frac{qN_dy^2}{2{\varepsilon }_s}~.
+\end{equation}
+Combining Eqs. \eqref{Eq:3.50}, \eqref{Eq:3.54}, \eqref{Eq:3.55} and using $x' = L_1-L_g$ we have
+\begin{equation}
+\label{Eq:3.56}
+\begin{aligned}
+V\left(x,y\right)=\frac{2E_sh_1}{\pi }{\mathrm{sinh} \left[\frac{\pi \left(L_g-L_1\right)}{2h_1}\right]{\mathrm{sin} \left(\frac{\pi y}{2h_1}\right)}}
++{{\frac{qN_dh_1y}{{\varepsilon }_s}-\frac{qN_dy^2}{{2\varepsilon }_s}-(V_g+V_{bi})}}~.
+\end{aligned}
+\end{equation}
+Towards the drain side at $x = L_g$ and $y = h_1$, one can have
+\begin{equation}
+\label{Eq:3.57}
+\begin{aligned}
+V\left(L_g,h_1\right)=\frac{2E_sh_1}{\pi }{\mathrm{sinh} \left[\frac{\pi \left(L_g-L_1\right)}{2h_1}\right]\ }
++\frac{qN_dh^2_1}{{2\varepsilon }_s}-\left(V_g+V_{bi}\right)~.
+\end{aligned}
+\end{equation}
+Since $h_1 = au_1$ and maximum value of $x = L_g$, therefore, \eqref{Eq:3.57} can also be written as
+\begin{equation}
+\label{Eq:3.58}
+V\left(L_g,h_1\right)=\frac{2E_s{au}_1}{\pi }{\mathrm{sinh} \left[\frac{\pi \left(L_g-L_1\right)}{2h_1}\right]\ }+V_Pu^2_1-\left(V_g+V_{bi}\right)~.
+\end{equation}
+But $\left(V_g+V_{bi}\right) = V_Pu_0^2$, therefore,
+\begin{equation}
+\label{Eq:3.59}
+V\left(L_g, h_1\right)=V_P\left(u^2_1-u^2_0\right)+\frac{2E_sau_1}{\pi }{\mathrm{sinh} \left[\frac{\pi \left(L_g-L_1\right)}{2au_1}\right]\ \ }~.
+\end{equation}
+In \eqref{Eq:3.59}, $V_P (u_1^2-u_0^2)$ represents the potential in Region-I, where carriers are moving below saturation velocity; whereas, the second term of \eqref{Eq:3.59} represents potential drop in Region-II, as shown in Fig. \ref{Fig:3.1}, where carriers are moving with saturation velocity thus, for $L_2 = L_g-L_1$
+\begin{equation}
+\label{Eq:3.60}
+V(L_2) = \frac{2E_sau_1}{\pi}\mathrm{sinh}\left[\frac{\pi L_2}{2au_1}\right]~.
+\end{equation}
+In Region-III, there is no gate biasing and the potential of Region-II will decay exponentially as a function of $x$. Let us assume that in Region-III, the depletion height is represented by $h_1$, as that of Region-II, which approaches to an insignificant value after distance $L_3$. Under these assumptions, Region-III potential can be approximated as
+\begin{equation}
+\label{Eq:3.61}
+V(L_3) \approx \frac{2E_sau_1}{\pi}\mathrm{sinh}\left[\frac{\pi L_3}{2au_1}\right] \approx \frac{2E_sau_1}{\pi}\mathrm{sinh}\left[\frac{\pi L_g}{8au_1}\right]~,
+\end{equation}
+where $L_3$ represents the width of Region-III, which for submicron devices can be written as $L_3 \sim L_g/4$ \cite{Ladbrooke1989,Enoki1990}. Now the potential distribution inside the channel of a SiC MESFET can be summarized as
+\begin{equation}
+\label{Eq:3.62}
+V(L_1)+ V(L_2)+V(L_3) = V_d~.
+\end{equation}
+or
+\begin{equation}
+\label{Eq:3.63}
+\begin{aligned}
+V_P\left(u_1^2-u_0^2\right)+\frac{2E_sau_1}{\pi}\mathrm{sinh}\left[\frac{\pi\left(L_g-L_1\right)}{2au_1}\right]+
+\frac{2E_sau_1}{\pi}\mathrm{sinh}\left[\frac{\pi L_g}{8au_1}\right] = V_d~.
+\end{aligned}
+\end{equation}
+To solve \eqref{Eq:3.63} for $u_1$, after making substitution for $L_1$ from \eqref{Eq:3.30}, we define a function $f(u_1)$ as
+\begin{equation}
+\label{Eq:3.64}
+\begin{aligned}
+&f\left(u_1\right)=V_P\left(u^2_1-u^2_0\right)+\left(\frac{2E_sau_1}{\pi }\right)\\
+\\
+&\mathrm{sinh}\left[\left(\frac{\pi L_g}{2au_1}\right)-\left(\frac{\pi L_gz}{2au_1}\right)\frac{\left(u^2_1-u^2_0\right)-\left(2/3\right)\left(u^3_1-u^3_0\right)}{\gamma \left(1-u_1\right)-\left(u^2_1-u^2_0\right)}\right]\\
+\\
+&+\left[\frac{2E_sau_1}{\pi}\mathrm{sinh}\left(\frac{\pi L_g}{8au_1}\right)\right]-V_d = 0~.
+\end{aligned}
+\end{equation}
+Consider $f(u_1) = f_1+f_2$ such that
+\begin{equation}
+\label{Eq:3.65}
+f_1 = V_P(u_1^2-u_0^2)+\left[\frac{2E_sau_1}{\pi}\mathrm{sinh}\left(\frac{\pi L_g}{8au_1}\right)\right]~.
+\end{equation}
+and
+\begin{equation}
+\label{Eq:3.66}
+Df_1 = 2V_Pu_1+\left(\frac{2E_sa}{\pi}\right)\mathrm{sinh}\left(\frac{\pi L_g}{8au_1}\right)+\frac{2E_sau_1}{\pi}
+\mathrm{cosh}\left(\frac{\pi L_g}{8au_1}\right)\left(\frac{-\pi L_g}{8au_1}\right)~.
+\end{equation}
+also
+\begin{equation}
+\label{Eq:3.67}
+f_2 = \left(\frac{2E_sau_1}{\pi}\right)\mathrm{sinh}\left[\left(\frac{\pi L_g}{2au_1}\right)-
+\left(\frac{\pi L_gz}{2au_1}\right)\frac{(u_1^2-u_0^2)-2/3(u_1^3-u_0^3)}{\gamma(1-u_1)-(u_1^2-u_0^2)}\right]~.
+\end{equation}
+and
+\begin{equation}
+\label{Eq:3.68}
+%\begin{split}
+\begin{aligned}
+Df_2 &= \left(\frac{2E_sa}{\pi}\right)\mathrm{sinh}\left[\left(\frac{\pi L_g}{2au_1}\right)-
+\left(\frac{\pi L_gz}{2au_1}\right)\frac{(u_1^2-u_0^2)-2/3(u_1^3-u_0^3)}{\gamma(1-u_1)-(u_1^2-u_0^2)}\right]+\left(\frac{2E_sau_1}{\pi}\right)\\
+\\
+&\times \mathrm{cosh}\left[\left(\frac{\pi L_g}{2au_1}\right)-\left(\frac{\pi L_gz}{2au_1}\right)\frac{(u_1^2-u_0^2)-2/3(u_1^3-u_0^3)}{\gamma(1-u_1)-(u_1^2-u_0^2)}\right]\times Df_3~,
+%\end{split}
+\end{aligned}
+\end{equation}
+where
+\begin{equation}
+\label{Eq:3.69}
+%\begin{split}
+\begin{aligned}
+&Df_3 = \bigg[\left(\frac{-\pi L_g}{2au_1^2}\right)+\left(\frac{\pi L_gz}{2au_1^2}\right)\left(\frac{(u_1^2-u_0^2)-2/3(u_1^3-u_0^3)}{\gamma(1-u_1)-(u_1^2-u_0^2)}\right)-\left(\frac{\pi L_gz}{2au_1}\right)\\&
+\\
+&\left(\frac{[\gamma(1-u_1)-(u_1^2-u_0^2)].[2u_1-2u_1^2]-[-\gamma-2u_1].[(u_1^2-u_0^2)-2/3(u_1^3-u_0^3)]}
+{[\gamma(1-u_1)-(u_1^3-u_0^3)]^2}\right)\bigg]~.&
+%\end{split}
+\end{aligned}
+\end{equation}
+Now the Newton's iterative method \cite{Chun2005,Wang2015} having definition $u_{(n+1)} = u_n-f(u_n)/Df(u_n)$ can be employed to find $u_1$. This evaluation would be for $V_d \geq V_{d\text{(sat)}}$ and for the devices having short $L_g$ to ensure that the observed current saturation is caused by velocity saturation of the carriers. Thus, the proposed model may not be valid for long-channel devices wherein the current saturation is usually observed after attaining the pinch-off condition. Further, the validity of the proposed model will be limited to the biasing conditions that maintain the device operation prior to the onset of avalanche breakdown.
+
+Figure \ref{Fig:3.4} shows potential accumulation in all the three regions of the device. Figure \ref{Fig:3.4}(a) represents potential drop in Region-I for a SiC submicron MESFET. The figure is plotted using \eqref{Eq:3.23} and it shows a non-uniform variation in between two consecutive curves while changing $V_g$ from 0 to -8V. This can be explained by the nonlinear dependence of $h$ on $V_g$ as evident from \eqref{Eq:3.8}. Also in Fig. \ref{Fig:3.4}(a), the magnitude of the potential in Region-I is decreasing by increasing $V_d$. This can only be possible if $u_1$ of \eqref{Eq:3.23} exhibits a decreasing trend with increasing magnitude of $V_d$. This is because of the fact that with increasing $V_d$ the carriers will attain saturation velocity relatively early thus, reducing the overall length of $L_1$.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=8.5in]{ThesisFigs/Fig3_4.pdf}
+\caption{Depletion layer potential underneath the Schottky barrier gate of a submicron SiC MESFET.}
+\label{Fig:3.4}
+\end{figure}
+
+Figure \ref{Fig:3.4}(b) is attained using \eqref{Eq:3.60} and it represents the potential drop for Region-II, where carriers are moving with saturation velocity, $\upsilon_s$. The examination of the figure shows that by increasing $V_d$, there is a linear increase in potential accumulation in Region-II. The start of the drain voltages in Fig. \ref{Fig:3.4}(b) is after meeting $V_d = V_{d\text{(sat)}}$ condition, and the total magnitude of the potential is dependent upon both $V_d$ and $V_g$. Thus, for a higher magnitude of $V_g$, Region-II will hold more potential after the onset of current saturation, which is evident from Fig. \ref{Fig:3.4}(b).
+
+Assuming that the extension of the depletion layer towards the drain side of a submicron SiC MESFET follows quarter circle approximation \cite{Enoki1990}, i.e., $L_{3} = L_g/4$. One can estimate the potential drop of Region-III by employing \eqref{Eq:3.61} as shown in Figure \ref{Fig:3.4}(c). It is obvious from the figure that there is an enhancement of Region-III potential after the onset of current saturation such that its magnitude is relatively less dependent on the device biasing. For the entire change in $V_d$ and $V_g$, the total observed variation in $V(L_3)\sim 0.5V$. But, the important point to note is that the potential drop in Region-III is $\sim$4V which is a significant value and cannot be neglected in the device modeling.
+
+It is pertinent to mention here that the potential variation with respect to $V_d$, underneath the Schottky barrier gate, is a continuous function for all the three regions discussed hitherto. In Region-I, prior to the velocity saturation, some variation in the magnitude of potential is observed which presumably is due to the drifting of $h_1$ towards the source side with increasing values of $V_d$. Whereas, in Region-II, potential increases linearly till the termination of the region. On the other hand, in Region-III, as evident from Fig. \ref{Fig:3.4}(c), potential variation as a function of $V_d$ is nominal. However, its magnitude is significant, thus, cannot be overlooked in the device modeling.
+
+A two-region analytical model as proposed by Murray et al. \cite{Murray2002} works reasonably well for low current (less than $\sim$10 mA) SiC MESFET. However, it fails for large current devices ($\sim$50 mA or above) which is usually the case for SiC power MESFET. By incorporating the potential drop of Region-III, Zhu et al. \cite{Zhu2006} has modified Murray model and demonstrated its improved performance over two-region model for relatively large current SiC MESFETs. In this study, the performance of the Zhu et al. model is further improved by incorporating the concept of depletion layer modification after the onset of current saturation.
+
+\section{Modeled ${I-V}$ Characteristics}
+\label{sec:2}
+A submicron SiC MEFET with device parameters as listed in Table \ref{Tab:3.2} has been selected \cite{Zhu2006}. A MATLAB code is developed using Eqs. \eqref{Eq:3.14} and \eqref{Eq:3.20} for the conditions shown below.\\
+\begin{equation}
+\label{Eq:69a}
+\begin{aligned}
+&I_{d(\text{linear})}=\frac{I_p\left[3\left(u^2_d-u^2_0\right)-2\left(u^3_d-u^3_0\right)\right]}{1+z\left(u^2_d-u^2_0\right)}	 \;\text{for} \;V_d < V_{d\text{(sat)}}\\
+& \text{and}\\
+&I_{d\left(\mathrm{sat}\right)}=qN_dWa\gamma\upsilon_s\left(1-u_1\right)\;\text{for} \;V_d > V_{d\text{(sat)}}~.\\
+\end{aligned}
+\end{equation}
+In Eqn. \eqref{Eq:69a}, $u_1$ is a constant as defined by the Zhu and Murray models, and the same is evaluated at $V_d = V_{d\text{(sat)}}$. Contrarily our study showed that $u_1$ is a variable, which can be evaluated using Eqn. \eqref{Eq:69a} for $V_d \geq V_{d\text{(sat)}}$ and the evaluated data can subsequently be employed to assess $I_{d\text{(sat)}}$ by involving Eqn. \eqref{Eq:69a}.\\
+
+Further, the effects of parasitic resistances $R_s$, $R_d$ and $R_b$ have been incorporated by using
+\begin{equation}
+\label{Eq:3.70}
+V_{ds} = V_d+I_d(R_s+R_d)~,
+\end{equation}
+where
+\begin{equation}
+\begin{aligned}
+\label{Eq:3.70B}
+&R_s = \frac{L_s}{N_d q \mu a W}+R_c\\
+\\
+& R_d = \frac{(L_d-L_3)}{N_d q \mu a W}+R_c~,
+\end{aligned}
+\end{equation}
+where $L_s$ and $L_d$ represent separation between source-gate and drain-gate respectively, and $R_c$ is the contact resistance. For $\mu = 300 cm^{-2}/{Vs}$, and $R_c \sim1.5\Omega$, the calculated values of $R_s$ and $R_d$ were $5.7\Omega$ and $10.3 \Omega$ respectively. The drain-to-source current, $I_{ds}$ was then evaluated by using
+\begin{equation}
+\label{Eq:3.71}
+I_{ds} = I_d+V_{ds}/R_b~.
+\end{equation}
+and
+\begin{equation}
+\label{Eq:3.72}
+V_{gs} = V_g+I_g(R_s)~.
+\end{equation}
+where for submicron devices $I_g\sim10^{-9}A$ \cite{Ahmed1995} and the buffer layer resistance, $R_b$, was evaluated using background doping as $10^{15} cm^{-3}$ \cite{Ladbrooke1989} and found as $R_b\sim2k\Omega$.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=3.5in]{ThesisFigs/Fig3_5.pdf}
+\caption{Modeled ($-$) and measured ($\bullet$) output characteristics of a submicron SiC MESFET.}
+\label{Fig:3.5}
+\end{figure}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=3.5in]{ThesisFigs/Fig3_6.pdf}
+\caption{Variation in depletion layer after the onset of current saturation in a SiC MESFET.}
+\label{Fig:3.6}
+\end{figure}
+
+Modeled and observed output characteristics of the chosen device are shown in Fig. \ref{Fig:3.5}. It is pertinent to mention here that the modeled output characteristics showed some discrepancies, especially near the pinch-off region. Analytical models as presented in \cite{Zhu2006,Murray2002} assumed that the depletion layer at location $L_1$ remains constant after the onset of current saturation and any increase in the current afterwards, would be associated with buffer layer conductance which has been incorporated in the model by $R_b$. Apart from the buffer layer conductance, our study showed that there is an increase in the potential drop after the onset of current saturation in Region-II, as well as in Region-III as evident from Fig. \ref{Fig:3.4}, which can potentially effect modeled output characteristics of a SiC MESFET.
+
+By involving \eqref{Eq:3.30} and \eqref{Eq:3.63} one can evaluate the behavior of $L_1$ and $u_1$ as a function of applied potential. Fig. \ref{Fig:3.6} shows variation in $u_1$ after the onset of the current saturation. This figure clearly depicts that the depletion layer at the point of saturation does not stay constant after the onset of current saturation; rather, it decreases with increasing values of $V_{ds}$.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=3.5in]{ThesisFigs/Fig3_7.pdf}
+\caption{Shows shifting of saturation length $L_1$ towards source side of the gate after the onset of current saturation in a SiC MESFET.}
+\label{Fig:3.7}
+\end{figure}
+
+Additionally, it is shown in Fig. \ref{Fig:3.7} that the saturation length $L_1$ is dependent on both $V_{ds}$ and $V_{gs}$ of the device. A careful examination of Fig. \ref{Fig:3.7} reveals that for $L_1/L_g >$ 1, carriers are attaining the saturation velocity after traveling the entire Schottky barrier gate, i.e., up to Region-III of the device. By increasing $V_{ds}$, $x$-directed field inside the channel also increases resulting in the shifting of $L_1$ toward Region-II, which brings $L_1/L_g <$ 1. Assuming that the current saturation in a short channel SiC MESFET is due to the velocity saturation of carriers \cite{Zhu2006,Murray2002}, one can conclude that the point where these carriers are attaining saturation velocity is bias dependent, and it shifts towards the source side with increasing magnitude of $V_{ds}$.
+
+Shifting of $L_1$ towards the source side of the depletion as observed in Fig. \ref{Fig:3.7}, can be associated with the fact that by increasing $V_{ds}$ the saturation point is gradually shifting towards the source and $u_1$ is thus decreasing as seen in Fig. \ref{Fig:3.6}. As a result there is an increase in the channel cross-sectional area available for the flow of current as illustrated in Fig. \ref{Fig:3.8}. It has been shown in the figure that with the shifting of saturation point towards the source side of Schottky barrier gate, the channel is slightly widened and the same is represented in the figure by the dotted line. This plausible explanation will lead to an obvious conclusion that finite output conductance in the saturation region of operation, may be associated with depletion layer modification with increasing drain biasing \cite{Ahmed2001}.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=2.5in]{ThesisFigs/Fig3_8.pdf}
+\caption{A crossectional view of an operating SiC MESFET where a dotted line shows reduction in gate depletion layer with increased drain biasing.}
+\label{Fig:3.8}
+\end{figure}
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\includegraphics [width=4in, height=3.5in]{ThesisFigs/Fig3_9.pdf}
+\caption{Output characteristics of a submicron SiC MESFET: measured ($\bullet$) and modeled ($-$) with proposed depletion layer modification technique.}
+\label{Fig:3.9}
+\end{figure}
+
+\begin{table*}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{2.5}
+\renewcommand{\tabcolsep}{0.1cm}
+\caption{Comparison of RMS errors for conventional and proposed modeling technique for the device parameters listed in Table 2.}
+\begin{tabular}{l|lllll|l}
+\hline
+\textbf{Model }& \textbf{$V_{gs}$ = 0V} & \textbf{$V_{gs}$ = -2V} & \textbf{$V_{gs}$ = -4V} & \textbf{$V_{gs}$ = -6V} & \textbf{$V_{gs}$ = -8V }& \textbf{Avr.RMSE} \\
+\hline
+Zhu et al. \cite{Zhu2006} & 12.36$\times$10$^{-3}$ & 9.48$\times$10$^{-3}$ & 5.52$\times$10$^{-3}$ & 3.13$\times$10$^{-3}$ & 5.28$\times$10$^{-3}$ & 7.15$\times$10$^{-3}$\\
+%\hline
+Proposed & 12.36$\times$10$^{-3}$ & 8.57$\times$10$^{-3}$ & 4.60$\times$10$^{-3}$ & 2.87$\times$10$^{-3}$ & 1.67$\times$10$^{-3}$ & 6.01$\times$10$^{-3}$\\
+\hline
+\end{tabular}
+\label{Tab:3.3}
+\end{table*}
+
+By incorporating the depletion layer modification concept as discussed hitherto, the device of Table \ref{Tab:3.2} is again modeled, and the result is shown in Fig. \ref{Fig:3.9}. A visual comparison of Fig. \ref{Fig:3.5} and \ref{Fig:3.9} clearly shows a tangible improvement in the modeled characteristics of Fig. \ref{Fig:3.9}, especially in the saturation region of operation. In Fig. \ref{Fig:3.5} at $V_{gs}\sim$-8V, i.e., near to the pinch-off, there is a relatively higher discrepancy in the observed and modeled characteristics. By looking at Fig. \ref{Fig:3.9} for the same curve ($V_{gs}$ = -8V), one can clearly gather that this discrepancy has been adequately addressed.
+
+\begin{figure}
+\centering
+%\includegraphics [scale=0.5]{3D}
+\subfigure{\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig3_10a.pdf}}
+\subfigure{\includegraphics [width=4.5in, height=4in]{ThesisFigs/Fig3_10b.pdf}}
+\caption{Modeled ($-$) and measured ($\bullet$) (a) output conductance and (b) transconductance of a submicron SiC MESFET.}
+\label{Fig:3.10}
+\end{figure}
+
+Table \ref{Tab:3.3} provides a comparison between the conventional approach and the one which has been adopted in this research. The table presents RMS errors for each $I_{ds}$ curve for the device under discussion. The data of the table clearly demonstrates that the proposed technique offers an improvement in SiC MESFET modeling. From average RMSE values one can calculate that the proposed technique is 15.9\% better than its counterpart.
+
+Figure \ref{Fig:3.10} shows modeled and experimental $g_d$ and $g_m$ of the device under discussion. It can be seen from the figure that the modeled characteristics, in both the cases, follow reasonably well the experimental data. This once again shows the validity of the proposed model to simulate submicron SiC MESFETs characteristics including $g_d$ and $g_m$. It is a well known fact that $g_d$ of a submicron device is the most unpredictable variable and to estimate its value at a given biasing is considered as the tedious part of the device modeling. Figure \ref{Fig:3.10}(a) shows that the proposed technique exhibited a reasonably good agreement between the experimental and the modeled $g_d$ characteristics. Since $g_d$ and $g_m$ characteristics are primarily based upon the output DC characteristics shown in Fig. \ref{Fig:3.9}, which demonstrated the validity of the proposed technique hence, its derivative; represented in the form of $g_d$ and $g_m$ and shown in Figs. \ref{Fig:3.10}(a) and \ref{Fig:3.10}(b), respectively.
+
+\section{Summary}
+
+This chapter presents a detailed mathematical model describing $I-V$ characteristics of submicron SiC MESFETs. Poisson's equation with appropriate boundary conditions has been solved to determine potential distribution inside the channel. Location ($L_1$) of Schottky barrier gate with a corresponding depletion layer width ($u_1$) where the carrier's velocity gets saturated has been evaluated. It has been demonstrated that, both $L_1$ and $u_1$ are biased dependent, and their values are changing by changing drain biasing even after the onset of current saturation. This causes a modification in the depletion layer underneath the Schottky barrier gate and, thus, changes the available channel crossection for the flow of current. It has been shown that finite output conductance in the saturation region of operation, which is usually observed in submicron devices, can be explained with Schottky barrier depletion layer modification.
+
+$I-V$ characteristics of submicron SiC MESFET are modeled and compared with conventional velocity saturation technique, where the depletion layer after the onset of current saturation has been treated as constant. It is observed that the proposed technique gave $\sim$15.9\% improvement in the modeled out characteristics of a submicron SiC MESFET.
+

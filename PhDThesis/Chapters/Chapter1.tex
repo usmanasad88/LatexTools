@@ -1,0 +1,71 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Background}
+\label{sec:background}
+
+The manufacturing landscape is undergoing a significant transformation, moving from the technology-driven paradigm of Industry 4.0 to the value-driven, human-centric principles of Industry 5.0. This evolution emphasizes a synergistic union between human capabilities and robotic systems, fostering collaborative workspaces where people and machines operate in close proximity. This shift is driven by the realization that full automation is not always the most effective solution, especially in high-mix, low-volume (HMLV) production environments that demand flexibility, creativity, and complex problem-solving—qualities inherent to human workers. The concept of Human-Robot Collaboration (HRC) is central to this new era, aiming to combine human ingenuity and dexterity with the precision, repeatability, and strength of robots.
+
+To facilitate this deeper integration, the concept of the Digital Twin (DT)—a virtual replica of a physical asset or system—has been extended to include the human element, leading to the emergence of the Human-Centric Digital Twin (HCDT). An HCDT is a dynamic virtual model of a human operator, integrating data on their physical state, behavior, and even cognitive load. The goal of an HCDT is to create a symbiotic relationship where the robotic system can understand, anticipate, and adapt to the human's needs, enhancing safety, ergonomics, and overall productivity.
+
+Recent advancements in Artificial Intelligence (AI), particularly in computer vision, sensor technology, and machine learning, have provided the foundational tools to build these sophisticated HCDTs. Vision-Language Models (VLMs) and other foundation models have demonstrated remarkable capabilities in semantic understanding and reasoning, opening new avenues for robots to interpret complex, unstructured human actions. This research is situated at the intersection of these fields, exploring how to leverage these technological strides to create truly intelligent and proactive robotic partners. A key application area with significant potential for HRC is composites manufacturing, a traditionally labor-intensive process involving the manipulation of deformable materials, which presents unique challenges for automation.
+
+\section{Limitations of Current Approaches}
+\label{sec:limitations}
+
+Despite the rapid technological progress, several critical limitations hinder the widespread adoption of truly collaborative and intelligent robotic systems.
+
+\begin{enumerate}
+    \item Neglect of the Human Element in Digital Twins: A comprehensive review of existing literature reveals that the vast majority of DT implementations focus almost exclusively on the physical assets (machines, production lines) of a Cyber-Physical System. The human operator is often overlooked or modeled in a simplistic, static manner. This system-centric view fails to capture the dynamic and nuanced nature of human behavior, limiting the robot's ability to adapt and collaborate effectively.
+
+    \item Challenges in Human Intent and Motion Prediction: For a robot to be a proactive partner, it must be able to anticipate what a human intends to do next. However, predicting human intent is a formidable challenge. Human actions are often stochastic, context-dependent, and driven by complex internal states. Current models struggle to translate high-level semantic understanding into accurate, granular predictions of future 3D human motion, especially over long horizons. This results in reactive, rather than proactive, robotic assistance.
+
+    \item Rigidity of Automation in Complex Tasks: Traditional robotic programming is ill-suited for the dynamic and variable nature of HMLV manufacturing and tasks involving deformable materials, such as composite layup. These tasks require adaptability and fine motor skills that are difficult to encode in rigid, pre-programmed routines. While learning-from-demonstration methods show promise, they often require extensive data and struggle to generalize to novel situations.
+
+    \item The Sim-to-Real Gap: While simulation is a powerful tool for developing and training robotic systems, a significant gap often exists between the simulated environment and the real world. This is particularly true for modeling the complex physics of deformable materials and the unpredictable nature of human interaction, making it difficult to transfer learned policies reliably to physical robots.
+\end{enumerate}
+
+\section{Problem Statement}
+\label{sec:problem_statement}
+
+The central problem addressed by this thesis is the gap between the conceptual promise of human-centric manufacturing and the practical limitations of current robotic systems. Specifically, existing frameworks lack the capability to robustly predict human intention and forecast detailed, physically plausible future motion in a way that enables proactive and intelligent robotic assistance in complex, semi-structured tasks. This deficiency prevents robots from transitioning from simple collaborative tools into truly symbiotic partners that can anticipate needs, pre-empt actions, and enhance human capabilities.
+
+Therefore, this research aims to develop and validate a modular Human-Centric Digital Twin (HCDT) framework that can accurately predict human intention and generate context-aware, full-body 3D motion forecasts to enable proactive robotic assistance in manufacturing environments, with a specific focus on the challenges presented by deformable object manipulation in composites manufacturing.
+
+\section{Research Objectives}
+\label{sec:objectives}
+
+To address the problem statement, this thesis pursues the following specific objectives:
+
+\begin{enumerate}
+    \item To develop a modular and scalable HCDT framework that integrates state-of-the-art, pre-trained AI modules for perception, reasoning, and motion generation, minimizing the need for extensive task-specific training.
+
+    \item To investigate and implement novel strategies for human intention prediction by leveraging Vision-Language Models (VLMs) to interpret rich, multi-modal context from video streams, task knowledge graphs, and human gaze data.
+
+    \item To create a robust pipeline for generating physically plausible, full-body 3D human motion forecasts that are conditioned on the predicted intent, enabling the visualization and simulation of future actions within the digital twin.
+
+    \item To apply and validate the developed framework on a challenging industrial use case: the manual layup of composite materials. This involves creating a specialized digital twin for deformable object manipulation and demonstrating how the framework can enhance this process.
+
+    \item To demonstrate the framework's capability to enable proactive robotic assistance, showing how the predictive outputs of the HCDT can be used to inform a robot's actions, allowing it to provide timely and effective support to a human operator.
+
+    \item To systematically evaluate the performance of the framework across multiple use cases of varying complexity, establishing benchmarks and identifying the trade-offs between prediction accuracy, latency, and contextual richness.
+\end{enumerate}
+
+\section{Thesis Layout}
+\label{sec:layout}
+
+This thesis is structured into six chapters, each building upon the previous one to present a comprehensive body of research.
+
+\begin{itemize}
+    \item Chapter 1: Introduction. This chapter provides the background and motivation for the research, outlines the limitations of current approaches, defines the problem statement and research objectives, and presents the overall structure of the thesis.
+
+    \item Chapter 2: Human-centric Digital Twins in Industry: Enabling Technologies and Implementation Strategies. This chapter presents a comprehensive literature review, establishing the theoretical foundation for the research. It surveys the state-of-the-art in HCDTs, HRC, AI-driven motion prediction, and the enabling technologies that underpin these fields.
+
+    \item Chapter 3: Human Intention and Motion Prediction Framework. This chapter details the core contribution of the thesis: the design and architecture of the proposed modular HCDT framework. It describes the individual components for perception, AI-driven reasoning, and motion generation, and explains how they are integrated to achieve intent-aware motion forecasting.
+
+    \item Chapter 4: Development of Digital Twin for Composite Layup. This chapter focuses on the first major application and validation of the framework. It details the development of a specialized digital twin for the complex task of composites manufacturing, addressing the specific challenges of modeling and simulating deformable materials and the associated human-robot interactions.
+
+    \item Chapter 5: Proactive Robotic Assistance in HCDTs. Building on the predictive capabilities developed in the previous chapters, this chapter demonstrates how the HCDT's outputs can be used to drive a physical or simulated robot. It presents experiments showing how the robot can provide proactive assistance to a human operator, validating the practical utility of the framework.
+
+    \item Chapter 6: Conclusion and Future Work. The final chapter summarizes the key findings and contributions of the thesis. It reflects on the achievement of the research objectives, discusses the broader implications of the work, acknowledges its limitations, and proposes promising directions for future research.
+\end{itemize}
