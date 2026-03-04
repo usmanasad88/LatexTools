@@ -1,0 +1,402 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{etoolbox} % Required for \ifblank
+\usepackage{xcolor} % Required for comments or highlighting
+\usepackage{tabularx}
+\usepackage{setspace} % Required for setting line spacing
+
+
+\newcommand{\class}{Special Topics in Mechatronics}
+\newcommand{\term}{DE-44 MTS}
+\newcommand{\examnum}{Final Exam}
+\newcommand{\examdate}{Dec 29, 2025}
+\newcommand{\timelimit}{3 hours}
+\newcommand{\classcode}{MTS-415}
+\newcommand{\timing}{0930-1230 hrs}
+\newcommand{\maxmarks}{100}
+\newcommand{\Instructor}{Usman Asad}
+
+\pagestyle{head}
+\firstpageheader{\textbf{CMS ID} & \makebox[1.8in]{\hrulefill}}{}{\textbf{Name} & \makebox[1.8in]{\hrulefill}}
+\runningheader{}{Page \thepage\ of \numpages}{}
+\runningheadrule
+
+
+% Top Stuff
+\begin{document}
+	\begin{tikzpicture}[remember picture,overlay]
+    	\node[xshift=25 mm,yshift=-30 mm,anchor=north west] at (current page.north west){%
+    		\includegraphics[width=24mm]{NUST}};
+    	\end{tikzpicture}
+    	
+    		\begin{tikzpicture}[remember picture,overlay]
+    	\node[xshift=-25 mm,yshift=-30 mm,anchor=north east] at (current page.north east){%
+    		\includegraphics[width=24mm]{CEME}};
+	\end{tikzpicture}
+	
+	
+\begin{center}
+	\textbf{National University of Sciences and Technology}\\
+	\textbf{College of E\&ME (Department of Mechatronics)}\\
+	\textbf{\examnum (\term)}\\
+\end{center}
+
+	
+	% Exam Details
+	\noindent
+	\\
+	\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+		\textbf{Subject Code: }\classcode &&\textbf{Subject: }\class \\
+		\textbf{Date: }\examdate && \textbf{Timing: }\timing\\
+		\textbf{Time Limit: }\timelimit && \textbf{Max Marks: }\maxmarks\\
+		\textbf{Instructor: }\Instructor
+	\end{tabular*}\\
+	\rule[2ex]{\textwidth}{1pt}
+	\textbf{Instructions:}\\This exam contains \numpages\ pages. \\ \\
+	\rule[2ex]{\textwidth}{1pt}
+    
+\noindent{Mark the answers for \textbf{True/False} Questions here} \\
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}}
+1. \textcircled{T} \textcircled{F} & 4. \textcircled{T} \textcircled{F} & 7. \textcircled{T} \textcircled{F} & 10. \textcircled{T} \textcircled{F} \\
+2. \textcircled{T} \textcircled{F} & 5. \textcircled{T} \textcircled{F} & 8. \textcircled{T} \textcircled{F} & 11. \textcircled{T} \textcircled{F} \\
+3. \textcircled{T} \textcircled{F} & 6. \textcircled{T} \textcircled{F} & 9. \textcircled{T} \textcircled{F} & 12. \textcircled{T} \textcircled{F} \\
+\end{tabular*}
+\vspace{1cm}
+
+\noindent{Mark the answers for \textbf{Multiple Choice Questions} here} \\
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}}
+1. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 6. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 11. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 16. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+2. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 7. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 12. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 17. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+3. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 8. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 13. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 18. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+4. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 9. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 14. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 19. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+5. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 10. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 15. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 20. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+\end{tabular*}
+
+
+
+
+        \begin{center}
+
+            \textbf{Fill in the blanks} in the provided space
+        \end{center}
+        \begin{questions}
+        
+		
+		% \renewcommand{\baselinestretch}{3}
+		
+           \question FFT stands for \textbf{Fast Fourier Transform}
+    
+           \question Two proximity sensors (such as eddy-current sensors) and a \textbf{key-phaser} are mounted on Journal bearing to find the Orbit plot
+            \question The component of a Reinforcement Learning system that makes decisions and learns from the environment is known as the \textbf{Agent}
+            \question To artificially increase the size of a training dataset, techniques such as rotation, cropping, and flipping are used, collectively known as Data \textbf{Augmentation}
+            \question In a neural network, a layer where all inputs from the previous layer are connected to every activation unit of the next layer is called a \textbf{Fully Connected} layer. 
+            \question The function $h(x)$ used in regression to predict the output $y$ based on input $x$ is historically called the \textbf{Hypothesis} % 
+            \question In Reinforcement Learning, the strategy that maps the current state to the action to be performed is called the \textbf{Policy} % 
+            \question The activation function defined as $f(z) = \frac{1}{1+e^{-z}}$ is known as the \textbf{Sigmoid} function. % 
+            \question The loss function commonly used for classification models to measure the difference between the predicted probability distribution and the actual distribution is called the \textbf{Cross-Entropy} loss. % 
+            \question In the Q-Learning update rule, the parameter $\gamma$ (gamma) represents the \textbf{Discount} factor. % 
+            \question RNN stands for \textbf{Recurrent} Neural Network. % 
+            \question \textbf{Overfitting} occurs when a model learns the training data too well, including the noise, and fails to generalize to new data. % 
+            \question In static equilibrium, the \textbf{Potential Energy} of an elastic body is minimized
+            \question Long cylinders, walls, and dams should be modelled using the Plain \textbf{Strain} formulation.
+            \question In Transformer models, positional encodings use \textbf{Sine} functions for even indices and \textbf{Cosine} functions for odd indices to represent token positions. % 
+
+        \end{questions}
+        \setcounter{question}{0}
+
+
+
+
+	\begin{questions}
+		% True False
+        \addpoints
+        %\pointsinleftmargin
+        %\boxedpoints
+		% \question[18]
+    
+
+           % Question 1: Formulation
+            \question[8] A furniture workshop produces two types of shelves: Wall-mounted ($x_1$) and Free-standing ($x_2$). The profit generated is \$50 per Wall-mounted unit and \$80 per Free-standing unit. Wall-mounted shelves require 2 units of wood, while Free-standing shelves require 4 units. The workshop has a total inventory of 100 units of wood. The carpentry team has limited capacity. If they dedicated all their time to just one type of shelf, they could produce a maximum of 30 Wall-mounted shelves or 45 Free-standing shelves. (Assume the labor resource is shared proportionately if both types are produced). Additionally, to satisfy market contracts, the workshop must produce at least 10 Wall-mounted shelves. Formulate the complete optimization problem to maximize profit. Explicitly state the objective function and all constraints.
+            \item \textbf{Design Formulation Solution} \\
+            \textbf{Design Variables:} $x_1$ (Wall-mounted), $x_2$ (Free-standing) \\
+            \textbf{Objective Function:}
+            \[ \text{Maximize } f(x) = 50x_1 + 80x_2 \]
+            \textbf{Subject to Constraints:}
+            \begin{align*}
+                2x_1 + 4x_2 &\le 100 & (\text{Wood Constraint}) \\
+                \frac{x_1}{30} + \frac{x_2}{45} &\le 1 & (\text{Labor Capacity Constraint}) \\
+                x_1 &\ge 10 & (\text{Market Constraint}) \\
+                x_1, x_2 &\ge 0 & (\text{Non-negativity})
+            \end{align*}
+           
+            % Question 2: Detailed Analysis
+            \question[14] [CLO3/PLO4] Consider the following objective function:
+            \[ f(x_1, x_2) = 3x_1^2 - 4x_1x_2 + 2x_2^2 + 5x_1 \]
+            
+            \begin{parts}
+                \part Calculate the Gradient $\nabla f(x)$ and the Hessian $H(x)$ at $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.
+                \part Do one iteration of steepest descent with $\lambda = 0.5$ starting from $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.
+                \part Do one iteration of Newton’s Method to minimize $f(x)$ starting from $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$. 
+                \[ x_{i+1} = x_{i} - H^{-1}\nabla f(x_{i}) \]
+                \part Solve for the stationary point where $\nabla f(x) = 0$.
+                \part Find the eigenvalues of the Hessian matrix.
+                \part Check to see if the stationary point meets the Necessary and Sufficient Conditions of optimality.
+            \end{parts}
+            \begin{enumerate}
+                % Part A
+                \item \textbf{Calculate the Gradient $\nabla f(x)$ and the Hessian $H(x)$ at $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.}
+            
+                First, determine the partial derivatives:
+                \begin{align*}
+                    \frac{\partial f}{\partial x_1} &= 6x_1 - 4x_2 + 5 \\
+                    \frac{\partial f}{\partial x_2} &= -4x_1 + 4x_2
+                \end{align*}
+            
+                The Gradient vector is:
+                \[ \nabla f(x) = \begin{bmatrix} 6x_1 - 4x_2 + 5 \\ -4x_1 + 4x_2 \end{bmatrix} \]
+            
+                Evaluating at $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$:
+                \[ \nabla f(0,0) = \begin{bmatrix} 5 \\ 0 \end{bmatrix} \]
+            
+                Next, determine the second partial derivatives for the Hessian:
+                \begin{align*}
+                    \frac{\partial^2 f}{\partial x_1^2} &= 6, \quad \frac{\partial^2 f}{\partial x_1 \partial x_2} = -4 \\
+                    \frac{\partial^2 f}{\partial x_2 \partial x_1} &= -4, \quad \frac{\partial^2 f}{\partial x_2^2} = 4
+                \end{align*}
+            
+                The Hessian matrix is constant:
+                \[ H(x) = \begin{bmatrix} 6 & -4 \\ -4 & 4 \end{bmatrix} \]
+            
+                % Part B
+                \item \textbf{Do one iteration of steepest descent with $\lambda = 0.5$ starting from $x_0 = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.}
+            
+                The update rule is $x_{1} = x_{0} - \lambda \nabla f(x_{0})$.
+                \begin{align*}
+                    x_{1} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} - 0.5 \begin{bmatrix} 5 \\ 0 \end{bmatrix} \\
+                    x_{1} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} - \begin{bmatrix} 2.5 \\ 0 \end{bmatrix} \\
+                    x_{1} &= \begin{bmatrix} -2.5 \\ 0 \end{bmatrix}
+                \end{align*}
+            
+                % Part C
+                \item \textbf{Do one iteration of Newton’s Method to minimize $f(x)$ starting from $x_0 = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.}
+            
+                The update rule is $x_{1} = x_{0} - H^{-1}\nabla f(x_{0})$.
+            
+                First, find $H^{-1}$. The determinant of $H$ is $(6)(4) - (-4)(-4) = 24 - 16 = 8$.
+                \[ H^{-1} = \frac{1}{8} \begin{bmatrix} 4 & 4 \\ 4 & 6 \end{bmatrix} = \begin{bmatrix} 0.5 & 0.5 \\ 0.5 & 0.75 \end{bmatrix} \]
+            
+                Now, compute the step:
+                \begin{align*}
+                    x_{1} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} - \begin{bmatrix} 0.5 & 0.5 \\ 0.5 & 0.75 \end{bmatrix} \begin{bmatrix} 5 \\ 0 \end{bmatrix} \\
+                    x_{1} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} - \begin{bmatrix} (0.5)(5) + 0 \\ (0.5)(5) + 0 \end{bmatrix} \\
+                    x_{1} &= \begin{bmatrix} -2.5 \\ -2.5 \end{bmatrix}
+                \end{align*}
+                \textit{(Note: Since the function is quadratic, Newton's method reaches the minimum in exactly one step.)}
+            
+                % Part D
+                \item \textbf{Solve for the stationary point where $\nabla f(x) = 0$.}
+            
+                Set the gradient components to zero:
+                \begin{cases}
+                    6x_1 - 4x_2 + 5 = 0 & \text{(1)} \\
+                    -4x_1 + 4x_2 = 0 & \text{(2)}
+                \end{cases}
+            
+                From equation (2): $4x_2 = 4x_1 \implies x_2 = x_1$. \\
+                Substitute into equation (1):
+                \[ 6x_1 - 4(x_1) + 5 = 0 \]
+                \[ 2x_1 = -5 \implies x_1 = -2.5 \]
+                Since $x_2 = x_1$, then $x_2 = -2.5$.
+            
+                The stationary point is $x^* = \begin{bmatrix} -2.5 \\ -2.5 \end{bmatrix}$.
+            
+                % Part E
+                \item \textbf{Find the eigenvalues of the Hessian matrix.}
+            
+                Solve the characteristic equation $\det(H - \lambda I) = 0$:
+                \[ \det \begin{bmatrix} 6-\lambda & -4 \\ -4 & 4-\lambda \end{bmatrix} = 0 \]
+                \[ (6-\lambda)(4-\lambda) - (-4)(-4) = 0 \]
+                \[ 24 - 10\lambda + \lambda^2 - 16 = 0 \]
+                \[ \lambda^2 - 10\lambda + 8 = 0 \]
+            
+                Using the quadratic formula $\lambda = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$:
+                \[ \lambda = \frac{10 \pm \sqrt{100 - 32}}{2} = \frac{10 \pm \sqrt{68}}{2} \]
+                \[ \lambda = \frac{10 \pm 2\sqrt{17}}{2} = 5 \pm \sqrt{17} \]
+            
+                Eigenvalues:
+                \[ \lambda_1 \approx 9.123, \quad \lambda_2 \approx 0.877 \]
+            
+                % Part F
+                \item \textbf{Check to see if the stationary point meets the Necessary and Sufficient Conditions of optimality.}
+            
+                \begin{itemize}
+                    \item \textbf{Necessary Condition ($\nabla f(x) = 0$):} This was satisfied in Part (d) at $x^* = [-2.5, -2.5]^T$.
+                    \item \textbf{Sufficient Condition (Hessian nature):}
+                    Since the eigenvalues $\lambda_1 = 9.123$ and $\lambda_2 = 0.877$ are both positive ($\lambda > 0$), the Hessian matrix $H$ is \textbf{Positive Definite}.
+                \end{itemize}
+            
+                \textbf{Conclusion:} Because the gradient is zero and the Hessian is Positive Definite, the stationary point is a \textbf{Strict Local Minimum}.
+            \end{enumerate}
+            
+            \question[9] [CLO4/PLO3] Calculate the Accuracy, Precision, and Recall of a model that predicts whether a machine part is Defective (1) or Normal (0), based on the below testing data:
+                \begin{center}
+                \begin{tabular}{lccccccccccc}
+                \textbf{Sample ID:} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+                \textbf{Ground Truth ($y$):} & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+                \textbf{Prediction ($\hat{y}$):} & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\
+                \end{tabular}
+                \end{center}
+            
+                \textbf{Solution:}    We compare the Ground Truth ($y$) with the Prediction ($\hat{y}$) for each sample to categorize them:
+                
+                \begin{itemize}
+                    \item \textbf{True Positives (TP)}: Both $y=1$ and $\hat{y}=1$. \\
+                    Samples: 1, 3, 7, 9 $\rightarrow$ \textbf{Count = 4}
+                    
+                    \item \textbf{True Negatives (TN)}: Both $y=0$ and $\hat{y}=0$. \\
+                    Samples: 2, 5, 8 $\rightarrow$ \textbf{Count = 3}
+                    
+                    \item \textbf{False Positives (FP)}: $y=0$ but $\hat{y}=1$. \\
+                    Samples: 6, 10 $\rightarrow$ \textbf{Count = 2}
+                    
+                    \item \textbf{False Negatives (FN)}: $y=1$ but $\hat{y}=0$. \\
+                    Sample: 4 $\rightarrow$ \textbf{Count = 1}
+                \end{itemize}
+                
+                \textbf{Step 2: Calculate Metrics}
+                
+                \begin{enumerate}
+                    \item \textbf{Accuracy} (Overall correctness):
+                    \[
+                    \text{Accuracy} = \frac{TP + TN}{Total} = \frac{4 + 3}{10} = \frac{7}{10} = \mathbf{0.7} \quad (70\%)
+                    \]
+                
+                    \item \textbf{Precision} (Accuracy of positive predictions):
+                    \[
+                    \text{Precision} = \frac{TP}{TP + FP} = \frac{4}{4 + 2} = \frac{4}{6} \approx \mathbf{0.67} \quad (66.7\%)
+                    \]
+                
+                    \item \textbf{Recall} (Ability to find all positive instances):
+                    \[
+                    \text{Recall} = \frac{TP}{TP + FN} = \frac{4}{4 + 1} = \frac{4}{5} = \mathbf{0.8} \quad (80\%)
+                    \]
+                \end{enumerate}
+
+
+                \question[8] [CLO4/PLO3] A neural network is performing a multi-class classification task for 3 classes: Cat (Index 0), Dog (Index 1), and Bird (Index 2).
+                For a specific input image, the last linear layer outputs the following raw logits ($z$):
+                \[ z = [2.0, \quad 5, \quad 9] \]
+                The ground truth label for this image is Dog. Compute the Softmax probabilities} ($\hat{y}$) for each class. Calculate the Cross-Entropy Loss} ($L$) for this prediction given the ground truth.
+
+                \textbf{Step 1: Calculate Exponentials ($e^{z_i}$)}
+                \begin{align*}
+                    e^{z_0} &= e^2 \approx 7.389 \\
+                    e^{z_1} &= e^5 \approx 148.413 \\
+                    e^{z_2} &= e^9 \approx 8103.084
+                \end{align*}
+                
+                \textbf{Step 2: Calculate the Sum of Exponentials}
+                \[ \sum_{j=0}^{2} e^{z_j} = 7.389 + 148.413 + 8103.084 = 8258.886 \]
+                
+                \textbf{Step 3: Compute Softmax Probabilities ($\hat{y}_i$)}
+                \[ \hat{y}_i = \frac{e^{z_i}}{\sum e^{z_j}} \]
+                
+                \begin{itemize}
+                    \item \textbf{Cat (Index 0):} $\hat{y}_0 = \frac{7.389}{8258.886} \approx 0.0009$
+                    \item \textbf{Dog (Index 1):} $\hat{y}_1 = \frac{148.413}{8258.886} \approx 0.0180$
+                    \item \textbf{Bird (Index 2):} $\hat{y}_2 = \frac{8103.084}{8258.886} \approx 0.9811$
+                \end{itemize}
+                
+                \[ \hat{y} \approx [0.0009, \quad 0.0180, \quad 0.9811] \]
+                
+                \textbf{Step 4: Calculate Cross-Entropy Loss ($L$)}
+                The formula for Cross-Entropy Loss is $L = - \sum_{i} y_i \log(\hat{y}_i)$.
+                Since the ground truth is Index 1 (Dog), only the term for $i=1$ is non-zero.
+                
+                \begin{align*}
+                    L &= - \log(\hat{y}_1) \\
+                    L &= - \ln(0.0180) \\
+                    L &\approx -(-4.017) \\
+                    L &\approx \mathbf{4.017}
+                \end{align*}
+                
+                \question[8] Carry out an update for a single weight parameter $\theta$ using the Adam Optimizer. We are now at time step $t=2$. The previous step resulted in non-zero moment estimates. Given:
+                Previous Weight $\theta_{1} = 9.9$
+                Previous Moments $m_{1} = 0.2$ and $v_{1} = 0.004$
+                Current Gradient ($t=2$) $g_2 = 1.0$
+                Hyperparameters $\beta_1 = 0.9$, $\beta_2 = 0.999$, $\epsilon = 10^{-8}$, $\eta = 0.1$
+                
+                Formulas:
+                \[ m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t \]
+                \[ v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \]
+                \[ \hat{m}_t = \frac{m_t}{1 - \beta_1^t}, \quad \hat{v}_t = \frac{v_t}{1 - \beta_2^t} \]
+                \[ \theta_t = \theta_{t-1} - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon} \]
+                \textbf{Solution}
+
+                \textbf{Step 1: Calculate the updated first moment estimate ($m_2$)}
+                \[ m_2 = \beta_1 m_{1} + (1 - \beta_1) g_2 \]
+                \[ m_2 = 0.9(0.2) + (1 - 0.9)(1.0) \]
+                \[ m_2 = 0.18 + 0.1 \]
+                \[ m_2 = 0.28 \]
+                
+                \textbf{Step 2: Calculate the updated second raw moment estimate ($v_2$)}
+                \[ v_2 = \beta_2 v_{1} + (1 - \beta_2) g_2^2 \]
+                \[ v_2 = 0.999(0.004) + (1 - 0.999)(1.0)^2 \]
+                \[ v_2 = 0.003996 + 0.001(1) \]
+                \[ v_2 = 0.004996 \]
+                
+                \textbf{Step 3: Compute the bias-corrected moments ($\hat{m}_2$ and $\hat{v}_2$)}
+                
+                For $\hat{m}_2$:
+                \[ \hat{m}_2 = \frac{m_2}{1 - \beta_1^2} = \frac{0.28}{1 - 0.9^2} = \frac{0.28}{1 - 0.81} = \frac{0.28}{0.19} \]
+                \[ \hat{m}_2 \approx 1.4737 \]
+                
+                For $\hat{v}_2$:
+                \[ \hat{v}_2 = \frac{v_2}{1 - \beta_2^2} = \frac{0.004996}{1 - 0.999^2} \]
+                \[ 1 - 0.999^2 = 1 - 0.998001 = 0.001999 \]
+                \[ \hat{v}_2 = \frac{0.004996}{0.001999} \approx 2.49925 \]
+                
+                \textbf{Step 4: Calculate the updated weight ($\theta_2$)}
+                \[ \theta_2 = \theta_{1} - \eta \frac{\hat{m}_2}{\sqrt{\hat{v}_2} + \epsilon} \]
+                \[ \theta_2 = 9.9 - 0.1 \left( \frac{1.4737}{\sqrt{2.49925} + 10^{-8}} \right) \]
+                % \[ \sqrt{2.49925} \approx 1.5809 \]
+                % \[ \theta_2 = 9.9 - 0.1 \left( \frac{1.4737}{1.5809} \right) \]
+                % \[ \theta_2 = 9.9 - 0.1(0.9322) \]
+                % \[ \theta_2 = 9.9 - 0.0932 \]
+                \[ \theta_2 \approx 9.8068 \]
+                \question[6] Given the following training set of four data points $(x, y)$:
+                \[ (1, 5), \quad (2, 8.5), \quad (3, 13), \quad (4, 16) \]
+                
+                Choose appropriate weights for the  hypothesis $h_\theta(x) = \theta_0 + \theta_1 x$, and calculate the Mean Square Error.
+
+                \textbf{Solution}
+
+                
+                All we need is a rough estimate of the weights. For \textbf{Hypothesis:} $h_\theta(x) = 1.5 + 3.5x$
+                
+                    \[ [h(x)] = [5 \quad 8.5 \quad 12 \quad 15.5 ] \] 
+                \[ \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (h(x^{(i)}) - y^{(i)})^2 \]
+                \[ \text{MSE} = \frac{0 + 0 + 1.0 + 0.25}{4} \]
+                \[ \text{MSE} = \frac{1.25}{4} = \mathbf{0.3125} \]
+
+                \end{questions}
+
+                
+
+% % Solution 1
+
+
+% % Solution 2
+%
+
+
+\clearpage % Force a new page after the nu
+
+\end{document}

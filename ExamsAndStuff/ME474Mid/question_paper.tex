@@ -1,0 +1,429 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{etoolbox} % Required for \ifblank
+\usepackage{xcolor} % Required for comments or highlighting
+\usepackage{tabularx}
+\usepackage{setspace} % Required for setting line spacing
+
+
+\newcommand{\class}{Special Topics in Mechatronics}
+\newcommand{\term}{DE-44 MTS}
+\newcommand{\examnum}{Final Exam}
+\newcommand{\examdate}{Dec 29, 2025}
+\newcommand{\timelimit}{3 hours}
+\newcommand{\classcode}{MTS-415}
+\newcommand{\timing}{0930-1230 hrs}
+\newcommand{\maxmarks}{100}
+\newcommand{\Instructor}{Usman Asad}
+
+\pagestyle{head}
+\firstpageheader{\textbf{CMS ID} & \makebox[1.8in]{\hrulefill}}{}{\textbf{Name} & \makebox[1.8in]{\hrulefill}}
+\runningheader{}{Page \thepage\ of \numpages}{}
+\runningheadrule
+
+
+% Top Stuff
+\begin{document}
+	\begin{tikzpicture}[remember picture,overlay]
+    	\node[xshift=25 mm,yshift=-30 mm,anchor=north west] at (current page.north west){%
+    		\includegraphics[width=24mm]{NUST}};
+    	\end{tikzpicture}
+    	
+    		\begin{tikzpicture}[remember picture,overlay]
+    	\node[xshift=-25 mm,yshift=-30 mm,anchor=north east] at (current page.north east){%
+    		\includegraphics[width=24mm]{CEME}};
+	\end{tikzpicture}
+	
+	
+\begin{center}
+	\textbf{National University of Sciences and Technology}\\
+	\textbf{College of E\&ME (Department of Mechatronics)}\\
+	\textbf{\examnum (\term)}\\
+\end{center}
+
+	
+	% Exam Details
+	\noindent
+	\\
+	\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+		\textbf{Subject Code: }\classcode &&\textbf{Subject: }\class \\
+		\textbf{Date: }\examdate && \textbf{Timing: }\timing\\
+		\textbf{Time Limit: }\timelimit && \textbf{Max Marks: }\maxmarks\\
+		\textbf{Instructor: }\Instructor
+	\end{tabular*}\\
+	\rule[2ex]{\textwidth}{1pt}
+	\textbf{Instructions:}\\This exam contains \numpages\ pages. \\ \\
+	\rule[2ex]{\textwidth}{1pt}
+    
+\noindent{Mark the answers for \textbf{True/False} Questions here} \\
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}}
+1. \textcircled{T} \textcircled{F} & 4. \textcircled{T} \textcircled{F} & 7. \textcircled{T} \textcircled{F} & 10. \textcircled{T} \textcircled{F} \\
+2. \textcircled{T} \textcircled{F} & 5. \textcircled{T} \textcircled{F} & 8. \textcircled{T} \textcircled{F} & 11. \textcircled{T} \textcircled{F} \\
+3. \textcircled{T} \textcircled{F} & 6. \textcircled{T} \textcircled{F} & 9. \textcircled{T} \textcircled{F} & 12. \textcircled{T} \textcircled{F} \\
+\end{tabular*}
+\vspace{1cm}
+
+\noindent{Mark the answers for \textbf{Multiple Choice Questions} here} \\
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}}
+1. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 6. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 11. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 16. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+2. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 7. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 12. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 17. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+3. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 8. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 13. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 18. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+4. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 9. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 14. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 19. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+5. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 10. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 15. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} & 20. \textcircled{a} \textcircled{b} \textcircled{c} \textcircled{d} \\
+\end{tabular*}
+
+
+
+
+        \begin{center}
+
+            \textbf{Fill in the blanks} in the provided space
+        \end{center}
+        \begin{questions}
+        
+		
+		% \renewcommand{\baselinestretch}{3}
+		
+           \question FFT stands for \makebox[1.8in]{\hrulefill}
+    
+           \question Two proximity sensors (such as eddy-current sensors) and a \makebox[1.8in]{\hrulefill} are mounted on Journal bearing to find the Orbit plot
+            \question The component of a Reinforcement Learning system that makes decisions and learns from the environment is known as the \makebox[1.8in]{\hrulefill} % Agent
+            \question To artificially increase the size of a training dataset, techniques such as rotation, cropping, and flipping are used, collectively known as Data \makebox[1.8in]{\hrulefill} % Augmentation
+            \question In a neural network, a layer where all inputs from the previous layer are connected to every activation unit of the next layer is called a \makebox[1.8in]{\hrulefill} layer. % Fully Connected
+            \question The function $h(x)$ used in regression to predict the output $y$ based on input $x$ is historically called the \makebox[1.8in]{\hrulefill} % Hypothesis
+            \question In Reinforcement Learning, the strategy that maps the current state to the action to be performed is called the \makebox[1.8in]{\hrulefill} % Policy
+            \question The activation function defined as $f(z) = \frac{1}{1+e^{-z}}$ is known as the \makebox[1.8in]{\hrulefill} function. % Sigmoid
+            \question The loss function commonly used for classification models to measure the difference between the predicted probability distribution and the actual distribution is called the \makebox[1.8in]{\hrulefill} loss. % Cross-Entropy
+            \question In the Q-Learning update rule, the parameter $\gamma$ (gamma) represents the \makebox[1.2in]{\hrulefill} factor. % Discount
+            \question RNN stands for \makebox[1.8in]{\hrulefill} Neural Network. % Recurrent
+            \question \makebox[1.8in]{\hrulefill} occurs when a model learns the training data too well, including the noise, and fails to generalize to new data. % Overfitting
+            \question In static equilibrium, the \makebox[1.8in]{\hrulefill} of an elastic body is minimized
+            \question Long cylinders, walls, and dams should be modelled using the plain \makebox[1.8in]{\hrulefill} formulation.
+            \question In Transformer models, positional encodings use \makebox[1.5in]{\hrulefill} functions for even indices and \makebox[1.5in]{\hrulefill} functions for odd indices to represent token positions. % Sine, Cosine
+
+        \end{questions}
+        \setcounter{question}{0}
+
+
+
+
+	\begin{questions}
+		% True False
+        \addpoints
+        %\pointsinleftmargin
+        %\boxedpoints
+		% \question[18]
+        \begin{center}            
+    \textbf{True/False:} Mark these statements as True or false on the table in the front page.
+       \end{center}
+		% % \begin{enumerate}		     
+            \question In a classification problem, the variable we are trying to predict is continuous. % False (It is Discrete; Regression predicts continuous variables)
+            \question In Supervised Learning, the training set consists of input data without any corresponding target labels. % False (Supervised learning requires labeled data/ground truth)
+
+            \question Data augmentation techniques like cropping and rotation are mostly used for text data only. % False (They are primarily used for image data/computer vision)
+            \question In a "Deep" Neural Network, the term "Deep" refers to the presence of multiple hidden layers between the input and output. % True
+            \question A "masked attention head" is used in Transformers to prevent the model from attending to future tokens. % True)
+            \question Logistic Regression is a machine learning algorithm used primarily for regression problems (predicting continuous values). % False (Despite the name, it is used for Classification)
+            \question In a Markov Decision Process (MDP), the next state depends on the complete history of all previous states and actions. % False (Markov Property: depends only on the current state and action)
+            \question Flattening is the process in a CNN where a 2D feature map is converted into a 1D vector to be fed into a fully connected layer. % True
+            \question Stochastic Gradient Descent (SGD) updates the model weights after running through the entire dataset (all training examples). % False (SGD updates after each individual training example; Batch GD uses the whole set)
+            \question In the context of neural networks, an epoch is defined as one forward pass and one backward pass of all the training examples. % True
+            \question A space frame element has a 6x6 stiffness matrix % False
+            \question The natural frequency of multiple degree of freedom system is found by setting $[K]-\omega^2[M]$ equal to zero
+    
+		
+		
+			% changing choice items style locally
+		
+			% %
+        \end{questions}
+			\begin{center} 
+
+            \textbf{MCQs: }Multiple Choice Questions. Mark the answers on the front page. 
+            \end{center}
+
+     	\renewcommand*\thechoice{\alph{choice}} 
+			\renewcommand*\choicelabel{\thechoice)}
+        \setcounter{question}{0}
+        \begin{questions}           
+
+               \question Bearing faults occur at a frequency which is \makebox[1in]{\hrulefill} the running speed of the machinery \\
+                    \begin{oneparchoices}
+                        \choice Lower than
+                        \choice Twice of
+                        \choice The same as
+                        \choice Higher than
+                    \end{oneparchoices}
+                
+                \question The axes of a spectrum plot are: \\
+                    \begin{oneparchoices}
+                        \choice Time vs Magnitude
+                        \choice Time vs Phase
+                        \choice Frequency vs Magnitude
+                        \choice None of the above
+                    \end{oneparchoices}
+                
+                \question Replacing an oil filter after a pre-defined time can be classified as: \\
+                    \begin{oneparchoices}
+                        \choice Predictive Maintenance
+                        \choice Corrective Maintenance
+                        \choice Breakdown Maintenance
+                        \choice Proactive Maintenance
+                    \end{oneparchoices}
+
+                \question Which phenomenon in dynamic compressors is characterized by the rapid reversal of gas flow back and forth when the flow drops below a stable level? \\ % (Page 107)
+                    \begin{oneparchoices}
+                        \choice Choking
+                        \choice Surging % Answer: Surging
+                        \choice Cavitation
+                        \choice Priming
+                    \end{oneparchoices}
+                
+                \question Connecting two pumps in series results in an increase in \makebox[1.8in]{\hrulefill}, whereas connecting them in parallel increases the flow rate. \\ % (Page 35)
+                    \begin{oneparchoices}
+                        \choice Efficiency
+                        \choice Velocity
+                        \choice Head % Answer: Head
+                        \choice NPSH
+                    \end{oneparchoices}
+                
+                \question Which type of turbine is best suited for high pressure head and low flow applications? \\ % (Page 118)
+                    \begin{oneparchoices}
+                        \choice Kaplan Turbine
+                        \choice Francis Turbine
+                        \choice Pelton Wheel % Answer: Pelton Wheel
+                        \choice Steam Turbine
+                    \end{oneparchoices}
+                
+		      \question Which parameter in the Gradient Descent algorithm controls the size of the step taken towards the minimum of the cost function? \\ 
+                \begin{oneparchoices}
+                    \choice Discount factor
+                    \choice Learning rate % Answer: Learning rate
+                    \choice Bias
+                    \choice Variance
+                \end{oneparchoices}
+                
+                \question In Reinforcement Learning, what information does the environment provide to the agent as feedback for its actions? \\ 
+                \begin{oneparchoices}
+                    \choice Policy
+                    \choice State
+                    \choice Reward % Answer: Reward
+                    \choice Gradient
+                \end{oneparchoices}
+                
+                \question Which activation function is defined by $f(z) = \max(0, z)$? \\ 
+                \begin{oneparchoices}
+                    \choice Sigmoid
+                    \choice Tanh
+                    \choice ReLU % Answer: ReLU
+                    \choice Leaky ReLU
+                \end{oneparchoices}
+                
+                \question A fully connected network has 3 input neurons, 5 hidden neurons, and 2 output neurons (ignoring biases). How many total weights are in this network? \\ 
+                \begin{oneparchoices}
+                    \choice 10
+                    \choice 17
+                    \choice 25 % Answer: (3*5) + (5*2) = 15 + 10 = 25
+                    \choice 30
+                \end{oneparchoices}
+                
+                \question Q-Learning is best described as which type of Reinforcement Learning approach? \\ 
+                \begin{oneparchoices}
+                    \choice Model-based
+                    \choice Value-based % Answer: Value-based
+                    \choice Policy-based
+                    \choice Supervised
+                \end{oneparchoices}
+                
+                
+                \question Which of the following statements distinguishes Reinforcement Learning from Supervised Learning? \\ 
+                \begin{oneparchoices}
+                    \choice It requires a pre-labeled dataset
+                    \choice It learns by interacting with an environment % Answer: It learns by interacting with an environment
+                    \choice It only predicts continuous variables
+                    \choice It does not use a loss function
+                \end{oneparchoices}
+                
+                \question In the context of confusion matrices, how is Precision calculated? (TP = True Positive, FP = False Positive) \\ 
+                \begin{oneparchoices}
+                    \choice $TP / (TP + FP)$ % Answer: TP / (TP + FP)
+                    \choice $TP / (TP + FN)$
+                    \choice $(TP + TN) / Total$
+                    \choice $FP / (TP + FP)$
+                \end{oneparchoices}
+                
+                \question What is the purpose of "Regularization" in machine learning training? \\ 
+                \begin{oneparchoices}
+                    \choice To increase the learning rate
+                    \choice To counter overfitting % Answer: To counter overfitting
+                    \choice To reduce the dataset size
+                    \choice To initialize weights to zero
+                \end{oneparchoices}
+
+                \question Which technique is specifically used to reduce the dimensionality of data while preserving as much class discriminatory information as possible? \\
+                \begin{oneparchoices}
+                    \choice Linear Regression
+                    \choice Linear Discriminant Analysis % Answer: LDA
+                    \choice Random Forest
+                    \choice Data Augmentation
+                \end{oneparchoices}
+                
+                \question In a Convolutional Neural Network (CNN), what is the effect of increasing the Stride parameter during a convolution operation? \\
+                \begin{oneparchoices}
+                    \choice Increases output dimensions
+                    \choice Reduces output dimensions % Answer: Reduces output dimensions
+                    \choice Increases number of filters
+                    \choice Removes the bias term
+                \end{oneparchoices}
+                
+                \question In a simple linear regression model $h(x) = \theta_0 + \theta_1 x$, what does the term $\theta_0$ represent? \\
+                \begin{oneparchoices}
+                    \choice The slope
+                    \choice The learning rate
+                    \choice The Bias % Answer: The y-intercept
+                    \choice The number of features
+                \end{oneparchoices}
+                
+                \question If a Reinforcement Learning agent has a Discount Factor ($\gamma$) of 0, what does it prioritize? \\
+                \begin{oneparchoices}
+                    \choice Future rewards only
+                    \choice Immediate rewards only % Answer: Immediate rewards only
+                    \choice Past rewards
+                    \choice The average of all rewards
+                \end{oneparchoices}
+                
+                \question Which layer in a neural network is primarily responsible for reducing the spatial size of the representation to decrease the amount of parameters and computation? \\
+                \begin{oneparchoices}
+                    \choice Convolutional Layer
+                    \choice Fully Connected Layer
+                    \choice Pooling Layer % Answer: Pooling Layer
+                    \choice Softmax Layer
+                \end{oneparchoices}
+                
+                \question How does the Long Short-Term Memory (LSTM) architecture primarily improve upon standard Recurrent Neural Networks (RNNs)? \\
+                \begin{oneparchoices}
+                    \choice By reducing computational complexity \\
+                    \choice By mitigating the vanishing gradient problem \\ % Answer: By mitigating the vanishing gradient problem (allows  learning long-term dependencies)
+                    \choice By eliminating the need for backpropagation \\
+                    \choice By using fewer parameters than a simple RNN
+                \end{oneparchoices}               
+       
+        \end{questions}
+        \setcounter{question}{0}
+        \begin{center}
+
+            \textbf{Numerical Questions:} Provide answers to the following
+        \end{center}
+        \begin{questions}
+		
+
+           % Question 1: Formulation
+            \question[8] A furniture workshop produces two types of shelves: Wall-mounted ($x_1$) and Free-standing ($x_2$). The profit generated is \$50 per Wall-mounted unit and \$80 per Free-standing unit. Wall-mounted shelves require 2 units of wood, while Free-standing shelves require 4 units. The workshop has a total inventory of 100 units of wood. The carpentry team has limited capacity. If they dedicated all their time to just one type of shelf, they could produce a maximum of 30 Wall-mounted shelves or 45 Free-standing shelves. (Assume the labor resource is shared proportionately if both types are produced). Additionally, to satisfy market contracts, the workshop must produce at least 10 Wall-mounted shelves. Formulate the complete optimization problem to maximize profit. Explicitly state the objective function and all constraints.
+           
+           
+            % Question 2: Detailed Analysis
+            \question[14] [CLO3/PLO4] Consider the following objective function:
+            \[ f(x_1, x_2) = 3x_1^2 - 4x_1x_2 + 2x_2^2 + 5x_1 \]
+            
+            \begin{parts}
+                \part Calculate the Gradient $\nabla f(x)$ and the Hessian $H(x)$ at $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.
+                \part Do one iteration of steepest descent with $\lambda = 0.5$ starting from $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.
+                \part Do one iteration of Newton’s Method to minimize $f(x)$ starting from $x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$. 
+                \[ x_{i+1} = x_{i} - H^{-1}\nabla f(x_{i}) \]
+                \part Solve for the stationary point where $\nabla f(x) = 0$.
+                \part Find the eigenvalues of the Hessian matrix.
+                \part Check to see if the stationary point meets the Necessary and Sufficient Conditions of optimality.
+            \end{parts}
+
+            \question[9] [CLO4/PLO3] Calculate the Accuracy, Precision, and Recall of a model that predicts whether a machine part is Defective (1) or Normal (0), based on the below testing data:
+                \begin{center}
+                \begin{tabular}{lccccccccccc}
+                \textbf{Sample ID:} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+                \textbf{Ground Truth ($y$):} & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+                \textbf{Prediction ($\hat{y}$):} & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\
+                \end{tabular}
+                \end{center}
+            
+    
+
+
+\question[8] [CLO4/PLO3] A neural network is performing a multi-class classification task for 3 classes: Cat (Index 0), Dog (Index 1), and Bird (Index 2).
+For a specific input image, the last linear layer outputs the following raw logits ($z$):
+\[ z = [2.0, \quad 5, \quad 9] \]
+The ground truth label for this image is Dog. Compute the Softmax probabilities} ($\hat{y}$) for each class. Calculate the Cross-Entropy Loss} ($L$) for this prediction given the ground truth.
+
+\question[8] Carry out an update for a single weight parameter $\theta$ using the Adam Optimizer. We are now at time step $t=2$. The previous step resulted in non-zero moment estimates. Given:
+Previous Weight $\theta_{1} = 9.9$
+Previous Moments $m_{1} = 0.2$ and $v_{1} = 0.004$
+Current Gradient ($t=2$) $g_2 = 1.0$
+Hyperparameters $\beta_1 = 0.9$, $\beta_2 = 0.999$, $\epsilon = 10^{-8}$, $\eta = 0.1$
+
+Formulas:
+\[ m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t \]
+\[ v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \]
+\[ \hat{m}_t = \frac{m_t}{1 - \beta_1^t}, \quad \hat{v}_t = \frac{v_t}{1 - \beta_2^t} \]
+\[ \theta_t = \theta_{t-1} - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon} \]
+
+\question[6] Given the following training set of four data points $(x, y)$:
+\[ (1, 5), \quad (2, 8.5), \quad (3, 13), \quad (4, 16) \]
+
+Choose appropriate weights for the  hypothesis $h_\theta(x) = \theta_0 + \theta_1 x$, and calculate the Mean Square Error.
+\end{questions}
+
+% % Solution 1
+% \item \textbf{Design Formulation Solution} \\
+% \textbf{Design Variables:} $x_1$ (Wall-mounted), $x_2$ (Free-standing) \\
+% \textbf{Objective Function:}
+% \[ \text{Maximize } f(x) = 50x_1 + 80x_2 \]
+% \textbf{Subject to Constraints:}
+% \begin{align*}
+%     2x_1 + 4x_2 &\le 100 & (\text{Wood Constraint}) \\
+%     \frac{x_1}{30} + \frac{x_2}{45} &\le 1 & (\text{Labor Capacity Constraint}) \\
+%     x_1 &\ge 10 & (\text{Market Constraint}) \\
+%     x_1, x_2 &\ge 0 & (\text{Non-negativity})
+% \end{align*}
+
+% % Solution 2
+% \item \textbf{Analysis Solution} \\
+% \textbf{(a) Gradient and Hessian at $x=0$:}
+% \[ \nabla f(x) = \begin{bmatrix} 6x_1 - 4x_2 + 5 \\ -4x_1 + 4x_2 \end{bmatrix} \implies \nabla f(0) = \begin{bmatrix} 5 \\ 0 \end{bmatrix} \]
+% \[ H(x) = \begin{bmatrix} 6 & -4 \\ -4 & 4 \end{bmatrix} \]
+
+% \textbf{(b) Steepest Descent ($\lambda = 0.5$):} \\
+% Starting point $x_0 = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$. Search direction $S_0 = -\nabla f(x_0) = \begin{bmatrix} -5 \\ 0 \end{bmatrix}$. \\
+% \[ x_1 = x_0 + \lambda S_0 = \begin{bmatrix} 0 \\ 0 \end{bmatrix} + 0.5 \begin{bmatrix} -5 \\ 0 \end{bmatrix} = \begin{bmatrix} -2.5 \\ 0 \end{bmatrix} \]
+
+% \textbf{(c) Newton's Method:} \\
+% Need inverse of Hessian: $\det(H) = 24 - 16 = 8$. \\
+% \[ H^{-1} = \frac{1}{8}\begin{bmatrix} 4 & 4 \\ 4 & 6 \end{bmatrix} = \begin{bmatrix} 0.5 & 0.5 \\ 0.5 & 0.75 \end{bmatrix} \]
+% \[ x_{new} = x_{old} - H^{-1}\nabla f(x_{old}) = \begin{bmatrix} 0 \\ 0 \end{bmatrix} - \begin{bmatrix} 0.5 & 0.5 \\ 0.5 & 0.75 \end{bmatrix}\begin{bmatrix} 5 \\ 0 \end{bmatrix} = \begin{bmatrix} -2.5 \\ -2.5 \end{bmatrix} \]
+
+% \textbf{(d) Stationary Point:} \\
+% Set $\nabla f(x) = 0$:
+% \[ \begin{aligned} 6x_1 - 4x_2 + 5 &= 0 \\ -4x_1 + 4x_2 &= 0 \implies x_1 = x_2 \end{aligned} \]
+% Substitute $x_1=x_2$ into first eq: $2x_1 + 5 = 0 \implies x_1 = -2.5$. \\
+% Stationary point $x^* = (-2.5, -2.5)$.
+
+% \textbf{(e) Eigenvalues of Hessian:} \\
+% Solve $\det(H - \lambda I) = 0 \implies \lambda^2 - 10\lambda + 8 = 0$. \\
+% $\lambda = \frac{10 \pm \sqrt{68}}{2} = 5 \pm \sqrt{17}$. \\
+% $\lambda_1 \approx 9.12, \quad \lambda_2 \approx 0.88$.
+
+% \textbf{(f) Optimality Conditions:} \\
+% \textbf{Necessary:} $\nabla f(x^*) = 0$ holds true. \\
+% \textbf{Sufficient:} Since all eigenvalues are positive ($\lambda_1 > 0, \lambda_2 > 0$), the Hessian is \textbf{Positive Definite}. \\
+% Therefore, the point is a \textbf{Local Minimum}.
+
+% \end{enumerate}
+
+
+\clearpage % Force a new page after the nu
+
+\end{document}
