@@ -1,0 +1,247 @@
+\begin{thebibliography}{999}
+
+\bibitem[Andronas et~al.(2021)Andronas, Kokotinis, and Makris]{Andronas2021}
+Andronas, D.; Kokotinis, G.; Makris, S.
+\newblock On modelling and handling of flexible materials: A review on digital
+  twins and planning systems.
+\newblock In Proceedings of the Procedia CIRP,  2021, Vol.~97, pp. 447--452.
+
+\bibitem[Polini and Corrado(2020)]{Polini2020}
+Polini, W.; Corrado, A.
+\newblock Digital twin of composite assembly manufacturing process.
+\newblock {\em International Journal of Production Research} {\bf 2020}, {\em
+  58},~5238--5252.
+
+\bibitem[Asad et~al.(2023)Asad, Khan, Khalid, and Lughmani]{Asad2023}
+Asad, U.; Khan, M.; Khalid, A.; Lughmani, W.A.
+\newblock Human-centric digital twins in industry: A comprehensive review of
+  enabling technologies and implementation strategies.
+\newblock {\em Sensors} {\bf 2023}, {\em 23}.
+
+\bibitem[David et~al.(2023)David, Coatanéa, and Lobov]{David2023}
+David, J.; Coatanéa, E.; Lobov, A.
+\newblock Deploying OWL ontologies for semantic mediation of mixed-reality
+  interactions for human–robot collaborative assembly.
+\newblock {\em Journal of Manufacturing Systems} {\bf 2023}, {\em
+  70},~359--381.
+\newblock {\url{https://doi.org/https://doi.org/10.1016/j.jmsy.2023.07.013}}.
+
+\bibitem[Adadi and Berrada(2018)]{Adadi2018}
+Adadi, A.; Berrada, M.
+\newblock Peeking Inside the Black-Box: A Survey on Explainable Artificial
+  Intelligence (XAI).
+\newblock {\em IEEE Access} {\bf 2018}, {\em 6},~52138--52160.
+\newblock {\url{https://doi.org/10.1109/ACCESS.2018.2870052}}.
+
+\bibitem[Gunning et~al.(2019)Gunning, Stefik, Choi, Miller, Stumpf, and
+  Yang]{Gunning2019}
+Gunning, D.; Stefik, M.; Choi, J.; Miller, T.; Stumpf, S.; Yang, G.Z.
+\newblock XAI—Explainable artificial intelligence.
+\newblock {\em Science Robotics} {\bf 2019}, {\em 4},~eaay7120.
+
+\bibitem[Asad et~al.(2025)Asad, Khalid, Lughmani, Rasheed, and
+  Khan]{Asad2024_intention}
+Asad, U.; Khalid, A.; Lughmani, W.A.; Rasheed, S.; Khan, M.M.
+\newblock A Human Intention and Motion Prediction Framework for Applications in
+  Human-Centric Digital Twins.
+\newblock {\em Biomimetics} {\bf 2025}, {\em 10}.
+\newblock {\url{https://doi.org/10.3390/biomimetics10100656}}.
+
+\bibitem[Umbrico et~al.(2022)Umbrico, Orlandini, Cesta, Faroni, Beschi,
+  Pedrocchi, Scala, Tavormina, Koukas, Zalonis, Fourtakas, Kotsaris, Andronas,
+  and Makris]{Umbrico2022}
+Umbrico, A.; Orlandini, A.; Cesta, A.; Faroni, M.; Beschi, M.; Pedrocchi, N.;
+  Scala, A.; Tavormina, P.; Koukas, S.; Zalonis, A.;  et~al.
+\newblock Design of Advanced Human–Robot Collaborative Cells for Personalized
+  Human–Robot Collaborations.
+\newblock {\em Applied Sciences} {\bf 2022}, {\em 12}.
+\newblock {\url{https://doi.org/10.3390/app12146839}}.
+
+\bibitem[Makris et~al.(2023)Makris, Dietrich, Kellens, and Hu]{Makris2023}
+Makris, S.; Dietrich, F.; Kellens, K.; Hu, S.
+\newblock Automated assembly of non-rigid objects.
+\newblock {\em CIRP Annals} {\bf 2023}, {\em 72},~513--539.
+
+\bibitem[Cotta et~al.(2023)Cotta, Lopes, and Vassallo]{Cotta2023}
+Cotta, W.A.A.; Lopes, S.I.; Vassallo, R.F.
+\newblock Towards the cognitive factory in industry 5.0: From concept to
+  implementation.
+\newblock {\em Smart Cities} {\bf 2023}, {\em 6},~1901--1921.
+
+\bibitem[Wang et~al.(2024)Wang, Kedia, Ren, Abdullah, Bhardwaj, Chao, Chen,
+  Chin, Dan, Fan, Gonzalez-Pumariega, Kompella, Pace, Sharma, Sun, Sunkara, and
+  Choudhury]{Wang2024}
+Wang, H.; Kedia, K.; Ren, J.; Abdullah, R.; Bhardwaj, A.; Chao, A.; Chen, K.Y.;
+  Chin, N.; Dan, P.; Fan, X.;  et~al.
+\newblock {MOSAIC}: A Modular System for Assistive and Interactive Cooking.
+\newblock In Proceedings of the Conference on Robot Learning (CoRL),  2024,
+  \href{http://arxiv.org/abs/2402.18796}{{\normalfont
+  [arXiv:cs.RO/2402.18796]}}.
+
+\bibitem[Zhou et~al.(2024)Zhou, Zheng, Qi, Li, Lee, Duan, Lu, Li, Hu, and
+  Navarro-Alarcon]{Zhou2024}
+Zhou, P.; Zheng, P.; Qi, J.; Li, C.; Lee, H.Y.; Duan, A.; Lu, L.; Li, Z.; Hu,
+  L.; Navarro-Alarcon, D.
+\newblock Reactive human-robot collaborative manipulation of deformable linear
+  objects using a new topological latent control model.
+\newblock {\em Robotics and Computer-Integrated Manufacturing} {\bf 2024}, {\em
+  88},~102727.
+
+\bibitem[Sirintuna et~al.(2024)Sirintuna, Kastritsi, Ozdamar, Gandarias, and
+  Ajoudani]{Sirintuna2024}
+Sirintuna, D.; Kastritsi, T.; Ozdamar, I.; Gandarias, J.M.; Ajoudani, A.
+\newblock Enhancing human-robot collaborative transportation through
+  obstacle-aware vibrotactile warning and virtual fixtures.
+\newblock {\em Robotics and Autonomous Systems} {\bf 2024}, p. 104725.
+
+\bibitem[Nezhad et~al.(2020)Nezhad, Wang, Court, Thapa, and
+  Erkoyuncu]{Nezhad2020}
+Nezhad, H.Y.; Wang, X.; Court, S.D.; Thapa, B.; Erkoyuncu, J.A.
+\newblock Development of an augmented reality equipped composites bonded
+  assembly and repair for aerospace applications.
+\newblock In Proceedings of the IFAC-PapersOnLine. Elsevier B.V.,  2020,
+  Vol.~53, pp. 209--215.
+
+\bibitem[De~Lazzari et~al.(2025)De~Lazzari, Terreran, Giacomuzzo, Jain, Falco,
+  Carli, and Romeres]{PACE}
+De~Lazzari, D.; Terreran, M.; Giacomuzzo, G.; Jain, S.; Falco, P.; Carli, R.;
+  Romeres, D.
+\newblock PACE: Proactive Assistance in Human-Robot Collaboration Through
+  Action-Completion Estimation.
+\newblock In Proceedings of the 2025 IEEE International Conference on Robotics
+  and Automation (ICRA),  2025, pp. 6725--6731.
+\newblock {\url{https://doi.org/10.1109/ICRA55743.2025.11127399}}.
+
+\bibitem[Chi et~al.(2023)Chi, Feng, Du, Xu, Cousineau, Burchfiel, and
+  Song]{Chi2023}
+Chi, C.; Feng, S.; Du, Y.; Xu, Z.; Cousineau, E.; Burchfiel, B.; Song, S.
+\newblock Diffusion policy: Visuomotor policy learning via action diffusion.
+\newblock arXiv preprint.
+
+\bibitem[Ahn et~al.(2022)Ahn, Brohan, Brown, Chebotar, Cortes, David, Finn, Fu,
+  Gopalakrishnan, Hausman, Herzog, Ho, Hsu, Ibarz, Ichter, Irpan, Jang, Ruano,
+  Jeffrey, Jesmonth, Joshi, Julian, Kalashnikov, Kuang, Lee, Levine, Lu, Luu,
+  Parada, Pastor, Quiambao, Rao, Rettinghouse, Reyes, Sermanet, Sievers, Tan,
+  Toshev, Vanhoucke, Xia, Xiao, Xu, Xu, Yan, and Zeng]{Ahn2022}
+Ahn, M.; Brohan, A.; Brown, N.; Chebotar, Y.; Cortes, O.; David, B.; Finn, C.;
+  Fu, C.; Gopalakrishnan, K.; Hausman, K.;  et~al.
+\newblock Do as i can, not as i say: Grounding language in robotic affordances.
+\newblock arXiv preprint.
+
+\bibitem[Yu et~al.(2024)Yu, Moghani, Dharmarajan, Schorp, Panitch, Liu, Hari,
+  Huang, Mittal, Goldberg, and Garg]{Yu2024}
+Yu, Q.; Moghani, M.; Dharmarajan, K.; Schorp, V.; Panitch, W.C.H.; Liu, J.;
+  Hari, K.; Huang, H.; Mittal, M.; Goldberg, K.;  et~al.
+\newblock Orbit-surgical: An open-simulation framework for learning surgical
+  augmented dexterity.
+\newblock arXiv preprint.
+
+\bibitem[Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le,
+  and Zhou]{Wei2022}
+Wei, J.; Wang, X.; Schuurmans, D.; Bosma, M.; Ichter, B.; Xia, F.; Chi, E.; Le,
+  Q.; Zhou, D.
+\newblock Chain-of-thought prompting elicits reasoning in large language
+  models.
+\newblock arXiv preprint.
+
+\bibitem[Singh et~al.(2023)Singh, Blukis, Mousavian, Goyal, Xu, Tremblay, Fox,
+  Thomason, and Garg]{Singh2023}
+Singh, I.; Blukis, V.; Mousavian, A.; Goyal, A.; Xu, D.; Tremblay, J.; Fox, D.;
+  Thomason, J.; Garg, A.
+\newblock Progprompt: program generation for situated robot task planning using
+  large language models.
+\newblock {\em Autonomous Robots} {\bf 2023}, {\em 47},~999--1012.
+
+\bibitem[Mandlekar et~al.(2021)Mandlekar, Xu, Wong, Nasiriany, Wang, Kulkarni,
+  Fei-Fei, Savarese, Zhu, and Mart{\'\i}n-Mart{\'\i}n]{Mandlekar2021}
+Mandlekar, A.; Xu, D.; Wong, J.; Nasiriany, S.; Wang, C.; Kulkarni, R.;
+  Fei-Fei, L.; Savarese, S.; Zhu, Y.; Mart{\'\i}n-Mart{\'\i}n, R.
+\newblock What matters in learning from offline human demonstrations for robot
+  manipulation.
+\newblock arXiv preprint.
+
+\bibitem[Lee et~al.(2025)Lee, Wen, Kang, Kang, Kweon, and Yoon]{any6d}
+Lee, T.; Wen, B.; Kang, M.; Kang, G.; Kweon, I.S.; Yoon, K.J.
+\newblock {Any6D}: Model-free 6D Pose Estimation of Novel Objects.
+\newblock In Proceedings of the Proceedings of the Computer Vision and Pattern
+  Recognition Conference (CVPR),  2025.
+
+\bibitem[Wen et~al.(2024)Wen, Yang, Kautz, and Birchfield]{foundationpose}
+Wen, B.; Yang, W.; Kautz, J.; Birchfield, S.
+\newblock {FoundationPose}: Unified 6D Pose Estimation and Tracking of Novel
+  Objects.
+\newblock In Proceedings of the CVPR,  2024.
+
+\bibitem[Lin et~al.(2025)Lin, Chen, Liew, Chen, Li, Shi, Feng, and
+  Kang]{depthanything3}
+Lin, H.; Chen, S.; Liew, J.H.; Chen, D.Y.; Li, Z.; Shi, G.; Feng, J.; Kang, B.
+\newblock Depth Anything 3: Recovering the visual space from any views.
+\newblock {\em arXiv preprint arXiv:2511.10647} {\bf 2025}.
+
+\bibitem[Carion et~al.(2025)Carion, Gustafson, Hu, Debnath, Hu, Suris, Ryali,
+  Alwala, Khedr, Huang, Lei, Ma, Guo, Kalla, Marks, Greer, Wang, Sun, Rädle,
+  Afouras, Mavroudi, Xu, Wu, Zhou, Momeni, Hazra, Ding, Vaze, Porcher, Li, Li,
+  Kamath, Cheng, Dollár, Ravi, Saenko, Zhang, and Feichtenhofer]{sam3}
+Carion, N.; Gustafson, L.; Hu, Y.T.; Debnath, S.; Hu, R.; Suris, D.; Ryali, C.;
+  Alwala, K.V.; Khedr, H.; Huang, A.;  et~al.
+\newblock SAM 3: Segment Anything with Concepts,  2025,
+  \href{http://arxiv.org/abs/2511.16719}{{\normalfont
+  [arXiv:cs.CV/2511.16719]}}.
+
+\bibitem[Team et~al.(2025)Team, Chen, Chu, Gleize, Liang, Sax, Tang, Wang, Guo,
+  Hardin, Li, Lin, Liu, Ma, Sagar, Song, Wang, Yang, Zhang, Dollár, Gkioxari,
+  Feiszli, and Malik]{sam3dobjects}
+Team, S.D.; Chen, X.; Chu, F.J.; Gleize, P.; Liang, K.J.; Sax, A.; Tang, H.;
+  Wang, W.; Guo, M.; Hardin, T.;  et~al.
+\newblock SAM 3D: 3Dfy Anything in Images {\bf 2025}.
+\newblock  \href{http://arxiv.org/abs/2511.16624}{{\normalfont
+  [arXiv:cs.CV/2511.16624]}}.
+
+\bibitem[Laine et~al.(2020)Laine, Hellsten, Karras, Seol, Lehtinen, and
+  Aila]{nvdiffrast}
+Laine, S.; Hellsten, J.; Karras, T.; Seol, Y.; Lehtinen, J.; Aila, T.
+\newblock Modular Primitives for High-Performance Differentiable Rendering.
+\newblock {\em ACM Transactions on Graphics} {\bf 2020}, {\em 39}.
+
+\bibitem[Liu et~al.(2023)Liu, Su, Lu, Li, and Yip]{Liu2023}
+Liu, F.; Su, E.; Lu, J.; Li, M.; Yip, M.C.
+\newblock Robotic manipulation of deformable rope-like objects using
+  differentiable compliant position-based dynamics.
+\newblock {\em IEEE Robotics and Automation Letters} {\bf 2023}, {\em
+  8},~3964--3971.
+
+\bibitem[Cadene et~al.(2024)Cadene, Alibert, Soare, Gallouedec, Zouitine,
+  Palma, Kooijmans, Aractingi, Shukor, Aubakirova, Russi, Capuano, Pascal,
+  Choghari, Moss, and Wolf]{cadene2024lerobot}
+Cadene, R.; Alibert, S.; Soare, A.; Gallouedec, Q.; Zouitine, A.; Palma, S.;
+  Kooijmans, P.; Aractingi, M.; Shukor, M.; Aubakirova, D.;  et~al.
+\newblock LeRobot: State-of-the-art Machine Learning for Real-World Robotics in
+  Pytorch.
+\newblock \url{https://github.com/huggingface/lerobot},  2024.
+
+\bibitem[Black et~al.(2024)Black, Brown, Driess, Esmail, Equi, Finn, Fusai,
+  Groom, Hausman, Ichter, et~al.]{pi0}
+Black, K.; Brown, N.; Driess, D.; Esmail, A.; Equi, M.; Finn, C.; Fusai, N.;
+  Groom, L.; Hausman, K.; Ichter, B.;  et~al.
+\newblock {$\pi_0$}: A Vision-Language-Action Flow Model for General Robot
+  Control.
+\newblock {\em arXiv preprint arXiv:2410.24164} {\bf 2024}.
+
+\bibitem[Kim et~al.(2024)Kim, Pertsch, Karamcheti, Xiao, Balakrishna, Nair,
+  Rafailov, Foster, Lam, Sanketi, Vuong, Kollar, Burchfiel, Tedrake, Sadigh,
+  Levine, Liang, and Finn]{openvla}
+Kim, M.; Pertsch, K.; Karamcheti, S.; Xiao, T.; Balakrishna, A.; Nair, S.;
+  Rafailov, R.; Foster, E.; Lam, G.; Sanketi, P.;  et~al.
+\newblock OpenVLA: An Open-Source Vision-Language-Action Model.
+\newblock {\em arXiv preprint arXiv:2406.09246} {\bf 2024}.
+
+\bibitem[Manyar et~al.(2023)Manyar, Cheng, Levine, Krishnan, Barbi{\v{c}}, and
+  Gupta]{Manyar2023}
+Manyar, O.M.; Cheng, J.; Levine, R.; Krishnan, V.; Barbi{\v{c}}, J.; Gupta,
+  S.K.
+\newblock Physics informed synthetic image generation for deep learning-based
+  detection of wrinkles and folds.
+\newblock {\em Journal of Computing and Information Science in Engineering}
+  {\bf 2023}, {\em 23}.
+
+\end{thebibliography}

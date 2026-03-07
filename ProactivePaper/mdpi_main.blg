@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: mdpi_main.aux
+The style file: Definitions/mdpi.bst
+Database file #1: draft_references.bib
+Warning--empty journal in sam3dobjects
+You've used 32 entries,
+            2887 wiz_defined-function locations,
+            778 strings with 14538 characters,
+and the built_in function-call counts, 17652 in all, are:
+= -- 1189
+> -- 1942
+< -- 8
++ -- 810
+- -- 550
+* -- 1703
+:= -- 2942
+add.period$ -- 101
+call.type$ -- 32
+change.case$ -- 32
+chr.to.int$ -- 32
+cite$ -- 33
+duplicate$ -- 589
+empty$ -- 955
+format.name$ -- 618
+if$ -- 3544
+int.to.chr$ -- 1
+int.to.str$ -- 32
+missing$ -- 25
+newline$ -- 167
+num.names$ -- 96
+pop$ -- 362
+preamble$ -- 0
+purify$ -- 32
+quote$ -- 0
+skip$ -- 593
+stack$ -- 0
+substring$ -- 418
+swap$ -- 135
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 224
+warning$ -- 1
+while$ -- 87
+width$ -- 0
+write$ -- 393
+(There was 1 warning)
